@@ -15,8 +15,8 @@
             theme: {
                 extend: {
                     colors: {
-                        primary: '#1a56db',
-                        secondary: '#1e40af',
+                        primary: '#2a3347',
+                        secondary: '#3a4357',
                         'off-white': '#f8fafc'
                     }
                 }
@@ -26,78 +26,38 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body class="bg-gray-50">
-    <!-- Header -->
-    <header class="site-header">
-        <div class="container">
-            <!-- Logo -->
-            <a href="home-en.html" class="site-logo">
-                <img src="images/Logo fit.png" alt="SECA - Environmental and Climatic Studies System">
-            </a>
-            
-            <!-- Mobile Menu Toggle -->
-            <button class="menu-toggle" aria-expanded="false" aria-label="Toggle navigation">
-                <i class="fas fa-bars"></i>
-            </button>
-            
-            <!-- Main Navigation -->
-            <nav class="main-nav">
-                <ul class="nav-list">
-                    <li class="nav-item">
-                        <a href="home-en.html" class="nav-link">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="about-en.html" class="nav-link">About Us</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a href="products-en.html" class="nav-link">Products</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="products-en.html#meteorological" class="dropdown-item">Meteorological Stations</a></li>
-                            <li><a href="products-en.html#sensors" class="dropdown-item">Environmental Sensors</a></li>
-                            <li><a href="products-en.html#software" class="dropdown-item">Software Solutions</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a href="training-en.html" class="nav-link">Training</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="animations-en.html" class="nav-link">Animations</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="https://seca-ambiental.com.br/publicacoes/" target="_blank" class="nav-link">Publications</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="https://seca-ambiental.com.br/blog/" target="_blank" class="nav-link">Blog</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="clients-en.html" class="nav-link">Clients</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="links-en.html" class="nav-link">Links</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="contact-en.html" class="nav-link active">Contact Us</a>
-                    </li>
-                </ul>
-            </nav>
-            
-            <!-- Language Switcher -->
-            <div class="language-switcher">
-                <a href="#" data-lang="en" class="active">
-                    <img src="images/BR_new.png" alt="English">
-                    <span>EN</span>
+    <!-- Top Bar with Logo and Language Switcher -->
+    <div class="bg-white py-4 border-b">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <a href="home-en.html" class="flex-shrink-0">
+                    <img src="images/Logo fit.png" alt="SECA" class="h-12">
                 </a>
-                <a href="#" data-lang="pt">
-                    <img src="images/BR_new.png" alt="Portuguese">
-                    <span>PT</span>
-                </a>
+                
+                <!-- Language Switcher and Mobile Menu Button -->
+                <div class="flex items-center space-x-4">
+                    <a href="#" data-lang="en" class="flex items-center space-x-1 text-sm text-primary">
+                        <img src="images/USA.jpg" class="w-5 h-5 rounded-full object-cover" alt="EN">
+                        <span>EN</span>
+                    </a>
+                    <a href="#" data-lang="pt" class="flex items-center space-x-1 text-sm text-gray-600 hover:text-primary">
+                        <img src="images/BR_new.png" class="w-5 h-5 rounded-full object-cover" alt="PT">
+                        <span>PT</span>
+                    </a>
+                    
+                    <!-- Mobile Menu Button -->
+                    <button class="ml-4 text-gray-700 hover:text-primary" id="mobileMenuButton">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
             </div>
         </div>
-    </header>
-
+    </div>
+    
     <!-- Hero Section -->
-    <section class="relative bg-[#2a3347] py-24 mt-16">
-        <div class="absolute inset-0 bg-gradient-to-r from-[#2a3347] to-[#3a4357] opacity-80"></div>
-        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section class="bg-[#2a3347] py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center">
                 <h1 class="text-4xl font-bold tracking-tight text-white sm:text-5xl">Contact Us</h1>
                 <p class="mt-6 max-w-2xl mx-auto text-xl text-gray-100">
@@ -323,36 +283,44 @@
     </section>
 
     <!-- International Representation -->
-    <section class="section">
-        <div class="container">
-            <h2 class="text-center">International Representation</h2>
-            <p class="text-center">SECA has representation in several countries to better serve our international clients</p>
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">International Representation</h2>
+                <div class="h-1 w-20 bg-primary mx-auto mb-6"></div>
+                <p class="text-xl text-gray-600">SECA has representation in several countries to better serve our international clients</p>
+            </div>
             
-            <div class="international-offices" style="margin-top: 40px;">
-                <div class="row">
-                    <div class="col-6">
-                        <div class="international-office">
-                            <h3><i class="fas fa-globe-americas"></i> North & Central America</h3>
-                            <p>
-                                <strong>SECA Environmental North America</strong><br>
-                                123 Environmental Boulevard<br>
-                                Miami, FL 33101, USA<br>
-                                <strong>Phone:</strong> +1 (305) 123-4567<br>
-                                <strong>Email:</strong> <a href="mailto:northamerica@seca-ambiental.com">northamerica@seca-ambiental.com</a>
-                            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- North & Central America -->
+                <div class="bg-white rounded-xl shadow-lg p-8 border border-gray-100 hover:shadow-xl transition-all duration-300">
+                    <div class="flex items-center mb-6">
+                        <div class="text-primary bg-primary/5 w-12 h-12 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-globe-americas text-2xl"></i>
                         </div>
+                        <h3 class="text-xl font-semibold text-gray-900">North & Central America</h3>
                     </div>
-                    <div class="col-6">
-                        <div class="international-office">
-                            <h3><i class="fas fa-globe-europe"></i> Europe</h3>
-                            <p>
-                                <strong>SECA Environmental Europe GmbH</strong><br>
-                                Umweltstraße 45<br>
-                                10115 Berlin, Germany<br>
-                                <strong>Phone:</strong> +49 (30) 987-6543<br>
-                                <strong>Email:</strong> <a href="mailto:europe@seca-ambiental.com">europe@seca-ambiental.com</a>
-                            </p>
+                    <div class="space-y-2 text-gray-600">
+                        <p class="font-medium text-gray-800">SECA Environmental North America</p>
+                        <p>123 Environmental Boulevard<br>Miami, FL 33101, USA</p>
+                        <p><span class="font-medium">Phone:</span> +1 (305) 123-4567</p>
+                        <p><span class="font-medium">Email:</span> <a href="mailto:northamerica@seca-ambiental.com" class="text-primary hover:text-secondary">northamerica@seca-ambiental.com</a></p>
+                    </div>
+                </div>
+                
+                <!-- Europe -->
+                <div class="bg-white rounded-xl shadow-lg p-8 border border-gray-100 hover:shadow-xl transition-all duration-300">
+                    <div class="flex items-center mb-6">
+                        <div class="text-primary bg-primary/5 w-12 h-12 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-globe-europe text-2xl"></i>
                         </div>
+                        <h3 class="text-xl font-semibold text-gray-900">Europe</h3>
+                    </div>
+                    <div class="space-y-2 text-gray-600">
+                        <p class="font-medium text-gray-800">SECA Environmental Europe GmbH</p>
+                        <p>Umweltstraße 45<br>10115 Berlin, Germany</p>
+                        <p><span class="font-medium">Phone:</span> +49 (30) 987-6543</p>
+                        <p><span class="font-medium">Email:</span> <a href="mailto:europe@seca-ambiental.com" class="text-primary hover:text-secondary">europe@seca-ambiental.com</a></p>
                     </div>
                 </div>
             </div>
@@ -360,35 +328,50 @@
     </section>
 
     <!-- FAQ Section -->
-    <section class="section" style="background-color: var(--off-white);">
-        <div class="container">
-            <h2 class="text-center">Frequently Asked Questions</h2>
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
+                <div class="h-1 w-20 bg-primary mx-auto mb-6"></div>
+            </div>
             
-            <div class="faqs" style="margin-top: 40px;">
-                <div class="faq-item">
-                    <h3 class="faq-question">How quickly can you respond to inquiries?</h3>
-                    <div class="faq-answer">
+            <div class="space-y-6 max-w-4xl mx-auto">
+                <!-- FAQ Item 1 -->
+                <div class="bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden">
+                    <div class="px-6 py-4 border-b border-gray-100">
+                        <h3 class="text-lg font-semibold text-gray-900">How quickly can you respond to inquiries?</h3>
+                    </div>
+                    <div class="px-6 py-4 text-gray-600">
                         <p>We typically respond to all inquiries within 24-48 business hours. For urgent matters, we recommend calling our office directly.</p>
                     </div>
                 </div>
                 
-                <div class="faq-item">
-                    <h3 class="faq-question">Do you offer services internationally?</h3>
-                    <div class="faq-answer">
+                <!-- FAQ Item 2 -->
+                <div class="bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden">
+                    <div class="px-6 py-4 border-b border-gray-100">
+                        <h3 class="text-lg font-semibold text-gray-900">Do you offer services internationally?</h3>
+                    </div>
+                    <div class="px-6 py-4 text-gray-600">
                         <p>Yes, SECA provides services throughout South America, North America, and Europe. We have conducted projects in over 25 countries and maintain international offices to support our global clients.</p>
                     </div>
                 </div>
                 
-                <div class="faq-item">
-                    <h3 class="faq-question">Can you provide references for similar projects?</h3>
-                    <div class="faq-answer">
+                <!-- FAQ Item 3 -->
+                <div class="bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden">
+                    <div class="px-6 py-4 border-b border-gray-100">
+                        <h3 class="text-lg font-semibold text-gray-900">Can you provide references for similar projects?</h3>
+                    </div>
+                    <div class="px-6 py-4 text-gray-600">
                         <p>Absolutely. We're happy to provide relevant references and case studies for projects similar to your needs. Please specify your industry and project type when contacting us, and we'll share appropriate references.</p>
                     </div>
                 </div>
                 
-                <div class="faq-item">
-                    <h3 class="faq-question">How can I schedule a consultation with your experts?</h3>
-                    <div class="faq-answer">
+                <!-- FAQ Item 4 -->
+                <div class="bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden">
+                    <div class="px-6 py-4 border-b border-gray-100">
+                        <h3 class="text-lg font-semibold text-gray-900">How can I schedule a consultation with your experts?</h3>
+                    </div>
+                    <div class="px-6 py-4 text-gray-600">
                         <p>You can request a consultation by filling out the contact form on this page, specifying that you'd like to schedule a meeting. Our team will follow up to arrange a time that works for both parties, either in person or via video conference.</p>
                     </div>
                 </div>
@@ -397,76 +380,134 @@
     </section>
 
     <!-- Footer -->
-    <footer class="site-footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-4">
-                    <div class="footer-logo">
-                        <img src="images/Logo fit.png" alt="SECA - Environmental and Climatic Studies System">
-                    </div>
-                    <p>SECA - Environmental and Climatic Studies System Ltd. is a company specialized in providing consulting services, studies and projects in the environmental area with emphasis on air pollution since 1995.</p>
+    <footer class="bg-[#2a3347] text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-wrap justify-between items-start gap-8">
+                <!-- Logo and Social -->
+                <div class="w-full sm:w-auto flex flex-col items-center sm:items-start">
+                    <img src="images/logo-white.png" alt="SECA" class="h-10 mb-4">
+                    <a href="https://www.linkedin.com/company/seca-ambiental" target="_blank" 
+                       class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
                 </div>
-                <div class="col-4">
-                    <h3>Quick Links</h3>
-                    <nav class="footer-nav">
-                        <ul class="footer-nav-list">
-                            <li class="footer-nav-item">
-                                <a href="about-en.html" class="footer-nav-link">About Us</a>
+
+                <!-- Combined Links and Contact -->
+                <div class="flex flex-1 flex-wrap justify-around gap-8">
+                    <!-- Quick Links -->
+                    <div class="w-full sm:w-auto">
+                        <h3 class="text-sm font-semibold uppercase tracking-wider mb-3">Quick Links</h3>
+                        <ul class="space-y-2 text-sm">
+                            <li><a href="about-en.html" class="text-gray-300 hover:text-white transition-colors">About Us</a></li>
+                            <li><a href="products-en.html" class="text-gray-300 hover:text-white transition-colors">Products</a></li>
+                            <li><a href="training-en.html" class="text-gray-300 hover:text-white transition-colors">Training</a></li>
+                            <li><a href="clients-en.html" class="text-gray-300 hover:text-white transition-colors">Clients</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- More Links -->
+                    <div class="w-full sm:w-auto">
+                        <h3 class="text-sm font-semibold uppercase tracking-wider mb-3">Resources</h3>
+                        <ul class="space-y-2 text-sm">
+                            <li><a href="animations-en.html" class="text-gray-300 hover:text-white transition-colors">Animations</a></li>
+                            <li><a href="links-en.html" class="text-gray-300 hover:text-white transition-colors">Useful Links</a></li>
+                            <li><a href="contact-en.html" class="text-gray-300 hover:text-white transition-colors">Contact Us</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Contact Info -->
+                    <div class="w-full sm:w-auto">
+                        <h3 class="text-sm font-semibold uppercase tracking-wider mb-3">Contact</h3>
+                        <ul class="space-y-2 text-sm text-gray-300">
+                            <li class="flex items-start">
+                                <i class="fas fa-map-marker-alt mt-1 mr-2 text-xs"></i>
+                                <span>Rua Cardeal Arcoverde, 1183 cj 65<br>Pinheiros - São Paulo - SP</span>
                             </li>
-                            <li class="footer-nav-item">
-                                <a href="products-en.html" class="footer-nav-link">Products</a>
+                            <li class="flex items-center">
+                                <i class="fas fa-phone mr-2 text-xs"></i>
+                                <span>+55 (11) 3031-4172</span>
                             </li>
-                            <li class="footer-nav-item">
-                                <a href="training-en.html" class="footer-nav-link">Training</a>
-                            </li>
-                            <li class="footer-nav-item">
-                                <a href="animations-en.html" class="footer-nav-link">Animations</a>
-                            </li>
-                            <li class="footer-nav-item">
-                                <a href="clients-en.html" class="footer-nav-link">Clients</a>
-                            </li>
-                            <li class="footer-nav-item">
-                                <a href="contact-en.html" class="footer-nav-link">Contact Us</a>
+                            <li class="flex items-center">
+                                <i class="fas fa-envelope mr-2 text-xs"></i>
+                                <a href="mailto:seca@seca-ambiental.com.br" class="hover:text-white transition-colors">seca@seca-ambiental.com.br</a>
                             </li>
                         </ul>
-                    </nav>
-                </div>
-                <div class="col-4">
-                    <h3>Contact Information</h3>
-                    <p>
-                        <i class="fas fa-map-marker-alt"></i> Rua Cardeal Arcoverde, 1183 cj 65<br>
-                        Pinheiros - São Paulo - SP - Brazil<br>
-                        CEP: 05407-002<br>
-                        <i class="fas fa-phone"></i> +55 (11) 3031-4172<br>
-                        <i class="fas fa-envelope"></i> seca@seca-ambiental.com.br
-                    </p>
-                    <div class="social-links">
-                        <a href="https://www.linkedin.com/company/seca-ambiental/" target="_blank" class="social-link"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
             </div>
-            
-            <div class="footer-bottom">
-                <div class="copyright">
-                    &copy; 2025 SECA - Environmental and Climatic Studies System. All rights reserved.
-                </div>
-                <div>
-                    <a href="privacy-en.html" class="footer-nav-link">Privacy Policy</a> | 
-                    <a href="terms-en.html" class="footer-nav-link">Terms of Service</a>
+
+            <div class="border-t border-white/10 mt-6 pt-6 flex flex-col sm:flex-row justify-between items-center text-xs text-gray-400">
+                <p>&copy; 2025 SECA - Environmental and Climatic Studies System. All rights reserved.</p>
+                <div class="mt-3 sm:mt-0">
+                    <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <span class="mx-2">|</span>
+                    <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
                 </div>
             </div>
         </div>
     </footer>
 
     <!-- JavaScript -->
-    <script src="js/main.js"></script>
     <script>
         // Form submission handler
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your message. We will contact you shortly.');
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Thank you for your message! We will get back to you soon.');
             this.reset();
         });
+
+        // Mobile menu toggle
+        document.getElementById('mobileMenuButton').addEventListener('click', function() {
+            document.getElementById('mobileMenu').classList.remove('hidden');
+        });
+        
+        // Scroll animation
+        document.addEventListener('DOMContentLoaded', function() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('opacity-100', 'translate-y-0');
+                        entry.target.classList.remove('opacity-0', 'translate-y-10');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            document.querySelectorAll('section > div').forEach((el) => {
+                el.classList.add('transform', 'transition-all', 'duration-1000', 'opacity-0', 'translate-y-10');
+                observer.observe(el);
+            });
+        });
     </script>
+
+    <!-- Mobile Menu (Hidden by default) -->
+    <div class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden" id="mobileMenu">
+        <div class="fixed inset-y-0 right-0 max-w-xs w-full bg-white shadow-xl">
+            <div class="flex items-center justify-between p-4 border-b">
+                <h2 class="text-lg font-semibold text-gray-900">Menu</h2>
+                <button class="text-gray-600 hover:text-gray-900" onclick="document.getElementById('mobileMenu').classList.add('hidden')">
+                    <i class="fas fa-times text-2xl"></i>
+                </button>
+            </div>
+            <nav class="px-4 py-6">
+                <ul class="space-y-4">
+                    <li><a href="home-en.html" class="block text-base text-gray-900 hover:text-primary">Home</a></li>
+                    <li><a href="about-en.html" class="block text-base text-gray-900 hover:text-primary">About Us</a></li>
+                    <li><a href="products-en.html" class="block text-base text-gray-900 hover:text-primary">Products</a></li>
+                    <li class="pl-4"><a href="products-en.html#meteorological" class="block text-sm text-gray-700 hover:text-primary">Meteorological Stations</a></li>
+                    <li class="pl-4"><a href="products-en.html#sensors" class="block text-sm text-gray-700 hover:text-primary">Environmental Sensors</a></li>
+                    <li class="pl-4"><a href="products-en.html#software" class="block text-sm text-gray-700 hover:text-primary">Software Solutions</a></li>
+                    <li><a href="training-en.html" class="block text-base text-gray-900 hover:text-primary">Training</a></li>
+                    <li><a href="animations-en.html" class="block text-base text-gray-900 hover:text-primary">Animations</a></li>
+                    <li><a href="clients-en.html" class="block text-base text-gray-900 hover:text-primary">Clients</a></li>
+                    <li><a href="links-en.html" class="block text-base text-gray-900 hover:text-primary">Links</a></li>
+                    <li class="border-l-4 border-primary pl-2">
+                        <a href="contact-en.html" class="block text-base text-primary font-medium">Contact Us</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
 </body>
 </html> 

@@ -3,259 +3,275 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Clients - SECA Environmental and Climatic Studies System</title>
-    <meta name="description" content="Discover SECA's diverse client portfolio and learn about our successful environmental project implementations across various industries.">
+    <title>Clients - SECA Environmental and Climatic Studies System</title>
+    <meta name="description" content="Discover the organizations and companies that trust SECA for their environmental consulting needs and air quality management solutions.">
     
     <!-- Stylesheets -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Open+Sans:wght@300;400;600&display=swap">
-    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2a3347',
+                        secondary: '#3a4357',
+                        'off-white': '#f8fafc'
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-<body>
-    <!-- Header -->
-    <header class="site-header">
-        <div class="container">
-            <!-- Logo -->
-            <a href="home-en.html" class="site-logo">
-                <img src="images/Logo fit.png" alt="SECA - Environmental and Climatic Studies System">
-            </a>
-            
-            <!-- Mobile Menu Toggle -->
-            <button class="menu-toggle" aria-expanded="false" aria-label="Toggle navigation">
-                <i class="fas fa-bars"></i>
-            </button>
-            
-            <!-- Main Navigation -->
-            <nav class="main-nav">
-                <ul class="nav-list">
-                    <li class="nav-item">
-                        <a href="home-en.html" class="nav-link">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="about-en.html" class="nav-link">About Us</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a href="products-en.html" class="nav-link">Products</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="products-en.html#meteorological" class="dropdown-item">Meteorological Stations</a></li>
-                            <li><a href="products-en.html#sensors" class="dropdown-item">Environmental Sensors</a></li>
-                            <li><a href="products-en.html#software" class="dropdown-item">Software Solutions</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a href="training-en.html" class="nav-link">Training</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="animations-en.html" class="nav-link">Animations</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="https://seca-ambiental.com.br/publicacoes/" target="_blank" class="nav-link">Publications</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="https://seca-ambiental.com.br/blog/" target="_blank" class="nav-link">Blog</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="clients-en.html" class="nav-link active">Clients</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="links-en.html" class="nav-link">Links</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="contact-en.html" class="nav-link">Contact Us</a>
-                    </li>
-                </ul>
-            </nav>
-            
-            <!-- Language Switcher -->
-            <div class="language-switcher">
-                <a href="#" data-lang="en" class="active">
-                    <img src="images/BR_new.png" alt="English">
-                    <span>EN</span>
+<body class="bg-gray-50">
+    <!-- Top Bar with Logo and Language Switcher -->
+    <div class="bg-white py-4 border-b">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <a href="home-en.html" class="flex-shrink-0">
+                    <img src="images/Logo fit.png" alt="SECA" class="h-12">
                 </a>
-                <a href="#" data-lang="pt">
-                    <img src="images/BR_new.png" alt="Portuguese">
-                    <span>PT</span>
-                </a>
+                
+                <!-- Language Switcher and Mobile Menu Button -->
+                <div class="flex items-center space-x-4">
+                    <a href="#" data-lang="en" class="flex items-center space-x-1 text-sm text-primary">
+                        <img src="images/USA.jpg" class="w-5 h-5 rounded-full object-cover" alt="EN">
+                        <span>EN</span>
+                    </a>
+                    <a href="#" data-lang="pt" class="flex items-center space-x-1 text-sm text-gray-600 hover:text-primary">
+                        <img src="images/BR_new.png" class="w-5 h-5 rounded-full object-cover" alt="PT">
+                        <span>PT</span>
+                    </a>
+                    
+                    <!-- Mobile Menu Button -->
+                    <button class="ml-4 text-gray-700 hover:text-primary" id="mobileMenuButton">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
             </div>
         </div>
-    </header>
+    </div>
+    
+    <!-- Hero Section -->
+    <section class="bg-[#2a3347] py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="text-4xl font-bold tracking-tight text-white sm:text-5xl">Our Clients</h1>
+                <p class="mt-6 max-w-2xl mx-auto text-xl text-gray-100">
+                    Organizations that trust SECA for their environmental consulting needs and air quality management solutions.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mobile Menu (Hidden by default) -->
+    <div class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden" id="mobileMenu">
+        <div class="fixed inset-y-0 right-0 max-w-xs w-full bg-white shadow-xl">
+            <div class="flex items-center justify-between p-4 border-b">
+                <h2 class="text-lg font-semibold text-gray-900">Menu</h2>
+                <button class="text-gray-600 hover:text-gray-900" onclick="document.getElementById('mobileMenu').classList.add('hidden')">
+                    <i class="fas fa-times text-2xl"></i>
+                </button>
+            </div>
+            <nav class="px-4 py-6">
+                <ul class="space-y-4">
+                    <li><a href="home-en.html" class="block text-base text-gray-900 hover:text-primary">Home</a></li>
+                    <li><a href="about-en.html" class="block text-base text-gray-900 hover:text-primary">About Us</a></li>
+                    <li><a href="products-en.html" class="block text-base text-gray-900 hover:text-primary">Products</a></li>
+                    <li class="pl-4"><a href="products-en.html#meteorological" class="block text-sm text-gray-700 hover:text-primary">Meteorological Stations</a></li>
+                    <li class="pl-4"><a href="products-en.html#sensors" class="block text-sm text-gray-700 hover:text-primary">Environmental Sensors</a></li>
+                    <li class="pl-4"><a href="products-en.html#software" class="block text-sm text-gray-700 hover:text-primary">Software Solutions</a></li>
+                    <li><a href="training-en.html" class="block text-base text-gray-900 hover:text-primary">Training</a></li>
+                    <li><a href="animations-en.html" class="block text-base text-gray-900 hover:text-primary">Animations</a></li>
+                    <li class="border-l-4 border-primary pl-2">
+                        <a href="clients-en.html" class="block text-base text-primary font-medium">Clients</a>
+                    </li>
+                    <li><a href="links-en.html" class="block text-base text-gray-900 hover:text-primary">Links</a></li>
+                    <li><a href="contact-en.html" class="block text-base text-gray-900 hover:text-primary">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
 
     <!-- Clients Section -->
-    <section class="section">
-        <div class="container">
-            <h2 class="text-center">Our Clients</h2>
-            <p class="text-center">For over 25 years, SECA has been providing environmental solutions to leading organizations across various sectors</p>
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Our Clients</h2>
+                <div class="h-1 w-20 bg-primary mx-auto mb-6"></div>
+                <p class="text-xl text-gray-600">For over 25 years, SECA has been providing environmental solutions to leading organizations across various sectors</p>
+            </div>
             
-            <div class="client-industries" style="margin-top: 40px;">
-                <div class="row">
-                    <div class="col-3">
-                        <div class="industry-card">
-                            <div class="industry-icon">
-                                <i class="fas fa-industry"></i>
-                            </div>
-                            <h3>Industrial</h3>
-                            <p>Environmental impact studies and air quality monitoring</p>
-                        </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Industry 1 -->
+                <div class="bg-white rounded-xl shadow-lg p-8 border border-gray-100 transform hover:scale-105 hover:shadow-2xl transition-all duration-300">
+                    <div class="text-primary mb-6 bg-primary/5 w-16 h-16 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-industry text-3xl"></i>
                     </div>
-                    <div class="col-3">
-                        <div class="industry-card">
-                            <div class="industry-icon">
-                                <i class="fas fa-oil-well"></i>
-                            </div>
-                            <h3>Oil & Gas</h3>
-                            <p>Atmospheric dispersion modeling and risk assessment</p>
-                        </div>
-                    </div>
-                    <div class="col-3">
-                        <div class="industry-card">
-                            <div class="industry-icon">
-                                <i class="fas fa-bolt"></i>
-                            </div>
-                            <h3>Energy</h3>
-                            <p>Environmental compliance and emissions monitoring</p>
-                        </div>
-                    </div>
-                    <div class="col-3">
-                        <div class="industry-card">
-                            <div class="industry-icon">
-                                <i class="fas fa-building"></i>
-                            </div>
-                            <h3>Construction</h3>
-                            <p>Environmental impact assessments and mitigation strategies</p>
-                        </div>
-                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Industrial</h3>
+                    <p class="text-gray-600">Environmental impact studies and air quality monitoring</p>
                 </div>
-                <div class="row" style="margin-top: 30px;">
-                    <div class="col-3">
-                        <div class="industry-card">
-                            <div class="industry-icon">
-                                <i class="fas fa-flask"></i>
-                            </div>
-                            <h3>Chemical</h3>
-                            <p>Air quality modeling and environmental consulting</p>
-                        </div>
+                
+                <!-- Industry 2 -->
+                <div class="bg-white rounded-xl shadow-lg p-8 border border-gray-100 transform hover:scale-105 hover:shadow-2xl transition-all duration-300">
+                    <div class="text-primary mb-6 bg-primary/5 w-16 h-16 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-oil-well text-3xl"></i>
                     </div>
-                    <div class="col-3">
-                        <div class="industry-card">
-                            <div class="industry-icon">
-                                <i class="fas fa-leaf"></i>
-                            </div>
-                            <h3>Agriculture</h3>
-                            <p>Climate studies and environmental monitoring</p>
-                        </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Oil & Gas</h3>
+                    <p class="text-gray-600">Atmospheric dispersion modeling and risk assessment</p>
+                </div>
+                
+                <!-- Industry 3 -->
+                <div class="bg-white rounded-xl shadow-lg p-8 border border-gray-100 transform hover:scale-105 hover:shadow-2xl transition-all duration-300">
+                    <div class="text-primary mb-6 bg-primary/5 w-16 h-16 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-bolt text-3xl"></i>
                     </div>
-                    <div class="col-3">
-                        <div class="industry-card">
-                            <div class="industry-icon">
-                                <i class="fas fa-city"></i>
-                            </div>
-                            <h3>Public Sector</h3>
-                            <p>Environmental policy support and technical consulting</p>
-                        </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Energy</h3>
+                    <p class="text-gray-600">Environmental compliance and emissions monitoring</p>
+                </div>
+                
+                <!-- Industry 4 -->
+                <div class="bg-white rounded-xl shadow-lg p-8 border border-gray-100 transform hover:scale-105 hover:shadow-2xl transition-all duration-300">
+                    <div class="text-primary mb-6 bg-primary/5 w-16 h-16 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-building text-3xl"></i>
                     </div>
-                    <div class="col-3">
-                        <div class="industry-card">
-                            <div class="industry-icon">
-                                <i class="fas fa-microscope"></i>
-                            </div>
-                            <h3>Research</h3>
-                            <p>Advanced modeling and environmental studies</p>
-                        </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Construction</h3>
+                    <p class="text-gray-600">Environmental impact assessments and mitigation strategies</p>
+                </div>
+                
+                <!-- Industry 5 -->
+                <div class="bg-white rounded-xl shadow-lg p-8 border border-gray-100 transform hover:scale-105 hover:shadow-2xl transition-all duration-300">
+                    <div class="text-primary mb-6 bg-primary/5 w-16 h-16 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-flask text-3xl"></i>
                     </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Chemical</h3>
+                    <p class="text-gray-600">Air quality modeling and environmental consulting</p>
+                </div>
+                
+                <!-- Industry 6 -->
+                <div class="bg-white rounded-xl shadow-lg p-8 border border-gray-100 transform hover:scale-105 hover:shadow-2xl transition-all duration-300">
+                    <div class="text-primary mb-6 bg-primary/5 w-16 h-16 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-leaf text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Agriculture</h3>
+                    <p class="text-gray-600">Climate studies and environmental monitoring</p>
+                </div>
+                
+                <!-- Industry 7 -->
+                <div class="bg-white rounded-xl shadow-lg p-8 border border-gray-100 transform hover:scale-105 hover:shadow-2xl transition-all duration-300">
+                    <div class="text-primary mb-6 bg-primary/5 w-16 h-16 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-city text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Public Sector</h3>
+                    <p class="text-gray-600">Environmental policy support and technical consulting</p>
+                </div>
+                
+                <!-- Industry 8 -->
+                <div class="bg-white rounded-xl shadow-lg p-8 border border-gray-100 transform hover:scale-105 hover:shadow-2xl transition-all duration-300">
+                    <div class="text-primary mb-6 bg-primary/5 w-16 h-16 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-microscope text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Research</h3>
+                    <p class="text-gray-600">Advanced modeling and environmental studies</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Client Logos -->
-    <section class="section" style="background-color: #ffffff;">
-        <div class="container">
-            <h2 class="text-center">Our Partners</h2>
-            <p class="text-center">We've collaborated with leading organizations across Brazil and globally</p>
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Our Partners</h2>
+                <div class="h-1 w-20 bg-primary mx-auto mb-6"></div>
+                <p class="text-xl text-gray-600">We've collaborated with leading organizations across Brazil and globally</p>
+            </div>
             
-            <div class="client-logos" style="margin-top: 40px;">
+            <div class="space-y-12">
                 <!-- Row 1 -->
-                <div class="row" style="margin-bottom: 40px; align-items: center;">
-                    <div class="col" style="text-align: center;">
-                        <img src="images/clients/petrobras-logo-7.png" alt="Petrobras" style="height: 60px; max-width: 100%; object-fit: contain;">
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center">
+                    <div class="flex justify-center">
+                        <img src="images/clients/petrobras-logo-7.png" alt="Petrobras" class="h-14 object-contain filter hover:brightness-110 transition-all">
                     </div>
-                    <div class="col" style="text-align: center;">
-                        <img src="images/clients/Braskem-Logo.png" alt="Braskem" style="height: 60px; max-width: 100%; object-fit: contain;">
+                    <div class="flex justify-center">
+                        <img src="images/clients/Braskem-Logo.png" alt="Braskem" class="h-14 object-contain filter hover:brightness-110 transition-all">
                     </div>
-                    <div class="col" style="text-align: center;">
-                        <img src="images/clients/logo_vale.gif" alt="Vale" style="height: 60px; max-width: 100%; object-fit: contain;">
+                    <div class="flex justify-center">
+                        <img src="images/clients/logo_vale.gif" alt="Vale" class="h-14 object-contain filter hover:brightness-110 transition-all">
                     </div>
-                    <div class="col" style="text-align: center;">
-                        <img src="images/clients/USIMINAS LOGO.png" alt="Usiminas" style="height: 60px; max-width: 100%; object-fit: contain;">
+                    <div class="flex justify-center">
+                        <img src="images/clients/USIMINAS LOGO.png" alt="Usiminas" class="h-14 object-contain filter hover:brightness-110 transition-all">
                     </div>
-                    <div class="col" style="text-align: center;">
-                        <img src="images/clients/Gerdau logo.png" alt="Gerdau" style="height: 60px; max-width: 100%; object-fit: contain;">
+                    <div class="flex justify-center">
+                        <img src="images/clients/Gerdau logo.png" alt="Gerdau" class="h-14 object-contain filter hover:brightness-110 transition-all">
                     </div>
-                    <div class="col" style="text-align: center;">
-                        <img src="images/clients/FORD logo.png" alt="Ford" style="height: 60px; max-width: 100%; object-fit: contain;">
+                    <div class="flex justify-center">
+                        <img src="images/clients/FORD logo.png" alt="Ford" class="h-14 object-contain filter hover:brightness-110 transition-all">
                     </div>
                 </div>
                 
                 <!-- Row 2 -->
-                <div class="row" style="margin-bottom: 40px; align-items: center;">
-                    <div class="col" style="text-align: center;">
-                        <img src="images/clients/samarco logo.png" alt="Samarco" style="height: 60px; max-width: 100%; object-fit: contain;">
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center">
+                    <div class="flex justify-center">
+                        <img src="images/clients/samarco logo.png" alt="Samarco" class="h-14 object-contain filter hover:brightness-110 transition-all">
                     </div>
-                    <div class="col" style="text-align: center;">
-                        <img src="images/clients/copel-logo-1.png" alt="Copel" style="height: 60px; max-width: 100%; object-fit: contain;">
+                    <div class="flex justify-center">
+                        <img src="images/clients/copel-logo-1.png" alt="Copel" class="h-14 object-contain filter hover:brightness-110 transition-all">
                     </div>
-                    <div class="col" style="text-align: center;">
-                        <img src="images/clients/edp-logo-1-1.png" alt="EDP" style="height: 60px; max-width: 100%; object-fit: contain;">
+                    <div class="flex justify-center">
+                        <img src="images/clients/edp-logo-1-1.png" alt="EDP" class="h-14 object-contain filter hover:brightness-110 transition-all">
                     </div>
-                    <div class="col" style="text-align: center;">
-                        <img src="images/clients/Copersucar.png" alt="Copersucar" style="height: 60px; max-width: 100%; object-fit: contain;">
+                    <div class="flex justify-center">
+                        <img src="images/clients/Copersucar.png" alt="Copersucar" class="h-14 object-contain filter hover:brightness-110 transition-all">
                     </div>
-                    <div class="col" style="text-align: center;">
-                        <img src="images/clients/Ferbasa.png" alt="Ferbasa" style="height: 60px; max-width: 100%; object-fit: contain;">
+                    <div class="flex justify-center">
+                        <img src="images/clients/Ferbasa.png" alt="Ferbasa" class="h-14 object-contain filter hover:brightness-110 transition-all">
                     </div>
-                    <div class="col" style="text-align: center;">
-                        <img src="images/clients/logo  ABB.png" alt="ABB" style="height: 60px; max-width: 100%; object-fit: contain;">
+                    <div class="flex justify-center">
+                        <img src="images/clients/logo  ABB.png" alt="ABB" class="h-14 object-contain filter hover:brightness-110 transition-all">
                     </div>
                 </div>
                 
                 <!-- Row 3 -->
-                <div class="row" style="margin-bottom: 40px; align-items: center;">
-                    <div class="col" style="text-align: center;">
-                        <img src="images/clients/logo-cetrel-header.png" alt="Cetrel" style="height: 60px; max-width: 100%; object-fit: contain;">
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center">
+                    <div class="flex justify-center">
+                        <img src="images/clients/logo-cetrel-header.png" alt="Cetrel" class="h-14 object-contain filter hover:brightness-110 transition-all">
                     </div>
-                    <div class="col" style="text-align: center;">
-                        <img src="images/clients/logo-ciclus.png" alt="Ciclus" style="height: 60px; max-width: 100%; object-fit: contain;">
+                    <div class="flex justify-center">
+                        <img src="images/clients/logo-ciclus.png" alt="Ciclus" class="h-14 object-contain filter hover:brightness-110 transition-all">
                     </div>
-                    <div class="col" style="text-align: center;">
-                        <img src="images/clients/Marubeni logo.png" alt="Marubeni" style="height: 60px; max-width: 100%; object-fit: contain;">
+                    <div class="flex justify-center">
+                        <img src="images/clients/Marubeni logo.png" alt="Marubeni" class="h-14 object-contain filter hover:brightness-110 transition-all">
                     </div>
-                    <div class="col" style="text-align: center;">
-                        <img src="images/clients/FEAM logo.png" alt="FEAM" style="height: 60px; max-width: 100%; object-fit: contain;">
+                    <div class="flex justify-center">
+                        <img src="images/clients/FEAM logo.png" alt="FEAM" class="h-14 object-contain filter hover:brightness-110 transition-all">
                     </div>
-                    <div class="col" style="text-align: center;">
-                        <img src="images/clients/tetratech-50th logo.png" alt="Tetratech" style="height: 60px; max-width: 100%; object-fit: contain;">
+                    <div class="flex justify-center">
+                        <img src="images/clients/tetratech-50th logo.png" alt="Tetratech" class="h-14 object-contain filter hover:brightness-110 transition-all">
                     </div>
-                    <div class="col" style="text-align: center;">
-                        <img src="images/clients/golar logo.jpg" alt="Golar" style="height: 60px; max-width: 100%; object-fit: contain;">
+                    <div class="flex justify-center">
+                        <img src="images/clients/golar logo.jpg" alt="Golar" class="h-14 object-contain filter hover:brightness-110 transition-all">
                     </div>
                 </div>
                 
                 <!-- Row 4 -->
-                <div class="row" style="align-items: center;">
-                    <div class="col" style="text-align: center;">
-                        <img src="images/clients/votorantim logo-azul.svg" alt="Votorantim" style="height: 60px; max-width: 100%; object-fit: contain;">
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 items-center">
+                    <div class="flex justify-center">
+                        <img src="images/clients/votorantim logo-azul.svg" alt="Votorantim" class="h-14 object-contain filter hover:brightness-110 transition-all">
                     </div>
-                    <div class="col" style="text-align: center;">
-                        <img src="images/clients/logo_gera_maranhao_3-2.png" alt="Gera Maranhão" style="height: 60px; max-width: 100%; object-fit: contain;">
+                    <div class="flex justify-center">
+                        <img src="images/clients/logo_gera_maranhao_3-2.png" alt="Gera Maranhão" class="h-14 object-contain filter hover:brightness-110 transition-all">
                     </div>
-                    <div class="col" style="text-align: center;">
-                        <img src="images/clients/Bourscheid logo.png" alt="Bourscheid" style="height: 60px; max-width: 100%; object-fit: contain;">
+                    <div class="flex justify-center">
+                        <img src="images/clients/Bourscheid logo.png" alt="Bourscheid" class="h-14 object-contain filter hover:brightness-110 transition-all">
                     </div>
-                    <div class="col" style="text-align: center;">
-                        <img src="images/clients/EcoVital logo.png" alt="EcoVital" style="height: 60px; max-width: 100%; object-fit: contain;">
+                    <div class="flex justify-center">
+                        <img src="images/clients/EcoVital logo.png" alt="EcoVital" class="h-14 object-contain filter hover:brightness-110 transition-all">
                     </div>
-                    <div class="col" style="text-align: center;">
-                        <img src="images/clients/GPE logo.png" alt="GPE" style="height: 60px; max-width: 100%; object-fit: contain;">
+                    <div class="flex justify-center">
+                        <img src="images/clients/GPE logo.png" alt="GPE" class="h-14 object-contain filter hover:brightness-110 transition-all">
                     </div>
                 </div>
             </div>
@@ -263,71 +279,89 @@
     </section>
 
     <!-- Case Studies -->
-    <section class="section" id="case-studies">
-        <div class="container">
-            <h2 class="text-center">Case Studies</h2>
-            <p class="text-center">Explore our successful project implementations</p>
+    <section class="py-16 bg-white" id="case-studies">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Case Studies</h2>
+                <div class="h-1 w-20 bg-primary mx-auto mb-6"></div>
+                <p class="text-xl text-gray-600">Explore our successful project implementations</p>
+            </div>
             
-            <div class="case-studies">
-                <div class="row" style="margin-top: 40px;">
-                    <div class="col-6">
-                        <div class="case-study">
-                            <h3>Air Quality Assessment for Industrial Complex</h3>
-                            <p class="industry"><strong>Industry:</strong> Manufacturing</p>
-                            <p>
+            <div class="space-y-12">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <!-- Case Study 1 -->
+                    <div class="bg-white rounded-xl shadow-lg p-8 border border-gray-100 hover:shadow-xl transition-all duration-300">
+                        <div class="space-y-4">
+                            <div class="inline-block px-3 py-1 bg-primary/10 text-primary text-sm font-semibold rounded-full mb-2">
+                                Manufacturing
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-3">Air Quality Assessment for Industrial Complex</h3>
+                            <p class="text-gray-600">
                                 SECA conducted a comprehensive air quality assessment for a major industrial complex, involving dispersion modeling, monitoring station setup, and regulatory compliance analysis.
                             </p>
-                            <p>
+                            <p class="text-gray-600">
                                 The project involved installation of meteorological stations, data analysis spanning multiple years, and sophisticated mathematical modeling using AERMOD, CALPUFF, and proprietary SECA methodologies.
                             </p>
-                            <p>
+                            <p class="text-gray-700 font-medium">
                                 <strong>Results:</strong> The client successfully demonstrated regulatory compliance, optimized operations, and implemented cost-effective emissions control strategies.
                             </p>
                         </div>
                     </div>
-                    <div class="col-6">
-                        <div class="case-study">
-                            <h3>Environmental Impact Assessment for Energy Plant</h3>
-                            <p class="industry"><strong>Industry:</strong> Energy</p>
-                            <p>
+                    
+                    <!-- Case Study 2 -->
+                    <div class="bg-white rounded-xl shadow-lg p-8 border border-gray-100 hover:shadow-xl transition-all duration-300">
+                        <div class="space-y-4">
+                            <div class="inline-block px-3 py-1 bg-primary/10 text-primary text-sm font-semibold rounded-full mb-2">
+                                Energy
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-3">Environmental Impact Assessment for Energy Plant</h3>
+                            <p class="text-gray-600">
                                 For a new energy generation facility, SECA developed a comprehensive environmental impact assessment with a focus on air quality and meteorological conditions.
                             </p>
-                            <p>
+                            <p class="text-gray-600">
                                 Our team conducted baseline measurements, implemented advanced dispersion models, and provided recommendations for emissions control technologies.
                             </p>
-                            <p>
+                            <p class="text-gray-700 font-medium">
                                 <strong>Results:</strong> The project received environmental licensing approval with minimal modifications, saving the client significant time and resources in the approval process.
                             </p>
                         </div>
                     </div>
                 </div>
-                <div class="row" style="margin-top: 40px;">
-                    <div class="col-6">
-                        <div class="case-study">
-                            <h3>Urban Air Quality Monitoring Network</h3>
-                            <p class="industry"><strong>Industry:</strong> Public Sector</p>
-                            <p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <!-- Case Study 3 -->
+                    <div class="bg-white rounded-xl shadow-lg p-8 border border-gray-100 hover:shadow-xl transition-all duration-300">
+                        <div class="space-y-4">
+                            <div class="inline-block px-3 py-1 bg-primary/10 text-primary text-sm font-semibold rounded-full mb-2">
+                                Public Sector
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-3">Urban Air Quality Monitoring Network</h3>
+                            <p class="text-gray-600">
                                 SECA designed and implemented an integrated air quality monitoring network for a major urban center, combining fixed and mobile monitoring stations.
                             </p>
-                            <p>
+                            <p class="text-gray-600">
                                 The project included sensor selection, station placement optimization, data management infrastructure, and public reporting systems.
                             </p>
-                            <p>
+                            <p class="text-gray-700 font-medium">
                                 <strong>Results:</strong> The system provided real-time air quality data for public health initiatives and enabled targeted traffic management measures that reduced pollution in critical areas.
                             </p>
                         </div>
                     </div>
-                    <div class="col-6">
-                        <div class="case-study">
-                            <h3>Emergency Response Planning for Chemical Facility</h3>
-                            <p class="industry"><strong>Industry:</strong> Chemical</p>
-                            <p>
+                    
+                    <!-- Case Study 4 -->
+                    <div class="bg-white rounded-xl shadow-lg p-8 border border-gray-100 hover:shadow-xl transition-all duration-300">
+                        <div class="space-y-4">
+                            <div class="inline-block px-3 py-1 bg-primary/10 text-primary text-sm font-semibold rounded-full mb-2">
+                                Chemical
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-3">Emergency Response Planning for Chemical Facility</h3>
+                            <p class="text-gray-600">
                                 SECA developed atmospheric dispersion modeling scenarios to support emergency response planning for a chemical manufacturing facility.
                             </p>
-                            <p>
+                            <p class="text-gray-600">
                                 The work included identification of potential release scenarios, modeling of dispersion under various meteorological conditions, and development of response protocols.
                             </p>
-                            <p>
+                            <p class="text-gray-700 font-medium">
                                 <strong>Results:</strong> The facility improved emergency preparedness, developed targeted evacuation plans, and reduced potential response times for hazardous material releases.
                             </p>
                         </div>
@@ -338,53 +372,59 @@
     </section>
 
     <!-- Testimonials -->
-    <section class="section" style="background-color: var(--off-white);">
-        <div class="container">
-            <h2 class="text-center">Client Testimonials</h2>
-            <p class="text-center">What our clients say about working with SECA</p>
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Client Testimonials</h2>
+                <div class="h-1 w-20 bg-primary mx-auto mb-6"></div>
+                <p class="text-xl text-gray-600">What our clients say about working with SECA</p>
+            </div>
             
-            <div class="testimonials" style="margin-top: 40px;">
-                <div class="row">
-                    <div class="col-4">
-                        <div class="testimonial">
-                            <div class="quote-icon">
-                                <i class="fas fa-quote-left"></i>
-                            </div>
-                            <p class="testimonial-text">
-                                "SECA's expertise in air quality modeling proved invaluable for our industrial expansion project. Their detailed assessment and recommendations helped us implement the most effective emissions control technologies."
-                            </p>
-                            <div class="testimonial-author">
-                                <p class="author-name">John Peterson</p>
-                                <p class="author-position">Environmental Director, ABC Manufacturing</p>
-                            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white rounded-xl shadow-lg p-8 border border-gray-100 relative">
+                    <div class="absolute -top-4 left-8 text-primary bg-white rounded-full w-10 h-10 flex items-center justify-center shadow-md">
+                        <i class="fas fa-quote-left text-2xl"></i>
+                    </div>
+                    <div class="pt-4">
+                        <p class="text-gray-600 italic mb-6">
+                            "SECA's expertise in air quality modeling proved invaluable for our industrial expansion project. Their detailed assessment and recommendations helped us implement the most effective emissions control technologies."
+                        </p>
+                        <div class="border-t border-gray-100 pt-4">
+                            <p class="font-semibold text-gray-900">John Peterson</p>
+                            <p class="text-sm text-gray-500">Environmental Director, ABC Manufacturing</p>
                         </div>
                     </div>
-                    <div class="col-4">
-                        <div class="testimonial">
-                            <div class="quote-icon">
-                                <i class="fas fa-quote-left"></i>
-                            </div>
-                            <p class="testimonial-text">
-                                "The monitoring systems SECA installed exceeded our expectations. The data quality and reliability have been excellent, and their ongoing support has been prompt and professional."
-                            </p>
-                            <div class="testimonial-author">
-                                <p class="author-name">Maria Silva</p>
-                                <p class="author-position">Operations Manager, Energy Solutions</p>
-                            </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-white rounded-xl shadow-lg p-8 border border-gray-100 relative">
+                    <div class="absolute -top-4 left-8 text-primary bg-white rounded-full w-10 h-10 flex items-center justify-center shadow-md">
+                        <i class="fas fa-quote-left text-2xl"></i>
+                    </div>
+                    <div class="pt-4">
+                        <p class="text-gray-600 italic mb-6">
+                            "The monitoring systems SECA installed exceeded our expectations. The data quality and reliability have been excellent, and their ongoing support has been prompt and professional."
+                        </p>
+                        <div class="border-t border-gray-100 pt-4">
+                            <p class="font-semibold text-gray-900">Maria Silva</p>
+                            <p class="text-sm text-gray-500">Operations Manager, Energy Solutions</p>
                         </div>
                     </div>
-                    <div class="col-4">
-                        <div class="testimonial">
-                            <div class="quote-icon">
-                                <i class="fas fa-quote-left"></i>
-                            </div>
-                            <p class="testimonial-text">
-                                "We've worked with SECA on multiple environmental assessments. Their technical expertise, thorough analysis, and clear communication make them our first choice for air quality studies."
-                            </p>
-                            <div class="testimonial-author">
-                                <p class="author-name">Carlos Mendez</p>
-                                <p class="author-position">Project Manager, Urban Development Corp</p>
-                            </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="bg-white rounded-xl shadow-lg p-8 border border-gray-100 relative">
+                    <div class="absolute -top-4 left-8 text-primary bg-white rounded-full w-10 h-10 flex items-center justify-center shadow-md">
+                        <i class="fas fa-quote-left text-2xl"></i>
+                    </div>
+                    <div class="pt-4">
+                        <p class="text-gray-600 italic mb-6">
+                            "We've worked with SECA on multiple environmental assessments. Their technical expertise, thorough analysis, and clear communication make them our first choice for air quality studies."
+                        </p>
+                        <div class="border-t border-gray-100 pt-4">
+                            <p class="font-semibold text-gray-900">Carlos Mendez</p>
+                            <p class="text-sm text-gray-500">Project Manager, Urban Development Corp</p>
                         </div>
                     </div>
                 </div>
@@ -393,77 +433,100 @@
     </section>
 
     <!-- Call to Action -->
-    <section class="section">
-        <div class="container text-center">
-            <h2>Ready to Work With Us?</h2>
-            <p>Contact us today to discuss how SECA can support your environmental initiatives.</p>
-            <a href="contact-en.html" class="btn btn-primary btn-lg" style="margin-top: 20px;">Contact Us</a>
+    <section class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold text-gray-900 mb-6">Ready to Work With Us?</h2>
+            <p class="text-xl text-gray-600 mb-8">
+                Contact us today to discuss how SECA can support your environmental initiatives.
+            </p>
+            <a href="contact-en.html" class="inline-flex items-center px-8 py-3 border border-transparent text-lg font-medium rounded-md text-white bg-primary hover:bg-secondary transition-colors">
+                Contact Us
+                <i class="fas fa-arrow-right ml-2"></i>
+            </a>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="site-footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-4">
-                    <div class="footer-logo">
-                        <img src="images/Logo fit.png" alt="SECA - Environmental and Climatic Studies System">
-                    </div>
-                    <p>SECA - Environmental and Climatic Studies System Ltd. is a company specialized in providing consulting services, studies and projects in the environmental area with emphasis on air pollution since 1995.</p>
-                </div>
-                <div class="col-4">
-                    <h3>Quick Links</h3>
-                    <nav class="footer-nav">
-                        <ul class="footer-nav-list">
-                            <li class="footer-nav-item">
-                                <a href="about-en.html" class="footer-nav-link">About Us</a>
-                            </li>
-                            <li class="footer-nav-item">
-                                <a href="products-en.html" class="footer-nav-link">Products</a>
-                            </li>
-                            <li class="footer-nav-item">
-                                <a href="training-en.html" class="footer-nav-link">Training</a>
-                            </li>
-                            <li class="footer-nav-item">
-                                <a href="animations-en.html" class="footer-nav-link">Animations</a>
-                            </li>
-                            <li class="footer-nav-item">
-                                <a href="clients-en.html" class="footer-nav-link">Clients</a>
-                            </li>
-                            <li class="footer-nav-item">
-                                <a href="contact-en.html" class="footer-nav-link">Contact Us</a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-                <div class="col-4">
-                    <h3>Contact Information</h3>
-                    <p>
-                        <i class="fas fa-map-marker-alt"></i> Rua Cardeal Arcoverde, 1183 cj 65<br>
-                        Pinheiros - São Paulo - SP - Brazil<br>
-                        CEP: 05407-002<br>
-                        <i class="fas fa-phone"></i> +55 (11) 3031-4172<br>
-                        <i class="fas fa-envelope"></i> seca@seca-ambiental.com.br
+    <footer class="bg-[#2a3347] text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+                <!-- Company Info -->
+                <div class="col-span-1 md:col-span-2">
+                    <img src="images/Logo fit.png" alt="SECA" class="h-12 mb-6 invert">
+                    <p class="text-gray-300 mb-6">
+                        SECA is a leading provider of environmental consulting services, specializing in air quality assessment and atmospheric dispersion modeling since 1995.
                     </p>
-                    <div class="social-links">
-                        <a href="https://www.linkedin.com/company/seca-ambiental/" target="_blank" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    <div class="flex space-x-4">
+                        <a href="https://www.linkedin.com/company/seca-ambiental" target="_blank" 
+                           class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
                     </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">Quick Links</h3>
+                    <ul class="space-y-4">
+                        <li><a href="about-en.html" class="text-gray-300 hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="products-en.html" class="text-gray-300 hover:text-white transition-colors">Products</a></li>
+                        <li><a href="training-en.html" class="text-gray-300 hover:text-white transition-colors">Training</a></li>
+                        <li><a href="animations-en.html" class="text-gray-300 hover:text-white transition-colors">Animations</a></li>
+                        <li><a href="clients-en.html" class="text-gray-300 hover:text-white transition-colors">Clients</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">Contact Us</h3>
+                    <ul class="space-y-4 text-gray-300">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3"></i>
+                            <span>Rua Cardeal Arcoverde, 1183 cj 65<br>Pinheiros - São Paulo - SP</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone mr-3"></i>
+                            <span>+55 (11) 3031-4172</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-3"></i>
+                            <a href="mailto:seca@seca-ambiental.com.br" class="hover:text-white transition-colors">seca@seca-ambiental.com.br</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
-            
-            <div class="footer-bottom">
-                <div class="copyright">
-                    &copy; 2025 SECA - Environmental and Climatic Studies System. All rights reserved.
-                </div>
-                <div>
-                    <a href="privacy-en.html" class="footer-nav-link">Privacy Policy</a> | 
-                    <a href="terms-en.html" class="footer-nav-link">Terms of Service</a>
-                </div>
+
+            <div class="border-t border-white/10 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 SECA - Environmental and Climatic Studies System. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
     <!-- JavaScript -->
-    <script src="js/main.js"></script>
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobileMenuButton').addEventListener('click', function() {
+            document.getElementById('mobileMenu').classList.remove('hidden');
+        });
+
+        // Scroll animation
+        document.addEventListener('DOMContentLoaded', function() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('opacity-100', 'translate-y-0');
+                        entry.target.classList.remove('opacity-0', 'translate-y-10');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            document.querySelectorAll('section > div').forEach((el) => {
+                el.classList.add('transform', 'transition-all', 'duration-1000', 'opacity-0', 'translate-y-10');
+                observer.observe(el);
+            });
+        });
+    </script>
 </body>
 </html> 

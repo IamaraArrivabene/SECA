@@ -4,161 +4,197 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Animations - SECA Environmental and Climatic Studies System</title>
-    <meta name="description" content="Visualize environmental processes through SECA's animations showcasing atmospheric dispersion, pollution modeling, and climate phenomena.">
+    <meta name="description" content="Explore SECA's animations that visually demonstrate complex atmospheric dispersion and air quality concepts.">
     
     <!-- Stylesheets -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Open+Sans:wght@300;400;600&display=swap">
-    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2a3347',
+                        secondary: '#3a4357',
+                        'off-white': '#f8fafc'
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-<body>
-    <!-- Header -->
-    <header class="site-header">
-        <div class="container">
-            <!-- Logo -->
-            <a href="home-en.html" class="site-logo">
-                <img src="images/Logo fit.png" alt="SECA - Environmental and Climatic Studies System">
-            </a>
-            
-            <!-- Mobile Menu Toggle -->
-            <button class="menu-toggle" aria-expanded="false" aria-label="Toggle navigation">
-                <i class="fas fa-bars"></i>
-            </button>
-            
-            <!-- Main Navigation -->
-            <nav class="main-nav">
-                <ul class="nav-list">
-                    <li class="nav-item">
-                        <a href="home-en.html" class="nav-link">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="about-en.html" class="nav-link">About Us</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a href="products-en.html" class="nav-link">Products</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="products-en.html#meteorological" class="dropdown-item">Meteorological Stations</a></li>
-                            <li><a href="products-en.html#sensors" class="dropdown-item">Environmental Sensors</a></li>
-                            <li><a href="products-en.html#software" class="dropdown-item">Software Solutions</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a href="training-en.html" class="nav-link">Training</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="animations-en.html" class="nav-link active">Animations</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="https://seca-ambiental.com.br/publicacoes/" target="_blank" class="nav-link">Publications</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="https://seca-ambiental.com.br/blog/" target="_blank" class="nav-link">Blog</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="clients-en.html" class="nav-link">Clients</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="links-en.html" class="nav-link">Links</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="contact-en.html" class="nav-link">Contact Us</a>
-                    </li>
-                </ul>
-            </nav>
-            
-            <!-- Language Switcher -->
-            <div class="language-switcher">
-                <a href="#" data-lang="en" class="active">
-                    <img src="images/BR_new.png" alt="English">
-                    <span>EN</span>
+<body class="bg-gray-50">
+    <!-- Top Bar with Logo and Language Switcher -->
+    <div class="bg-white py-4 border-b">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <a href="home-en.html" class="flex-shrink-0">
+                    <img src="images/Logo fit.png" alt="SECA" class="h-12">
                 </a>
-                <a href="#" data-lang="pt">
-                    <img src="images/BR_new.png" alt="Portuguese">
-                    <span>PT</span>
-                </a>
+                
+                <!-- Language Switcher and Mobile Menu Button -->
+                <div class="flex items-center space-x-4">
+                    <a href="#" data-lang="en" class="flex items-center space-x-1 text-sm text-primary">
+                        <img src="images/USA.jpg" class="w-5 h-5 rounded-full object-cover" alt="EN">
+                        <span>EN</span>
+                    </a>
+                    <a href="#" data-lang="pt" class="flex items-center space-x-1 text-sm text-gray-600 hover:text-primary">
+                        <img src="images/BR_new.png" class="w-5 h-5 rounded-full object-cover" alt="PT">
+                        <span>PT</span>
+                    </a>
+                    
+                    <!-- Mobile Menu Button -->
+                    <button class="ml-4 text-gray-700 hover:text-primary" id="mobileMenuButton">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
             </div>
         </div>
-    </header>
+    </div>
+    
+    <!-- Hero Section -->
+    <section class="bg-[#2a3347] py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="text-4xl font-bold tracking-tight text-white sm:text-5xl">Animations</h1>
+                <p class="mt-6 max-w-2xl mx-auto text-xl text-gray-100">
+                    Visual demonstrations of atmospheric dispersion and air quality concepts through interactive animations.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mobile Menu (Hidden by default) -->
+    <div class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden" id="mobileMenu">
+        <div class="fixed inset-y-0 right-0 max-w-xs w-full bg-white shadow-xl">
+            <div class="flex items-center justify-between p-4 border-b">
+                <h2 class="text-lg font-semibold text-gray-900">Menu</h2>
+                <button class="text-gray-600 hover:text-gray-900" onclick="document.getElementById('mobileMenu').classList.add('hidden')">
+                    <i class="fas fa-times text-2xl"></i>
+                </button>
+            </div>
+            <nav class="px-4 py-6">
+                <ul class="space-y-4">
+                    <li><a href="home-en.html" class="block text-base text-gray-900 hover:text-primary">Home</a></li>
+                    <li><a href="about-en.html" class="block text-base text-gray-900 hover:text-primary">About Us</a></li>
+                    <li><a href="products-en.html" class="block text-base text-gray-900 hover:text-primary">Products</a></li>
+                    <li class="pl-4"><a href="products-en.html#meteorological" class="block text-sm text-gray-700 hover:text-primary">Meteorological Stations</a></li>
+                    <li class="pl-4"><a href="products-en.html#sensors" class="block text-sm text-gray-700 hover:text-primary">Environmental Sensors</a></li>
+                    <li class="pl-4"><a href="products-en.html#software" class="block text-sm text-gray-700 hover:text-primary">Software Solutions</a></li>
+                    <li><a href="training-en.html" class="block text-base text-gray-900 hover:text-primary">Training</a></li>
+                    <li class="border-l-4 border-primary pl-2">
+                        <a href="animations-en.html" class="block text-base text-primary font-medium">Animations</a>
+                    </li>
+                    <li><a href="clients-en.html" class="block text-base text-gray-900 hover:text-primary">Clients</a></li>
+                    <li><a href="links-en.html" class="block text-base text-gray-900 hover:text-primary">Links</a></li>
+                    <li><a href="contact-en.html" class="block text-base text-gray-900 hover:text-primary">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
 
     <!-- Animations Section -->
-    <section class="section">
-        <div class="container">
-            <div class="row">
-                <div class="col-6">
-                    <h2>Professional Experience in Environmental Visualization</h2>
-                    <p>
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-6">Professional Experience in Environmental Visualization</h2>
+                    <p class="text-gray-600 mb-4">
                         SECA has over 20 years of experience in creating advanced animations and visualizations for environmental studies, with a focus on:
                     </p>
-                    <ul>
-                        <li>Mathematical modeling of atmospheric dispersion</li>
-                        <li>Air quality control visualization</li>
-                        <li>Climate and meteorological pattern analysis</li>
-                        <li>Environmental risk assessment</li>
-                        <li>Public consultation and stakeholder presentations</li>
+                    <ul class="space-y-3 text-gray-600">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-primary mt-1 mr-3"></i>
+                            <span>Mathematical modeling of atmospheric dispersion</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-primary mt-1 mr-3"></i>
+                            <span>Air quality control visualization</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-primary mt-1 mr-3"></i>
+                            <span>Climate and meteorological pattern analysis</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-primary mt-1 mr-3"></i>
+                            <span>Environmental risk assessment</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-primary mt-1 mr-3"></i>
+                            <span>Public consultation and stakeholder presentations</span>
+                        </li>
                     </ul>
-                    <p>
+                    <p class="text-gray-600">
                         Our animations are created using state-of-the-art tools and are based on rigorous scientific modeling, making complex environmental processes easier to understand for both technical and non-technical audiences.
                     </p>
                 </div>
-                <div class="col-6">
-                    <div class="video-container">
-                        <video controls>
-                            <source src="videos/videorosaF.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                    </div>
+                <div class="rounded-xl overflow-hidden shadow-lg">
+                    <video controls class="w-full">
+                        <source src="videos/videorosaF.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Animation Gallery -->
-    <section class="section" style="background-color: var(--off-white);">
-        <div class="container">
-            <h2 class="text-center">Featured Animations</h2>
-            <p class="text-center">Examples of our environmental visualization work</p>
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Featured Animations</h2>
+                <div class="h-1 w-20 bg-primary mx-auto mb-6"></div>
+                <p class="text-xl text-gray-600">Examples of our environmental visualization work</p>
+            </div>
             
-            <div class="row" style="margin-top: 40px;">
-                <div class="col-4">
-                    <div class="animation-card">
-                        <div class="video-thumbnail" data-video="videos/videorosaF.mp4">
-                            <img src="images/Logo fit.png" alt="AERMOD Modeling" class="thumbnail-img">
-                            <div class="play-button">
-                                <i class="fas fa-play"></i>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Animation 1 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden group hover:shadow-2xl transition-all duration-300">
+                    <div class="relative overflow-hidden cursor-pointer video-thumbnail" data-video="videos/videorosaF.mp4">
+                        <img src="images/Logo fit.png" alt="AERMOD Modeling" class="w-full h-48 object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center">
+                            <div class="w-16 h-16 rounded-full bg-white bg-opacity-75 flex items-center justify-center transform transition-transform group-hover:scale-110">
+                                <i class="fas fa-play text-primary text-2xl"></i>
                             </div>
-                        </div>
-                        <div class="animation-body">
-                            <h3 class="animation-title">AERMOD Modeling</h3>
-                            <p class="animation-description">Visualization of pollutant dispersion using AERMOD, an advanced air quality modeling system.</p>
                         </div>
                     </div>
-                </div>
-                <div class="col-4">
-                    <div class="animation-card">
-                        <div class="video-thumbnail" data-video="videos/videorosaF.mp4">
-                            <img src="images/Logo fit.png" alt="CALPUFF Modeling" class="thumbnail-img">
-                            <div class="play-button">
-                                <i class="fas fa-play"></i>
-                            </div>
-                        </div>
-                        <div class="animation-body">
-                            <h3 class="animation-title">CALPUFF Modeling</h3>
-                            <p class="animation-description">Advanced visualization of long-range transport and dispersion of air pollutants.</p>
-                        </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-3 group-hover:text-primary transition-colors">AERMOD Modeling</h3>
+                        <p class="text-gray-600">Visualization of pollutant dispersion using AERMOD, an advanced air quality modeling system.</p>
                     </div>
                 </div>
-                <div class="col-4">
-                    <div class="animation-card">
-                        <div class="video-thumbnail" data-video="videos/videorosaF.mp4">
-                            <img src="images/Logo fit.png" alt="Environmental Impact" class="thumbnail-img">
-                            <div class="play-button">
-                                <i class="fas fa-play"></i>
+
+                <!-- Animation 2 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden group hover:shadow-2xl transition-all duration-300">
+                    <div class="relative overflow-hidden cursor-pointer video-thumbnail" data-video="videos/videorosaF.mp4">
+                        <img src="images/Logo fit.png" alt="CALPUFF Modeling" class="w-full h-48 object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center">
+                            <div class="w-16 h-16 rounded-full bg-white bg-opacity-75 flex items-center justify-center transform transition-transform group-hover:scale-110">
+                                <i class="fas fa-play text-primary text-2xl"></i>
                             </div>
                         </div>
-                        <div class="animation-body">
-                            <h3 class="animation-title">Environmental Impact</h3>
-                            <p class="animation-description">Comprehensive visualization of environmental impacts for impact assessment studies.</p>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-3 group-hover:text-primary transition-colors">CALPUFF Modeling</h3>
+                        <p class="text-gray-600">Advanced visualization of long-range transport and dispersion of air pollutants.</p>
+                    </div>
+                </div>
+
+                <!-- Animation 3 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden group hover:shadow-2xl transition-all duration-300">
+                    <div class="relative overflow-hidden cursor-pointer video-thumbnail" data-video="videos/videorosaF.mp4">
+                        <img src="images/Logo fit.png" alt="Environmental Impact" class="w-full h-48 object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center">
+                            <div class="w-16 h-16 rounded-full bg-white bg-opacity-75 flex items-center justify-center transform transition-transform group-hover:scale-110">
+                                <i class="fas fa-play text-primary text-2xl"></i>
+                            </div>
                         </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-3 group-hover:text-primary transition-colors">Environmental Impact</h3>
+                        <p class="text-gray-600">Comprehensive visualization of environmental impacts for impact assessment studies.</p>
                     </div>
                 </div>
             </div>
@@ -166,11 +202,16 @@
     </section>
 
     <!-- Video Player Modal -->
-    <div class="video-modal" id="videoModal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <div class="modal-video-container">
-                <video id="modalVideo" controls>
+    <div class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-75 hidden" id="videoModal">
+        <div class="bg-white rounded-lg max-w-4xl w-full mx-4 overflow-hidden">
+            <div class="flex items-center justify-between bg-gray-100 px-4 py-3 border-b">
+                <h3 class="text-lg font-semibold text-gray-900">Animation Preview</h3>
+                <button class="text-gray-600 hover:text-gray-900 close-modal">
+                    <i class="fas fa-times text-2xl"></i>
+                </button>
+            </div>
+            <div class="p-4">
+                <video id="modalVideo" controls class="w-full">
                     <source src="" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
@@ -179,164 +220,192 @@
     </div>
 
     <!-- Software Used -->
-    <section class="section">
-        <div class="container">
-            <h2 class="text-center">Our Modeling Tools</h2>
-            <p class="text-center">Advanced software used in our environmental studies and visualizations</p>
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Our Modeling Tools</h2>
+                <div class="h-1 w-20 bg-primary mx-auto mb-6"></div>
+                <p class="text-xl text-gray-600">Advanced software used in our environmental studies and visualizations</p>
+            </div>
             
-            <div class="row" style="margin-top: 40px;">
-                <div class="col-3">
-                    <div class="tech-card">
-                        <div class="tech-icon">
-                            <i class="fas fa-wind"></i>
-                        </div>
-                        <h3 class="tech-title">AERMOD View</h3>
-                        <p class="tech-description">Industry-standard air dispersion modeling system for near-field applications.</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Tool 1 -->
+                <div class="bg-white rounded-xl shadow-lg p-8 border border-gray-100 transform hover:scale-105 hover:shadow-2xl transition-all duration-300">
+                    <div class="text-primary mb-6 bg-primary/5 w-16 h-16 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-wind text-3xl"></i>
                     </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">AERMOD View</h3>
+                    <p class="text-gray-600">Industry-standard air dispersion modeling system for near-field applications.</p>
                 </div>
-                <div class="col-3">
-                    <div class="tech-card">
-                        <div class="tech-icon">
-                            <i class="fas fa-cloud"></i>
-                        </div>
-                        <h3 class="tech-title">CALPUFF View</h3>
-                        <p class="tech-description">Advanced modeling system for long-range transport of pollutants.</p>
+
+                <!-- Tool 2 -->
+                <div class="bg-white rounded-xl shadow-lg p-8 border border-gray-100 transform hover:scale-105 hover:shadow-2xl transition-all duration-300">
+                    <div class="text-primary mb-6 bg-primary/5 w-16 h-16 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-cloud text-3xl"></i>
                     </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">CALPUFF View</h3>
+                    <p class="text-gray-600">Advanced modeling system for long-range transport of pollutants.</p>
                 </div>
-                <div class="col-3">
-                    <div class="tech-card">
-                        <div class="tech-icon">
-                            <i class="fas fa-globe-americas"></i>
-                        </div>
-                        <h3 class="tech-title">GIS Integration</h3>
-                        <p class="tech-description">Geographic information systems for accurate spatial visualization.</p>
+
+                <!-- Tool 3 -->
+                <div class="bg-white rounded-xl shadow-lg p-8 border border-gray-100 transform hover:scale-105 hover:shadow-2xl transition-all duration-300">
+                    <div class="text-primary mb-6 bg-primary/5 w-16 h-16 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-globe-americas text-3xl"></i>
                     </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">GIS Integration</h3>
+                    <p class="text-gray-600">Geographic information systems for accurate spatial visualization.</p>
                 </div>
-                <div class="col-3">
-                    <div class="tech-card">
-                        <div class="tech-icon">
-                            <i class="fas fa-chart-line"></i>
-                        </div>
-                        <h3 class="tech-title">Data Analysis</h3>
-                        <p class="tech-description">Advanced tools for processing and visualizing environmental data.</p>
+
+                <!-- Tool 4 -->
+                <div class="bg-white rounded-xl shadow-lg p-8 border border-gray-100 transform hover:scale-105 hover:shadow-2xl transition-all duration-300">
+                    <div class="text-primary mb-6 bg-primary/5 w-16 h-16 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-chart-line text-3xl"></i>
                     </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Data Analysis</h3>
+                    <p class="text-gray-600">Advanced tools for processing and visualizing environmental data.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Applications -->
-    <section class="section" style="background-color: var(--off-white);">
-        <div class="container">
-            <h2 class="text-center">Applications</h2>
-            <p class="text-center">How our animations are used in environmental management</p>
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Applications</h2>
+                <div class="h-1 w-20 bg-primary mx-auto mb-6"></div>
+                <p class="text-xl text-gray-600">How our animations are used in environmental management</p>
+            </div>
             
-            <div class="row" style="margin-top: 40px;">
-                <div class="col-6">
-                    <div class="application-item">
-                        <h3><i class="fas fa-file-contract"></i> Environmental Impact Assessments</h3>
-                        <p>Our animations are used in environmental impact studies to visualize potential impacts of proposed projects, helping stakeholders understand complex environmental consequences.</p>
-                    </div>
-                    <div class="application-item">
-                        <h3><i class="fas fa-users"></i> Public Consultations</h3>
-                        <p>Visual representations help communicate environmental data to the public during consultations for new industrial projects or environmental management plans.</p>
-                    </div>
-                    <div class="application-item">
-                        <h3><i class="fas fa-graduation-cap"></i> Educational Resources</h3>
-                        <p>Our animations serve as valuable educational tools for universities, training programs, and public awareness campaigns about environmental processes.</p>
-                    </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
+                <!-- Application 1 -->
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3 flex items-center">
+                        <i class="fas fa-file-contract text-primary mr-3"></i>
+                        Environmental Impact Assessments
+                    </h3>
+                    <p class="text-gray-600">Our animations are used in environmental impact studies to visualize potential impacts of proposed projects, helping stakeholders understand complex environmental consequences.</p>
                 </div>
-                <div class="col-6">
-                    <div class="application-item">
-                        <h3><i class="fas fa-industry"></i> Industrial Planning</h3>
-                        <p>Companies use our visualizations to optimize industrial layouts, stack heights, and operating conditions to minimize environmental impacts.</p>
-                    </div>
-                    <div class="application-item">
-                        <h3><i class="fas fa-briefcase"></i> Expert Testimony</h3>
-                        <p>Our animations help explain complex environmental phenomena in legal proceedings, regulatory hearings, and expert testimony situations.</p>
-                    </div>
-                    <div class="application-item">
-                        <h3><i class="fas fa-chart-pie"></i> Results Presentation</h3>
-                        <p>Converting technical modeling results into visual formats makes them more accessible and impactful for executive presentations and reports.</p>
-                    </div>
+
+                <!-- Application 2 -->
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3 flex items-center">
+                        <i class="fas fa-industry text-primary mr-3"></i>
+                        Industrial Planning
+                    </h3>
+                    <p class="text-gray-600">Companies use our visualizations to optimize industrial layouts, stack heights, and operating conditions to minimize environmental impacts.</p>
+                </div>
+
+                <!-- Application 3 -->
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3 flex items-center">
+                        <i class="fas fa-users text-primary mr-3"></i>
+                        Public Consultations
+                    </h3>
+                    <p class="text-gray-600">Visual representations help communicate environmental data to the public during consultations for new industrial projects or environmental management plans.</p>
+                </div>
+
+                <!-- Application 4 -->
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3 flex items-center">
+                        <i class="fas fa-briefcase text-primary mr-3"></i>
+                        Expert Testimony
+                    </h3>
+                    <p class="text-gray-600">Our animations help explain complex environmental phenomena in legal proceedings, regulatory hearings, and expert testimony situations.</p>
+                </div>
+
+                <!-- Application 5 -->
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3 flex items-center">
+                        <i class="fas fa-graduation-cap text-primary mr-3"></i>
+                        Educational Resources
+                    </h3>
+                    <p class="text-gray-600">Our animations serve as valuable educational tools for universities, training programs, and public awareness campaigns about environmental processes.</p>
+                </div>
+
+                <!-- Application 6 -->
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3 flex items-center">
+                        <i class="fas fa-chart-pie text-primary mr-3"></i>
+                        Results Presentation
+                    </h3>
+                    <p class="text-gray-600">Converting technical modeling results into visual formats makes them more accessible and impactful for executive presentations and reports.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Call to Action -->
-    <section class="section">
-        <div class="container text-center">
-            <h2>Need Custom Environmental Animations?</h2>
-            <p>Contact us to discuss how our visualization services can help communicate your environmental data.</p>
-            <a href="contact-en.html" class="btn btn-primary btn-lg" style="margin-top: 20px;">Contact Us</a>
+    <section class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold text-gray-900 mb-6">Need Custom Environmental Animations?</h2>
+            <p class="text-xl text-gray-600 mb-8">
+                Contact us to discuss how our visualization services can help communicate your environmental data.
+            </p>
+            <a href="contact-en.html" class="inline-flex items-center px-8 py-3 border border-transparent text-lg font-medium rounded-md text-white bg-primary hover:bg-secondary transition-colors">
+                Contact Us
+                <i class="fas fa-arrow-right ml-2"></i>
+            </a>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="site-footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-4">
-                    <div class="footer-logo">
-                        <img src="images/Logo fit.png" alt="SECA - Environmental and Climatic Studies System">
-                    </div>
-                    <p>SECA - Environmental and Climatic Studies System Ltd. is a company specialized in providing consulting services, studies and projects in the environmental area with emphasis on air pollution since 1995.</p>
-                </div>
-                <div class="col-4">
-                    <h3>Quick Links</h3>
-                    <nav class="footer-nav">
-                        <ul class="footer-nav-list">
-                            <li class="footer-nav-item">
-                                <a href="about-en.html" class="footer-nav-link">About Us</a>
-                            </li>
-                            <li class="footer-nav-item">
-                                <a href="products-en.html" class="footer-nav-link">Products</a>
-                            </li>
-                            <li class="footer-nav-item">
-                                <a href="training-en.html" class="footer-nav-link">Training</a>
-                            </li>
-                            <li class="footer-nav-item">
-                                <a href="animations-en.html" class="footer-nav-link">Animations</a>
-                            </li>
-                            <li class="footer-nav-item">
-                                <a href="clients-en.html" class="footer-nav-link">Clients</a>
-                            </li>
-                            <li class="footer-nav-item">
-                                <a href="contact-en.html" class="footer-nav-link">Contact Us</a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-                <div class="col-4">
-                    <h3>Contact Information</h3>
-                    <p>
-                        <i class="fas fa-map-marker-alt"></i> Rua Cardeal Arcoverde, 1183 cj 65<br>
-                        Pinheiros - São Paulo - SP - Brazil<br>
-                        CEP: 05407-002<br>
-                        <i class="fas fa-phone"></i> +55 (11) 3031-4172<br>
-                        <i class="fas fa-envelope"></i> seca@seca-ambiental.com.br
+    <footer class="bg-[#2a3347] text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+                <!-- Company Info -->
+                <div class="col-span-1 md:col-span-2">
+                    <img src="images/Logo fit.png" alt="SECA" class="h-12 mb-6 invert">
+                    <p class="text-gray-300 mb-6">
+                        SECA is a leading provider of environmental consulting services, specializing in air quality assessment and atmospheric dispersion modeling since 1995.
                     </p>
-                    <div class="social-links">
-                        <a href="https://www.linkedin.com/company/seca-ambiental/" target="_blank" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    <div class="flex space-x-4">
+                        <a href="https://www.linkedin.com/company/seca-ambiental" target="_blank" 
+                           class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
                     </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">Quick Links</h3>
+                    <ul class="space-y-4">
+                        <li><a href="about-en.html" class="text-gray-300 hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="products-en.html" class="text-gray-300 hover:text-white transition-colors">Products</a></li>
+                        <li><a href="training-en.html" class="text-gray-300 hover:text-white transition-colors">Training</a></li>
+                        <li><a href="animations-en.html" class="text-gray-300 hover:text-white transition-colors">Animations</a></li>
+                        <li><a href="clients-en.html" class="text-gray-300 hover:text-white transition-colors">Clients</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">Contact Us</h3>
+                    <ul class="space-y-4 text-gray-300">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3"></i>
+                            <span>Rua Cardeal Arcoverde, 1183 cj 65<br>Pinheiros - São Paulo - SP</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone mr-3"></i>
+                            <span>+55 (11) 3031-4172</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-3"></i>
+                            <a href="mailto:seca@seca-ambiental.com.br" class="hover:text-white transition-colors">seca@seca-ambiental.com.br</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
-            
-            <div class="footer-bottom">
-                <div class="copyright">
-                    &copy; 2025 SECA - Environmental and Climatic Studies System. All rights reserved.
-                </div>
-                <div>
-                    <a href="privacy-en.html" class="footer-nav-link">Privacy Policy</a> | 
-                    <a href="terms-en.html" class="footer-nav-link">Terms of Service</a>
-                </div>
+
+            <div class="border-t border-white/10 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 SECA - Environmental and Climatic Studies System. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
     <!-- JavaScript -->
-    <script src="js/main.js"></script>
     <script>
         // Video modal functionality
         document.addEventListener('DOMContentLoaded', function() {
@@ -350,20 +419,44 @@
                     const videoSrc = this.getAttribute('data-video');
                     modalVideo.querySelector('source').src = videoSrc;
                     modalVideo.load();
-                    videoModal.style.display = 'flex';
+                    videoModal.classList.remove('hidden');
                 });
             });
             
             closeModal.addEventListener('click', function() {
-                videoModal.style.display = 'none';
+                videoModal.classList.add('hidden');
                 modalVideo.pause();
             });
             
             window.addEventListener('click', function(event) {
                 if (event.target === videoModal) {
-                    videoModal.style.display = 'none';
+                    videoModal.classList.add('hidden');
                     modalVideo.pause();
                 }
+            });
+        });
+
+        // Mobile menu toggle
+        document.getElementById('mobileMenuButton').addEventListener('click', function() {
+            document.getElementById('mobileMenu').classList.remove('hidden');
+        });
+
+        // Scroll animation
+        document.addEventListener('DOMContentLoaded', function() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('opacity-100', 'translate-y-0');
+                        entry.target.classList.remove('opacity-0', 'translate-y-10');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            document.querySelectorAll('section > div').forEach((el) => {
+                el.classList.add('transform', 'transition-all', 'duration-1000', 'opacity-0', 'translate-y-10');
+                observer.observe(el);
             });
         });
     </script>

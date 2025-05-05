@@ -9,318 +9,618 @@
     <!-- Stylesheets -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Open+Sans:wght@300;400;600&display=swap">
-    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2a3347',
+                        secondary: '#3a4357',
+                        'off-white': '#f8fafc'
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-<body>
-    <!-- Header -->
-    <header class="site-header">
-        <div class="container">
-            <!-- Logo -->
-            <a href="home-en.html" class="site-logo">
-                <img src="images/Logo fitfit.png" alt="SECA - Environmental and Climatic Studies System">
-            </a>
-            
-            <!-- Mobile Menu Toggle -->
-            <button class="menu-toggle" aria-expanded="false" aria-label="Toggle navigation">
-                <i class="fas fa-bars"></i>
-            </button>
-            
-            <!-- Main Navigation -->
-            <nav class="main-nav">
-                <ul class="nav-list">
-                    <li class="nav-item">
-                        <a href="home-en.html" class="nav-link">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="about-en.html" class="nav-link">About Us</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a href="products-en.html" class="nav-link active">Products</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#software" class="dropdown-item">Software Solutions</a></li>
-                            <li><a href="#meteorological" class="dropdown-item">Meteorological Stations</a></li>
-                            <li><a href="#sensors" class="dropdown-item">Environmental Sensors</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a href="training-en.html" class="nav-link">Training</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="animations-en.html" class="nav-link">Animations</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="https://seca-ambiental.com.br/publicacoes/" target="_blank" class="nav-link">Publications</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="https://seca-ambiental.com.br/blog/" target="_blank" class="nav-link">Blog</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="clients-en.html" class="nav-link">Clients</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="links-en.html" class="nav-link">Links</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="contact-en.html" class="nav-link">Contact Us</a>
-                    </li>
-                </ul>
-            </nav>
-            
-            <!-- Language Switcher -->
-            <div class="language-switcher">
-                <a href="products-pt.html" data-lang="pt">
-                    <img src="images/BR_new.png" alt="Portuguese">
-                    <span>PT</span>
+<body class="bg-gray-50">
+    <!-- Top Bar with Logo and Language Switcher -->
+    <div class="bg-white py-4 border-b">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <a href="home-en.html" class="flex-shrink-0">
+                    <img src="images/Logo fit.png" alt="SECA" class="h-12">
                 </a>
-                <a href="#" data-lang="en" class="active">
-                    <img src="images/BR_new.png" alt="English">
-                    <span>EN</span>
-                </a>
+                
+                <!-- Language Switcher and Mobile Menu Button -->
+                <div class="flex items-center space-x-4">
+                    <a href="#" data-lang="en" class="flex items-center space-x-1 text-sm text-primary">
+                        <img src="images/USA.jpg" class="w-5 h-5 rounded-full object-cover" alt="EN">
+                        <span>EN</span>
+                    </a>
+                    <a href="#" data-lang="pt" class="flex items-center space-x-1 text-sm text-gray-600 hover:text-primary">
+                        <img src="images/BR_new.png" class="w-5 h-5 rounded-full object-cover" alt="PT">
+                        <span>PT</span>
+                    </a>
+                    
+                    <!-- Mobile Menu Button -->
+                    <button class="ml-4 text-gray-700 hover:text-primary" id="mobileMenuButton">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
             </div>
         </div>
-    </header>
+    </div>
+    
+    <!-- Hero Section -->
+    <section class="bg-[#2a3347] py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="text-4xl font-bold tracking-tight text-white sm:text-5xl">Our Products</h1>
+                <p class="mt-6 max-w-2xl mx-auto text-xl text-gray-100">
+                    Advanced environmental monitoring equipment, meteorological stations, and software solutions for comprehensive air quality management.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Navigation Tabs -->
+    <div class="sticky top-0 z-10 bg-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <nav class="flex overflow-x-auto py-4">
+                <a href="#software" class="px-4 py-2 mx-2 rounded-md text-primary hover:bg-primary/5 font-medium whitespace-nowrap">Software Solutions</a>
+                <a href="#meteorological" class="px-4 py-2 mx-2 rounded-md text-primary hover:bg-primary/5 font-medium whitespace-nowrap">Meteorological Stations</a>
+                <a href="#sensors" class="px-4 py-2 mx-2 rounded-md text-primary hover:bg-primary/5 font-medium whitespace-nowrap">Environmental Sensors</a>
+            </nav>
+        </div>
+    </div>
 
     <!-- Software Solutions Section -->
-    <section class="section" id="software">
-        <div class="container">
-            <h2 class="text-center">Software Solutions</h2>
-            <p class="text-center">SECA is an official distributor in Brazil of Lakes Environmental Software, a reseller of Lakes products in the area of software for modeling atmospheric dispersion.</p>
+    <section class="py-24 bg-white" id="software">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Software Solutions</h2>
+                <div class="h-1 w-20 bg-primary mx-auto mb-6"></div>
+                <p class="text-xl text-gray-600">SECA is an official distributor in Brazil of Lakes Environmental Software, a reseller of Lakes products in the area of software for modeling atmospheric dispersion.</p>
+            </div>
             
-            <div class="row" style="margin-top: 40px;">
-                <div class="col-6">
-                    <div class="product-card">
-                        <img src="images/aremod_icon.jpg" alt="AERMOD View" class="product-img">
-                        <div class="product-body">
-                            <h3 class="product-title">AERMOD View™</h3>
-                            <p class="product-description">A complete and powerful air dispersion modeling package that incorporates the latest U.S. EPA air dispersion models:</p>
-                            <ul class="product-features">
-                                <li>AERMOD (AMS/EPA Regulatory Model)</li>
-                                <li>ISCST3 (Industrial Source Complex)</li>
-                                <li>ISC-PRIME</li>
-                            </ul>
-                            <p>Features include:</p>
-                            <ul class="product-features">
-                                <li>PRIME building downwash algorithms</li>
-                                <li>Advanced depositional parameters</li>
-                                <li>Local terrain effects</li>
-                                <li>Advanced meteorological turbulence calculations</li>
-                            </ul>
-                            <a href="contact-en.html" class="btn btn-secondary">Request Information</a>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- AERMOD View -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition-all duration-300">
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="images/aremod_icon.jpg" alt="AERMOD View" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <span class="inline-block bg-primary text-white text-sm px-3 py-1 rounded-full">Air Dispersion</span>
                         </div>
                     </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold text-gray-900 mb-4">AERMOD View™</h3>
+                        <p class="text-gray-600 mb-4">A complete and powerful air dispersion modeling package that incorporates the latest U.S. EPA air dispersion models:</p>
+                        <ul class="space-y-2 mb-4">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-primary mt-1 mr-2"></i>
+                                <span>AERMOD (AMS/EPA Regulatory Model)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-primary mt-1 mr-2"></i>
+                                <span>ISCST3 (Industrial Source Complex)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-primary mt-1 mr-2"></i>
+                                <span>ISC-PRIME</span>
+                            </li>
+                        </ul>
+                        <p class="text-gray-600 font-medium mb-2">Features include:</p>
+                        <ul class="space-y-2 mb-6">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-primary mt-1 mr-2"></i>
+                                <span>PRIME building downwash algorithms</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-primary mt-1 mr-2"></i>
+                                <span>Advanced depositional parameters</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-primary mt-1 mr-2"></i>
+                                <span>Local terrain effects</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-primary mt-1 mr-2"></i>
+                                <span>Advanced meteorological turbulence calculations</span>
+                            </li>
+                        </ul>
+                        <a href="contact-en.html" class="inline-flex items-center px-6 py-3 rounded-md bg-primary text-white hover:bg-secondary transition-colors">
+                            Request Information
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
                 </div>
-                <div class="col-6">
-                    <div class="product-card">
-                        <img src="images/calpuff_icon.jpg" alt="CALPUFF View" class="product-img">
-                        <div class="product-body">
-                            <h3 class="product-title">CALPUFF View™</h3>
-                            <p class="product-description">A complete graphical solution for the CALPUFF modeling system, including CALPUFF, CALMET, CALPOST, and related pre- and post-processors.</p>
-                            <p>Available versions:</p>
-                            <ul class="product-features">
-                                <li>USEPA Approved Version 5.8</li>
-                                <li>Version 6</li>
-                                <li>Version 7</li>
-                            </ul>
-                            <p>Applications include:</p>
-                            <ul class="product-features">
-                                <li>Toxic pollutant deposition</li>
-                                <li>Visibility assessments</li>
-                                <li>Complex terrain modeling</li>
-                                <li>Secondary pollutant formation</li>
-                                <li>Long range and overwater transport</li>
-                                <li>Building downwash effects</li>
-                            </ul>
-                            <a href="contact-en.html" class="btn btn-secondary">Request Information</a>
+
+                <!-- CALPUFF View -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition-all duration-300">
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="images/calpuff_icon.jpg" alt="CALPUFF View" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <span class="inline-block bg-primary text-white text-sm px-3 py-1 rounded-full">Air Dispersion</span>
                         </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold text-gray-900 mb-4">CALPUFF View™</h3>
+                        <p class="text-gray-600 mb-4">A complete graphical solution for the CALPUFF modeling system, including CALPUFF, CALMET, CALPOST, and related pre- and post-processors.</p>
+                        <p class="text-gray-600 font-medium mb-2">Available versions:</p>
+                        <ul class="space-y-2 mb-4">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-primary mt-1 mr-2"></i>
+                                <span>USEPA Approved Version 5.8</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-primary mt-1 mr-2"></i>
+                                <span>Version 6</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-primary mt-1 mr-2"></i>
+                                <span>Version 7</span>
+                            </li>
+                        </ul>
+                        <p class="text-gray-600 font-medium mb-2">Applications include:</p>
+                        <ul class="space-y-2 mb-6">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-primary mt-1 mr-2"></i>
+                                <span>Toxic pollutant deposition</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-primary mt-1 mr-2"></i>
+                                <span>Visibility assessments</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-primary mt-1 mr-2"></i>
+                                <span>Complex terrain modeling</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-primary mt-1 mr-2"></i>
+                                <span>Long range and overwater transport</span>
+                            </li>
+                        </ul>
+                        <a href="contact-en.html" class="inline-flex items-center px-6 py-3 rounded-md bg-primary text-white hover:bg-secondary transition-colors">
+                            Request Information
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
                     </div>
                 </div>
             </div>
 
-            <div class="row" style="margin-top: 40px;">
-                <div class="col-12">
-                    <h3>Risk Assessment Models</h3>
-                    <ul class="feature-list">
-                        <li><strong>EcoRisk View™</strong> - Advanced ecological risk assessment program</li>
-                        <li><strong>SEVEX View™</strong> - Advanced 3D model of dense gas dispersion over complex terrain</li>
-                        <li><strong>SLAB View™</strong> - Dense gas accidental release modeling</li>
-                    </ul>
+            <div class="mt-20 bg-gray-50 rounded-xl p-8 shadow-lg">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Risk Assessment Models -->
+                    <div>
+                        <div class="flex items-center mb-6">
+                            <div class="text-primary bg-primary/5 w-12 h-12 rounded-lg flex items-center justify-center mr-4">
+                                <i class="fas fa-exclamation-triangle text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-900">Risk Assessment Models</h3>
+                        </div>
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-primary mt-1 mr-3"></i>
+                                <div>
+                                    <span class="font-medium text-gray-900">EcoRisk View™</span>
+                                    <p class="text-gray-600">Advanced ecological risk assessment program</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-primary mt-1 mr-3"></i>
+                                <div>
+                                    <span class="font-medium text-gray-900">SEVEX View™</span>
+                                    <p class="text-gray-600">Advanced 3D model of dense gas dispersion over complex terrain</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-primary mt-1 mr-3"></i>
+                                <div>
+                                    <span class="font-medium text-gray-900">SLAB View™</span>
+                                    <p class="text-gray-600">Dense gas accidental release modeling</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
 
-                    <h3>Additional Models</h3>
-                    <ul class="feature-list">
-                        <li><strong>CALRoads View™</strong> - Highway pollution impact prediction</li>
-                        <li><strong>AERMET View™</strong> - AERMOD meteorological data preprocessor</li>
-                        <li><strong>SCREEN View™</strong> - Single source worst-case concentration estimation</li>
-                        <li><strong>WRPlot View™</strong> - Wind rose plots and meteorological data analysis</li>
-                    </ul>
+                    <!-- Additional Models -->
+                    <div>
+                        <div class="flex items-center mb-6">
+                            <div class="text-primary bg-primary/5 w-12 h-12 rounded-lg flex items-center justify-center mr-4">
+                                <i class="fas fa-chart-bar text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-900">Additional Models</h3>
+                        </div>
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-primary mt-1 mr-3"></i>
+                                <div>
+                                    <span class="font-medium text-gray-900">CALRoads View™</span>
+                                    <p class="text-gray-600">Highway pollution impact prediction</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-primary mt-1 mr-3"></i>
+                                <div>
+                                    <span class="font-medium text-gray-900">AERMET View™</span>
+                                    <p class="text-gray-600">AERMOD meteorological data preprocessor</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-primary mt-1 mr-3"></i>
+                                <div>
+                                    <span class="font-medium text-gray-900">SCREEN View™</span>
+                                    <p class="text-gray-600">Single source worst-case concentration estimation</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-primary mt-1 mr-3"></i>
+                                <div>
+                                    <span class="font-medium text-gray-900">WRPlot View™</span>
+                                    <p class="text-gray-600">Wind rose plots and meteorological data analysis</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Meteorological Stations Section -->
-    <section class="section" style="background-color: var(--off-white);" id="meteorological">
-        <div class="container">
-            <h2 class="text-center">Weather Stations</h2>
-            <p class="text-center">Practical, versatile and economical monitoring solutions. We provide station supply, installation, training, data processing and analysis for environmental studies and various applications.</p>
+    <section class="py-24 bg-gray-50" id="meteorological">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Weather Stations</h2>
+                <div class="h-1 w-20 bg-primary mx-auto mb-6"></div>
+                <p class="text-xl text-gray-600">Practical, versatile and economical monitoring solutions. We provide station supply, installation, training, data processing and analysis for environmental studies and various applications.</p>
+            </div>
             
-            <div class="row" style="margin-top: 40px;">
-                <div class="col-6">
-                    <img src="images/Station.png" alt="Weather Station Components" class="img-fluid">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="relative">
+                    <div class="absolute inset-0 bg-gradient-to-r from-[#2a3347] to-[#3a4357] rounded-xl transform rotate-2 scale-105"></div>
+                    <img src="images/Station.png" alt="Weather Station Components" class="relative rounded-xl shadow-2xl transform hover:-translate-y-2 transition-all duration-300 w-full">
                 </div>
-                <div class="col-6">
-                    <h3>Station Components</h3>
-                    <ul class="station-components">
-                        <li><img src="images/Sendor de umidade red.jpg" alt="Humidity Sensor"> Relative humidity and air temperature sensor</li>
-                        <li><img src="images/Anemometro red.jpg" alt="Anemometer"> Anemometer - Wind speed and direction measurement</li>
-                        <li><img src="images/met-2a.jpg" alt="Pluviometer"> Pluviometer - Rainfall measurement</li>
-                        <li><img src="images/Sensor de folhas red.jpg" alt="Leaf Sensor"> Leaf wetness sensor</li>
-                        <li><img src="images/Sensor UV.jpeg" alt="UV Sensor"> UV sensor - Solar, global and ultraviolet radiation measurement</li>
-                        <li><img src="images/alarme red.jpg" alt="Alarm"> System failure alarm</li>
-                        <li><img src="images/coletor de dados red.jpg" alt="Data Logger"> Data logger with real-time preview</li>
-                        <li><img src="images/Coletor.jpeg" alt="Actinograph"> Actinograph - Solar radiation intensity measurement and recording</li>
+                <div>
+                    <div class="inline-block mb-8">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Station Components</h3>
+                        <div class="h-1 w-12 bg-primary"></div>
+                    </div>
+                    <ul class="space-y-6">
+                        <li class="flex items-center space-x-4">
+                            <div class="flex-shrink-0 bg-white rounded-full p-1 shadow-md">
+                                <img src="images/Sendor de umidade red.jpg" alt="Humidity Sensor" class="w-14 h-14 rounded-full object-cover">
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-medium text-gray-900">Humidity & Temperature Sensor</h4>
+                                <p class="text-gray-600">Measures relative humidity and air temperature with high precision</p>
+                            </div>
+                        </li>
+                        <li class="flex items-center space-x-4">
+                            <div class="flex-shrink-0 bg-white rounded-full p-1 shadow-md">
+                                <img src="images/Anemometro red.jpg" alt="Anemometer" class="w-14 h-14 rounded-full object-cover">
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-medium text-gray-900">Anemometer</h4>
+                                <p class="text-gray-600">Wind speed and direction measurement with advanced accuracy</p>
+                            </div>
+                        </li>
+                        <li class="flex items-center space-x-4">
+                            <div class="flex-shrink-0 bg-white rounded-full p-1 shadow-md">
+                                <img src="images/met-2a.jpg" alt="Pluviometer" class="w-14 h-14 rounded-full object-cover">
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-medium text-gray-900">Pluviometer</h4>
+                                <p class="text-gray-600">Rainfall measurement for precise precipitation data</p>
+                            </div>
+                        </li>
+                        <li class="flex items-center space-x-4">
+                            <div class="flex-shrink-0 bg-white rounded-full p-1 shadow-md">
+                                <img src="images/Sensor de folhas red.jpg" alt="Leaf Sensor" class="w-14 h-14 rounded-full object-cover">
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-medium text-gray-900">Leaf Wetness Sensor</h4>
+                                <p class="text-gray-600">Monitors leaf surface moisture for agricultural applications</p>
+                            </div>
+                        </li>
+                        <li class="flex items-center space-x-4">
+                            <div class="flex-shrink-0 bg-white rounded-full p-1 shadow-md">
+                                <img src="images/Sensor UV.jpeg" alt="UV Sensor" class="w-14 h-14 rounded-full object-cover">
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-medium text-gray-900">UV Sensor</h4>
+                                <p class="text-gray-600">Solar, global and ultraviolet radiation measurement</p>
+                            </div>
+                        </li>
+                        <li class="flex items-center space-x-4">
+                            <div class="flex-shrink-0 bg-white rounded-full p-1 shadow-md">
+                                <img src="images/coletor de dados red.jpg" alt="Data Logger" class="w-14 h-14 rounded-full object-cover">
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-medium text-gray-900">Data Logger</h4>
+                                <p class="text-gray-600">Records and stores environmental data with real-time preview capabilities</p>
+                            </div>
+                        </li>
                     </ul>
                 </div>
+            </div>
+            
+            <div class="mt-16 text-center">
+                <a href="contact-en.html" class="inline-flex items-center px-8 py-3 border border-transparent text-lg font-medium rounded-md text-white bg-primary hover:bg-secondary transition-colors">
+                    Request Custom Configuration
+                    <i class="fas fa-arrow-right ml-2"></i>
+                </a>
             </div>
         </div>
     </section>
 
     <!-- Environmental Sensors Section -->
-    <section class="section" id="sensors">
-        <div class="container">
-            <h2 class="text-center">Environmental Sensors</h2>
-            <p class="text-center">Specialized monitoring equipment for various environmental parameters</p>
+    <section class="py-24 bg-white" id="sensors">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Environmental Sensors</h2>
+                <div class="h-1 w-20 bg-primary mx-auto mb-6"></div>
+                <p class="text-xl text-gray-600">Specialized monitoring equipment for various environmental parameters</p>
+            </div>
             
-            <div class="row" style="margin-top: 40px;">
-                <div class="col-4">
-                    <div class="product-card">
-                        <img src="images/Sendor de umidade red.jpg" alt="Air Quality Sensors" class="product-img">
-                        <div class="product-body">
-                            <h3 class="product-title">Air Quality Sensors</h3>
-                            <p class="product-description">Advanced monitoring systems for air pollutants including:</p>
-                            <ul class="product-features">
-                                <li>Particulate matter (PM10, PM2.5)</li>
-                                <li>Nitrogen oxides (NOx)</li>
-                                <li>Sulfur dioxide (SO2)</li>
-                                <li>Ozone (O3)</li>
-                                <li>Carbon monoxide (CO)</li>
-                                <li>Volatile organic compounds (VOCs)</li>
-                            </ul>
-                            <a href="contact-en.html" class="btn btn-secondary">Request Information</a>
-                        </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Air Quality Sensors -->
+                <div class="bg-white rounded-xl shadow-lg p-8 border border-gray-100 transform hover:scale-105 hover:shadow-2xl transition-all duration-300">
+                    <div class="text-primary mb-6 bg-primary/5 w-16 h-16 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-wind text-3xl"></i>
                     </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Air Quality Sensors</h3>
+                    <p class="text-gray-600 mb-6">Advanced monitoring systems for air pollutants including:</p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-primary mt-1 mr-3"></i>
+                            <span>Particulate matter (PM10, PM2.5)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-primary mt-1 mr-3"></i>
+                            <span>Nitrogen oxides (NOx)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-primary mt-1 mr-3"></i>
+                            <span>Sulfur dioxide (SO2)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-primary mt-1 mr-3"></i>
+                            <span>Ozone (O3)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-primary mt-1 mr-3"></i>
+                            <span>Carbon monoxide (CO)</span>
+                        </li>
+                    </ul>
+                    <a href="contact-en.html" class="inline-flex items-center text-primary hover:text-secondary transition-colors group">
+                        Request Information 
+                        <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform"></i>
+                    </a>
                 </div>
-                <div class="col-4">
-                    <div class="product-card">
-                        <img src="images/Sensor UV.jpeg" alt="Meteorological Sensors" class="product-img">
-                        <div class="product-body">
-                            <h3 class="product-title">Meteorological Sensors</h3>
-                            <p class="product-description">High-precision sensors for meteorological parameters:</p>
-                            <ul class="product-features">
-                                <li>Temperature and humidity</li>
-                                <li>Wind speed and direction</li>
-                                <li>Solar radiation</li>
-                                <li>Precipitation</li>
-                                <li>Atmospheric pressure</li>
-                                <li>UV radiation</li>
-                            </ul>
-                            <a href="contact-en.html" class="btn btn-secondary">Request Information</a>
-                        </div>
+
+                <!-- Meteorological Sensors -->
+                <div class="bg-white rounded-xl shadow-lg p-8 border border-gray-100 transform hover:scale-105 hover:shadow-2xl transition-all duration-300">
+                    <div class="text-primary mb-6 bg-primary/5 w-16 h-16 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-cloud-sun text-3xl"></i>
                     </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Meteorological Sensors</h3>
+                    <p class="text-gray-600 mb-6">High-precision sensors for meteorological parameters:</p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-primary mt-1 mr-3"></i>
+                            <span>Temperature and humidity</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-primary mt-1 mr-3"></i>
+                            <span>Wind speed and direction</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-primary mt-1 mr-3"></i>
+                            <span>Solar radiation</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-primary mt-1 mr-3"></i>
+                            <span>Precipitation</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-primary mt-1 mr-3"></i>
+                            <span>Atmospheric pressure</span>
+                        </li>
+                    </ul>
+                    <a href="contact-en.html" class="inline-flex items-center text-primary hover:text-secondary transition-colors group">
+                        Request Information 
+                        <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform"></i>
+                    </a>
                 </div>
-                <div class="col-4">
-                    <div class="product-card">
-                        <img src="images/Sensor de folhas red.jpg" alt="Data Acquisition Systems" class="product-img">
-                        <div class="product-body">
-                            <h3 class="product-title">Data Acquisition Systems</h3>
-                            <p class="product-description">Complete solutions for environmental data collection and management:</p>
-                            <ul class="product-features">
-                                <li>Data loggers</li>
-                                <li>Real-time monitoring</li>
-                                <li>Remote data access</li>
-                                <li>Data validation</li>
-                                <li>Customizable reporting</li>
-                                <li>System integration</li>
-                            </ul>
-                            <a href="contact-en.html" class="btn btn-secondary">Request Information</a>
-                        </div>
+
+                <!-- Data Acquisition Systems -->
+                <div class="bg-white rounded-xl shadow-lg p-8 border border-gray-100 transform hover:scale-105 hover:shadow-2xl transition-all duration-300">
+                    <div class="text-primary mb-6 bg-primary/5 w-16 h-16 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-database text-3xl"></i>
                     </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Data Acquisition Systems</h3>
+                    <p class="text-gray-600 mb-6">Complete solutions for environmental data collection and management:</p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-primary mt-1 mr-3"></i>
+                            <span>Data loggers</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-primary mt-1 mr-3"></i>
+                            <span>Real-time monitoring</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-primary mt-1 mr-3"></i>
+                            <span>Remote data access</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-primary mt-1 mr-3"></i>
+                            <span>Data validation</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-primary mt-1 mr-3"></i>
+                            <span>Customizable reporting</span>
+                        </li>
+                    </ul>
+                    <a href="contact-en.html" class="inline-flex items-center text-primary hover:text-secondary transition-colors group">
+                        Request Information 
+                        <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform"></i>
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Call to Action -->
-    <section class="section" style="background-color: var(--off-white);">
-        <div class="container text-center">
-            <h2>Need Environmental Monitoring Solutions?</h2>
-            <p>Contact us to discuss your specific requirements and find the best solution for your needs.</p>
-            <a href="contact-en.html" class="btn btn-primary btn-lg" style="margin-top: 20px;">Contact Us</a>
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold text-gray-900 mb-6">Need a Custom Solution?</h2>
+            <p class="text-xl text-gray-600 mb-8">
+                Contact our team to discuss your specific environmental monitoring requirements and we'll design a tailored solution for your project.
+            </p>
+            <a href="contact-en.html" class="inline-flex items-center px-8 py-3 border border-transparent text-lg font-medium rounded-md text-white bg-primary hover:bg-secondary transition-colors">
+                Get in Touch
+                <i class="fas fa-arrow-right ml-2"></i>
+            </a>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="site-footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-4">
-                    <div class="footer-logo">
-                        <img src="images/Logo fitfit.png" alt="SECA - Environmental and Climatic Studies System">
-                    </div>
-                    <p>SECA - Environmental and Climatic Studies System Ltd. is a company specialized in providing consulting services, studies and projects in the environmental area with emphasis on air pollution since 1995.</p>
-                </div>
-                <div class="col-4">
-                    <h3>Quick Links</h3>
-                    <nav class="footer-nav">
-                        <ul class="footer-nav-list">
-                            <li class="footer-nav-item">
-                                <a href="about-en.html" class="footer-nav-link">About Us</a>
-                            </li>
-                            <li class="footer-nav-item">
-                                <a href="products-en.html" class="footer-nav-link">Products</a>
-                            </li>
-                            <li class="footer-nav-item">
-                                <a href="training-en.html" class="footer-nav-link">Training</a>
-                            </li>
-                            <li class="footer-nav-item">
-                                <a href="animations-en.html" class="footer-nav-link">Animations</a>
-                            </li>
-                            <li class="footer-nav-item">
-                                <a href="clients-en.html" class="footer-nav-link">Clients</a>
-                            </li>
-                            <li class="footer-nav-item">
-                                <a href="contact-en.html" class="footer-nav-link">Contact Us</a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-                <div class="col-4">
-                    <h3>Contact Information</h3>
-                    <p>
-                        <i class="fas fa-map-marker-alt"></i> Rua Cardeal Arcoverde, 1183 cj 65<br>
-                        Pinheiros - São Paulo - SP - Brazil<br>
-                        CEP: 05407-002<br>
-                        <i class="fas fa-phone"></i> +55 (11) 3031-4172<br>
-                        <i class="fas fa-envelope"></i> seca@seca-ambiental.com.br
+    <footer class="bg-[#2a3347] text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+                <!-- Company Info -->
+                <div class="col-span-1 md:col-span-2">
+                    <img src="images/Logo fit.png" alt="SECA" class="h-12 mb-6 invert">
+                    <p class="text-gray-300 mb-6">
+                        SECA is a leading provider of environmental consulting services, specializing in air quality assessment and atmospheric dispersion modeling since 1995.
                     </p>
-                    <div class="social-links">
-                        <a href="https://www.linkedin.com/company/seca-ambiental/" target="_blank" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    <div class="flex space-x-4">
+                        <a href="https://www.linkedin.com/company/seca-ambiental" target="_blank" 
+                           class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
                     </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">Quick Links</h3>
+                    <ul class="space-y-4">
+                        <li><a href="about-en.html" class="text-gray-300 hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="products-en.html" class="text-gray-300 hover:text-white transition-colors">Products</a></li>
+                        <li><a href="training-en.html" class="text-gray-300 hover:text-white transition-colors">Training</a></li>
+                        <li><a href="clients-en.html" class="text-gray-300 hover:text-white transition-colors">Clients</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">Contact Us</h3>
+                    <ul class="space-y-4 text-gray-300">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3"></i>
+                            <span>Rua Cardeal Arcoverde, 1183 cj 65<br>Pinheiros - São Paulo - SP</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone mr-3"></i>
+                            <span>+55 (11) 3031-4172</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-3"></i>
+                            <a href="mailto:seca@seca-ambiental.com.br" class="hover:text-white transition-colors">seca@seca-ambiental.com.br</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
-            
-            <div class="footer-bottom">
-                <div class="copyright">
-                    &copy; 2025 SECA - Environmental and Climatic Studies System. All rights reserved.
-                </div>
-                <div>
-                    <a href="privacy-en.html" class="footer-nav-link">Privacy Policy</a> | 
-                    <a href="terms-en.html" class="footer-nav-link">Terms of Service</a>
-                </div>
+
+            <div class="border-t border-white/10 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 SECA - Environmental and Climatic Studies System. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
+    <!-- Mobile Menu (Hidden by default) -->
+    <div class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden" id="mobileMenu">
+        <div class="fixed inset-y-0 right-0 max-w-xs w-full bg-white shadow-xl">
+            <div class="flex items-center justify-between p-4 border-b">
+                <h2 class="text-lg font-semibold text-gray-900">Menu</h2>
+                <button class="text-gray-600 hover:text-gray-900" onclick="document.getElementById('mobileMenu').classList.add('hidden')">
+                    <i class="fas fa-times text-2xl"></i>
+                </button>
+            </div>
+            <nav class="px-4 py-6">
+                <ul class="space-y-4">
+                    <li><a href="home-en.html" class="block text-base text-gray-900 hover:text-primary">Home</a></li>
+                    <li><a href="about-en.html" class="block text-base text-gray-900 hover:text-primary">About Us</a></li>
+                    <li class="border-l-4 border-primary pl-2">
+                        <a href="products-en.html" class="block text-base text-primary font-medium">Products</a>
+                    </li>
+                    <li class="pl-4"><a href="#software" class="block text-sm text-gray-700 hover:text-primary">Software Solutions</a></li>
+                    <li class="pl-4"><a href="#meteorological" class="block text-sm text-gray-700 hover:text-primary">Meteorological Stations</a></li>
+                    <li class="pl-4"><a href="#sensors" class="block text-sm text-gray-700 hover:text-primary">Environmental Sensors</a></li>
+                    <li><a href="training-en.html" class="block text-base text-gray-900 hover:text-primary">Training</a></li>
+                    <li><a href="animations-en.html" class="block text-base text-gray-900 hover:text-primary">Animations</a></li>
+                    <li><a href="clients-en.html" class="block text-base text-gray-900 hover:text-primary">Clients</a></li>
+                    <li><a href="links-en.html" class="block text-base text-gray-900 hover:text-primary">Links</a></li>
+                    <li><a href="contact-en.html" class="block text-base text-gray-900 hover:text-primary">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
     <!-- JavaScript -->
-    <script src="js/main.js"></script>
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobileMenuButton').addEventListener('click', function() {
+            document.getElementById('mobileMenu').classList.remove('hidden');
+        });
+
+        // Scroll animation
+        document.addEventListener('DOMContentLoaded', function() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('opacity-100', 'translate-y-0');
+                        entry.target.classList.remove('opacity-0', 'translate-y-10');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            document.querySelectorAll('section > div').forEach((el) => {
+                el.classList.add('transform', 'transition-all', 'duration-1000', 'opacity-0', 'translate-y-10');
+                observer.observe(el);
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    const headerOffset = 120; // Adjust based on your header height
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                    
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html> 
