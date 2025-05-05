@@ -26,13 +26,40 @@
 </head>
 <body class="bg-gray-50">
     <!-- Top Bar with Logo and Language Switcher -->
-    <div class="bg-white py-4 border-b">
+    <div class="bg-white py-4 border-b fixed top-0 left-0 right-0 z-40 shadow-sm transition-shadow duration-300" id="navbar">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center">
                 <!-- Logo -->
                 <a href="home-en.html" class="flex-shrink-0">
                     <img src="images/Logo fit.png" alt="SECA" class="h-12">
                 </a>
+                
+                <!-- Desktop Navigation Menu -->
+                <nav class="hidden md:flex space-x-6">
+                    <a href="home-en.html" class="text-gray-700 font-medium hover:text-primary transition-colors">Home</a>
+                    <a href="about-en.html" class="text-gray-700 font-medium hover:text-primary transition-colors">About Us</a>
+                    
+                    <!-- Products Dropdown -->
+                    <div class="relative group">
+                        <a href="products-en.html" class="text-gray-700 font-medium hover:text-primary transition-colors flex items-center">
+                            Products
+                            <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </a>
+                        <div class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                            <a href="products-en.html#meteorological" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Meteorological Stations</a>
+                            <a href="products-en.html#sensors" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Environmental Sensors</a>
+                            <a href="products-en.html#software" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Software Solutions</a>
+                        </div>
+                    </div>
+                    
+                    <a href="training-en.html" class="text-gray-700 font-medium hover:text-primary transition-colors">Training</a>
+                    <a href="animations-en.html" class="text-primary font-medium hover:text-secondary transition-colors">Animations</a>
+                    <a href="clients-en.html" class="text-gray-700 font-medium hover:text-primary transition-colors">Clients</a>
+                    <a href="links-en.html" class="text-gray-700 font-medium hover:text-primary transition-colors">Links</a>
+                    <a href="contact-en.html" class="text-gray-700 font-medium hover:text-primary transition-colors">Contact Us</a>
+                </nav>
                 
                 <!-- Language Switcher and Mobile Menu Button -->
                 <div class="flex items-center space-x-4">
@@ -46,7 +73,7 @@
                     </a>
                     
                     <!-- Mobile Menu Button -->
-                    <button class="ml-4 text-gray-700 hover:text-primary" id="mobileMenuButton">
+                    <button class="md:hidden ml-4 text-gray-700 hover:text-primary" id="mobileMenuButton">
                         <i class="fas fa-bars text-2xl"></i>
                     </button>
                 </div>
@@ -55,7 +82,7 @@
     </div>
     
     <!-- Hero Section -->
-    <section class="bg-[#2a3347] py-16">
+    <section class="bg-[#2a3347] py-16 pt-32">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center">
                 <h1 class="text-4xl font-bold tracking-tight text-white sm:text-5xl">Animations</h1>
@@ -451,6 +478,37 @@
         // Mobile menu toggle
         document.getElementById('mobileMenuButton').addEventListener('click', function() {
             document.getElementById('mobileMenu').classList.remove('hidden');
+        });
+
+        // Navbar scroll behavior
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            // Always keep navbar white without shadows regardless of scroll position
+            navbar.classList.add('bg-white');
+            navbar.classList.remove('shadow-md', 'bg-white/95');
+        });
+
+        // Highlight active page in navigation
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get current page path
+            const currentPath = window.location.pathname;
+            const currentPage = currentPath.split('/').pop() || 'home-en.html';
+            
+            // Highlight desktop navbar item
+            document.querySelectorAll('nav a').forEach(link => {
+                if (link.getAttribute('href') === currentPage) {
+                    link.classList.add('text-primary');
+                    link.classList.remove('text-gray-700');
+                }
+            });
+            
+            // Highlight mobile menu item
+            document.querySelectorAll('#mobileMenu nav a').forEach(link => {
+                if (link.getAttribute('href') === currentPage) {
+                    link.classList.add('text-primary');
+                    link.parentElement.classList.add('border-l-4', 'border-primary', 'pl-2');
+                }
+            });
         });
 
         // Scroll animation
