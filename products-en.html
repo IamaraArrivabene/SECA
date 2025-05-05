@@ -17,7 +17,7 @@
         <div class="container">
             <!-- Logo -->
             <a href="home-en.html" class="site-logo">
-                <img src="images/Logo fit.png" alt="SECA - Environmental and Climatic Studies System">
+                <img src="images/Logo fitfit.png" alt="SECA - Environmental and Climatic Studies System">
             </a>
             
             <!-- Mobile Menu Toggle -->
@@ -37,9 +37,9 @@
                     <li class="nav-item dropdown">
                         <a href="products-en.html" class="nav-link active">Products</a>
                         <ul class="dropdown-menu">
+                            <li><a href="#software" class="dropdown-item">Software Solutions</a></li>
                             <li><a href="#meteorological" class="dropdown-item">Meteorological Stations</a></li>
                             <li><a href="#sensors" class="dropdown-item">Environmental Sensors</a></li>
-                            <li><a href="#software" class="dropdown-item">Software Solutions</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
@@ -68,49 +68,83 @@
             
             <!-- Language Switcher -->
             <div class="language-switcher">
+                <a href="products-pt.html" data-lang="pt">
+                    <img src="images/BR_new.png" alt="Portuguese">
+                    <span>PT</span>
+                </a>
                 <a href="#" data-lang="en" class="active">
                     <img src="images/BR_new.png" alt="English">
                     <span>EN</span>
-                </a>
-                <a href="#" data-lang="pt">
-                    <img src="images/BR_new.png" alt="Portuguese">
-                    <span>PT</span>
                 </a>
             </div>
         </div>
     </header>
 
-    <!-- Page Title Section -->
-    <section class="page-title" style="background-color: var(--primary-color);">
+    <!-- Software Solutions Section -->
+    <section class="section" id="software">
         <div class="container">
-            <h1>Products</h1>
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="home-en.html">Home</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Products</li>
-                </ol>
-            </nav>
-        </div>
-    </section>
-
-    <!-- Introduction -->
-    <section class="section">
-        <div class="container">
-            <div class="row">
+            <h2 class="text-center">Software Solutions</h2>
+            <p class="text-center">SECA is an official distributor in Brazil of Lakes Environmental Software, a reseller of Lakes products in the area of software for modeling atmospheric dispersion.</p>
+            
+            <div class="row" style="margin-top: 40px;">
                 <div class="col-6">
-                    <h2>Environmental Monitoring Solutions</h2>
-                    <p>
-                        SECA offers a comprehensive range of environmental monitoring equipment, meteorological stations, and software solutions for air quality management and environmental studies.
-                    </p>
-                    <p>
-                        Our products are designed to meet the highest standards of accuracy, reliability, and durability, ensuring that our clients have access to quality data for their environmental decision-making processes.
-                    </p>
-                    <p>
-                        We work with leading manufacturers and also develop our own specialized solutions to meet the specific needs of our clients across various industries.
-                    </p>
+                    <div class="product-card">
+                        <img src="images/aremod_icon.jpg" alt="AERMOD View" class="product-img">
+                        <div class="product-body">
+                            <h3 class="product-title">AERMOD View™ (Gaussian Plume Air Dispersion Model)</h3>
+                            <p class="product-description">A complete and powerful air dispersion-modeling package incorporating popular U.S. EPA air dispersion models:</p>
+                            <ul class="product-features">
+                                <li>AERMOD</li>
+                                <li>ISCST3</li>
+                                <li>ISC-PRIME</li>
+                            </ul>
+                            <p>AERMOD fully incorporates the PRIME building downwash algorithms, advanced depositional parameters, local terrain effects, and advanced meteorological turbulence calculations.</p>
+                            <a href="contact-en.html" class="btn btn-secondary">Request Information</a>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-6">
-                    <img src="images/Station.png" alt="SECA Monitoring Station" style="width: 100%; border-radius: 8px; box-shadow: 0 10px 20px rgba(0,0,0,0.1);">
+                    <div class="product-card">
+                        <img src="images/calpuff_icon.jpg" alt="CALPUFF View" class="product-img">
+                        <div class="product-body">
+                            <h3 class="product-title">CALPUFF View™</h3>
+                            <p class="product-description">A complete graphical solution for the CALPUFF modeling system: CALPUFF, CALMET, CALPOST, and related pre- and post-processors.</p>
+                            <ul class="product-features">
+                                <li>USEPA Approved Version 5.8</li>
+                                <li>Version 6</li>
+                                <li>Version 7</li>
+                            </ul>
+                            <p>Applications include:</p>
+                            <ul class="product-features">
+                                <li>Toxic pollutant deposition</li>
+                                <li>Visibility assessments</li>
+                                <li>Complex terrain</li>
+                                <li>Secondary pollutant formation</li>
+                                <li>Long range and overwater transport</li>
+                                <li>Building downwash</li>
+                            </ul>
+                            <a href="contact-en.html" class="btn btn-secondary">Request Information</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row" style="margin-top: 40px;">
+                <div class="col-12">
+                    <h3>Risk Planning Models</h3>
+                    <ul class="feature-list">
+                        <li><strong>EcoRisk View</strong> - Advanced ecological risk assessment program</li>
+                        <li><strong>SEVEX View</strong> - Advanced 3D model of dense gas over complex terrain</li>
+                        <li><strong>SLAB View</strong> - Simulation of accidental leaks of denser gases than air</li>
+                    </ul>
+
+                    <h3>Additional Simulation Models</h3>
+                    <ul class="feature-list">
+                        <li><strong>CALRoads View</strong> - Model for predicting impacts of pollutants near highways</li>
+                        <li><strong>AERMETView</strong> - AERMOD Preprocessor of meteorological data</li>
+                        <li><strong>SCREEN View</strong> - Used to estimate worst-case concentrations for a single source</li>
+                        <li><strong>WRPlot View</strong> - Wind rose plots meteorological data</li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -119,57 +153,25 @@
     <!-- Meteorological Stations Section -->
     <section class="section" style="background-color: var(--off-white);" id="meteorological">
         <div class="container">
-            <h2 class="text-center">Meteorological Stations</h2>
-            <p class="text-center">High-quality weather monitoring systems for various applications</p>
+            <h2 class="text-center">Weather Stations</h2>
+            <p class="text-center">Practical, versatile and economical monitoring solutions. Supply of stations, installation, training, data processing and analysis for environmental studies and several applications.</p>
             
             <div class="row" style="margin-top: 40px;">
-                <div class="col-4">
-                    <div class="product-card">
-                        <img src="images/Anemometro red.jpg" alt="Compact Weather Station" class="product-img">
-                        <div class="product-body">
-                            <h3 class="product-title">Compact Weather Station</h3>
-                            <p class="product-description">Ideal for urban environments and small-scale projects. Measures temperature, humidity, precipitation, wind speed and direction.</p>
-                            <ul class="product-features">
-                                <li>Easy installation and maintenance</li>
-                                <li>Wireless data transmission</li>
-                                <li>Solar-powered option available</li>
-                                <li>Compact and durable design</li>
-                            </ul>
-                            <a href="contact-en.html" class="btn btn-secondary">Request Information</a>
-                        </div>
-                    </div>
+                <div class="col-6">
+                    <img src="images/Station.png" alt="Weather Station Components" class="img-fluid">
                 </div>
-                <div class="col-4">
-                    <div class="product-card">
-                        <img src="images/met-2a.jpg" alt="Professional Weather Station" class="product-img">
-                        <div class="product-body">
-                            <h3 class="product-title">Professional Weather Station</h3>
-                            <p class="product-description">Complete system for professional meteorological monitoring. Features high-precision sensors for comprehensive weather measurement.</p>
-                            <ul class="product-features">
-                                <li>High precision sensors</li>
-                                <li>Data logging and remote access</li>
-                                <li>Customizable configuration</li>
-                                <li>WMO compliant measurements</li>
-                            </ul>
-                            <a href="contact-en.html" class="btn btn-secondary">Request Information</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-4">
-                    <div class="product-card">
-                        <img src="images/coletor de dados red.jpg" alt="Industrial Weather Station" class="product-img">
-                        <div class="product-body">
-                            <h3 class="product-title">Industrial Weather Station</h3>
-                            <p class="product-description">Robust system designed for industrial environments. Resistant to harsh conditions and provides reliable data for regulatory compliance.</p>
-                            <ul class="product-features">
-                                <li>Enhanced durability</li>
-                                <li>Resistant to corrosive environments</li>
-                                <li>Integration with SCADA systems</li>
-                                <li>Real-time alerts and notifications</li>
-                            </ul>
-                            <a href="contact-en.html" class="btn btn-secondary">Request Information</a>
-                        </div>
-                    </div>
+                <div class="col-6">
+                    <h3>Station Components</h3>
+                    <ul class="station-components">
+                        <li><img src="images/Sendor de umidade red.jpg" alt="Humidity Sensor"> Sensor of relative humidity and air temperature</li>
+                        <li><img src="images/Anemometro red.jpg" alt="Anemometer"> Anemometer - Measures wind speed and direction</li>
+                        <li><img src="images/met-2a.jpg" alt="Pluviometer"> Pluviometer - Measures rainfall</li>
+                        <li><img src="images/Sensor de folhas red.jpg" alt="Leaf Sensor"> Leaf sensor - Measures the degree sensitivity of the leaves</li>
+                        <li><img src="images/Sensor UV.jpeg" alt="UV Sensor"> UV sensor - Measures solar, global and ultra-violet radiation</li>
+                        <li><img src="images/alarme red.jpg" alt="Alarm"> Alarm - System failure indicator</li>
+                        <li><img src="images/coletor de dados red.jpg" alt="Data Collector"> Data collector - Real-time preview</li>
+                        <li><img src="images/Coletor.jpeg" alt="Actinograph"> Actinograph - Measures and stores solar radiation intensity</li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -234,130 +236,8 @@
         </div>
     </section>
 
-    <!-- Software Solutions Section -->
-    <section class="section" style="background-color: var(--off-white);" id="software">
-        <div class="container">
-            <h2 class="text-center">Software Solutions</h2>
-            <p class="text-center">Specialized software for environmental analysis and management</p>
-            
-            <div class="row" style="margin-top: 40px;">
-                <div class="col-4">
-                    <div class="product-card">
-                        <img src="images/aremod_icon.jpg" alt="AERMOD Modeling System" class="product-img">
-                        <div class="product-body">
-                            <h3 class="product-title">AERMOD Modeling System</h3>
-                            <p class="product-description">Industry-standard air dispersion model for regulatory applications. SECA provides licensed software and training.</p>
-                            <ul class="product-features">
-                                <li>EPA regulatory approved</li>
-                                <li>Advanced meteorological preprocessor</li>
-                                <li>Building downwash calculations</li>
-                                <li>Technical support available</li>
-                            </ul>
-                            <a href="contact-en.html" class="btn btn-secondary">Request Information</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-4">
-                    <div class="product-card">
-                        <img src="images/calpuff_icon.jpg" alt="CALPUFF Modeling System" class="product-img">
-                        <div class="product-body">
-                            <h3 class="product-title">CALPUFF Modeling System</h3>
-                            <p class="product-description">Advanced non-steady-state puff dispersion model for complex terrain and long-range transport.</p>
-                            <ul class="product-features">
-                                <li>Non-steady-state calculations</li>
-                                <li>Complex terrain handling</li>
-                                <li>Coastal effects modeling</li>
-                                <li>Visibility impact assessment</li>
-                            </ul>
-                            <a href="contact-en.html" class="btn btn-secondary">Request Information</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-4">
-                    <div class="product-card">
-                        <img src="images/Logo fit.png" alt="SECA Data Manager" class="product-img">
-                        <div class="product-body">
-                            <h3 class="product-title">SECA Data Manager</h3>
-                            <p class="product-description">Proprietary software for environmental data management, visualization, and analysis.</p>
-                            <ul class="product-features">
-                                <li>Customizable dashboards</li>
-                                <li>Automated report generation</li>
-                                <li>Integration with monitoring networks</li>
-                                <li>Regulatory compliance tools</li>
-                            </ul>
-                            <a href="contact-en.html" class="btn btn-secondary">Request Information</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Data Collection Systems -->
-    <section class="section">
-        <div class="container">
-            <h2 class="text-center">Data Collection Systems</h2>
-            <p class="text-center">Complete solutions for environmental data acquisition and management</p>
-            
-            <div class="row" style="margin-top: 40px;">
-                <div class="col-6">
-                    <h3>Integrated Environmental Monitoring Networks</h3>
-                    <p>
-                        SECA designs and implements comprehensive environmental monitoring networks that integrate various sensors and meteorological stations into a unified data management system.
-                    </p>
-                    <p>
-                        Our integrated systems include:
-                    </p>
-                    <ul>
-                        <li>Data loggers and telemetry systems</li>
-                        <li>Automated data validation procedures</li>
-                        <li>Real-time visualization platforms</li>
-                        <li>Alarm systems for threshold exceedances</li>
-                        <li>Data storage and backup solutions</li>
-                        <li>Reporting tools for regulatory compliance</li>
-                    </ul>
-                    <a href="contact-en.html" class="btn btn-primary">Contact Us for Custom Solutions</a>
-                </div>
-                <div class="col-6">
-                    <img src="images/Coletor.jpeg" alt="Environmental Data Collection System" style="width: 100%; border-radius: 8px; box-shadow: 0 10px 20px rgba(0,0,0,0.1);">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Early Warning Systems -->
-    <section class="section" style="background-color: var(--off-white);">
-        <div class="container">
-            <div class="row">
-                <div class="col-6">
-                    <img src="images/alarme red.jpg" alt="Environmental Warning System" style="width: 100%; border-radius: 8px; box-shadow: 0 10px 20px rgba(0,0,0,0.1);">
-                </div>
-                <div class="col-6">
-                    <h2>Environmental Early Warning Systems</h2>
-                    <p>
-                        Our early warning systems provide automated alerts for potential environmental issues, helping clients respond promptly to changing conditions.
-                    </p>
-                    <p>
-                        Applications include:
-                    </p>
-                    <ul>
-                        <li>Air quality incident detection</li>
-                        <li>Weather hazard warnings</li>
-                        <li>Emission exceedance notifications</li>
-                        <li>Industrial accident response</li>
-                        <li>Regulatory compliance management</li>
-                    </ul>
-                    <p>
-                        Each system is customized to the specific needs of the client, integrating with existing infrastructure and management protocols.
-                    </p>
-                    <a href="contact-en.html" class="btn btn-primary">Learn More</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Call to Action -->
-    <section class="section">
+    <section class="section" style="background-color: var(--off-white);">
         <div class="container text-center">
             <h2>Need a Customized Solution?</h2>
             <p>Contact our team to discuss your specific environmental monitoring requirements.</p>
@@ -371,7 +251,7 @@
             <div class="row">
                 <div class="col-4">
                     <div class="footer-logo">
-                        <img src="images/Logo fit.png" alt="SECA - Environmental and Climatic Studies System">
+                        <img src="images/Logo fitfit.png" alt="SECA - Environmental and Climatic Studies System">
                     </div>
                     <p>SECA - Environmental and Climatic Studies System Ltd. is a company specialized in providing consulting services, studies and projects in the environmental area with emphasis on air pollution since 1995.</p>
                 </div>

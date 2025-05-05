@@ -652,4 +652,16 @@ p {
   .copyright {
     margin-bottom: var(--spacing-md);
   }
+}
+
+/* Add padding to first section after header to prevent navbar overlap */
+.site-header + .section {
+    padding-top: 120px; /* Default padding for desktop */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .site-header + .section {
+        padding-top: 100px; /* Slightly less padding on mobile */
+    }
 } 
