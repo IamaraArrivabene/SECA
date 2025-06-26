@@ -81,98 +81,97 @@
         </div>
     </div>
     
-    <!-- Hero Section with Background Image -->
-    <section class="relative h-screen bg-cover bg-center bg-no-repeat" style="background-image: linear-gradient(rgba(42, 51, 71, 0.7), rgba(42, 51, 71, 0.7)), url('images/Station.png');">
-        <div class="absolute inset-0 bg-gradient-to-r from-black/50 to-transparent"></div>
-        <div class="relative flex items-center justify-center h-full pt-20">
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
-                <h1 class="text-5xl md:text-6xl font-bold mb-6">About SECA</h1>
-                <p class="text-xl md:text-2xl font-light leading-relaxed">
-                    Environmental and Climatic Studies System<br>
-                    Excellence in Air Quality Assessment Since 1995
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- The Company Section -->
-    <section class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-gray-900 mb-6">The Company</h2>
-                <div class="h-1 w-20 bg-primary mx-auto"></div>
-            </div>
-            
-            <div class="max-w-4xl mx-auto text-lg text-gray-700 leading-relaxed space-y-6">
-                <p class="text-center">
-                    <strong>SECA - Environmental and Climatic Studies System Ltd.</strong> is a company specialized in providing consulting services, studies and projects that has been operating in the environmental area with an emphasis on air pollution since 1995. Based on the experience of its technical staff, SECA has been executing services and advising companies with updated technology while maintaining the commitment to quality and impartiality.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Technical Team Section -->
-    <section class="py-20 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-gray-900 mb-6">Technical Team</h2>
-                <div class="h-1 w-20 bg-primary mx-auto"></div>
-            </div>
-            
-            <div class="max-w-6xl mx-auto">
-                <p class="text-lg text-gray-700 text-center mb-12 leading-relaxed">
-                    It is constituted by professionals with great experience and competence, with training acquired in Brazil and other countries. In addition to theoretical training, they have practical knowledge for carrying out projects and studies, acquired for years in private companies and public bodies in the environmental area.
-                </p>
-                
-                <p class="text-lg text-gray-700 text-center mb-16 font-medium">
-                    SECA's technical team is led by <strong>SILVIO DE OLIVEIRA</strong>.
-                </p>
-                
-                <!-- Team Leader Profile -->
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
-                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-0">
-                        <!-- Photo Section -->
-                        <div class="lg:col-span-1 relative">
-                            <img src="images/FOTO SILVIO.jpg" alt="Dr. Silvio de Oliveira" class="w-full h-96 lg:h-full object-cover object-center">
-                            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6">
-                                <h3 class="text-2xl font-bold text-white">Dr. Silvio de Oliveira</h3>
-                                <p class="text-gray-200 font-medium">Technical Leader</p>
-                            </div>
-                        </div>
-                        
-                        <!-- Education Section -->
-                        <div class="lg:col-span-2 p-8">
-                            <h4 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
-                                <i class="fas fa-graduation-cap mr-3 text-primary"></i> Education
-                            </h4>
-                            <div class="space-y-4 text-gray-700">
-                                <div class="flex items-start">
-                                    <i class="fas fa-circle text-primary text-xs mt-2 mr-3"></i>
-                                    <p><strong>MSc. in Micrometeorology</strong> - Institute for Space Research (INPE)</p>
-                                </div>
-                                <div class="flex items-start">
-                                    <i class="fas fa-circle text-primary text-xs mt-2 mr-3"></i>
-                                    <p><strong>BSc. in Meteorology</strong> - Federal University of Rio de Janeiro (UFRJ)</p>
-                                </div>
-                                <div class="flex items-start">
-                                    <i class="fas fa-circle text-primary text-xs mt-2 mr-3"></i>
-                                    <p><strong>Environmental Engineering Specialist</strong> - Texas A&M University, College Station, USA</p>
-                                </div>
-                                <div class="flex items-start">
-                                    <i class="fas fa-circle text-primary text-xs mt-2 mr-3"></i>
-                                    <p><strong>Specialization in Mathematical Simulation of Photochemical Oxidation</strong> - Gesellschaft für Mathematik und Datenverarbeitung (GMD) Berlin, Germany</p>
-                                </div>
-                                <div class="flex items-start">
-                                    <i class="fas fa-circle text-primary text-xs mt-2 mr-3"></i>
-                                    <p><strong>Specialization in Atmospheric Dispersion with CALPUFF Models</strong> - TRC Environmental Corporation, Berkeley, California, USA</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+    <!-- Video Background Section -->
+    <section class="relative h-96 overflow-hidden mt-20">
+        <!-- Video Background -->
+        <video autoplay muted loop class="absolute inset-0 w-full h-full object-cover">
+            <source src="images/Video_Seca_Audio_new10b.mp4" type="video/mp4">
+            <!-- Fallback image if video doesn't load -->
+            <img src="images/Station.png" alt="SECA Environmental" class="w-full h-full object-cover">
+        </video>
+        
+        <!-- Overlay -->
+        <div class="absolute inset-0 bg-black/30"></div>
+        
+        <!-- Content Card -->
+        <div class="relative flex items-center h-full">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="bg-black/70 backdrop-blur-sm rounded-lg p-8 max-w-2xl">
+                    <h1 class="text-4xl font-bold mb-6 text-white">The Company</h1>
+                    <p class="text-lg leading-relaxed text-white">
+                        SECA - Environmental and Climatic Studies System Ltd. is a company specialized in providing consulting services, studies and projects that has been operating in the environmental area with an emphasis on air pollution since 1995. Based on the experience of its technical staff, SECA has been executing services and advising companies with updated technology while maintaining the commitment to quality and impartiality.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Dark Section for Technical Team -->
+    <section class="bg-[#2a3347] py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-white">
+                <h2 class="text-3xl font-bold mb-8">Technical Team</h2>
+                <p class="text-lg leading-relaxed mb-6">
+                    It is constituted by professionals with great experience and competence, with training acquired in Brazil and other countries. In addition to theoretical training, they have practical knowledge for carrying out projects and studies, acquired for years in private companies and public bodies in the environmental area.
+                </p>
+                <p class="text-lg font-medium">
+                    SECA's technical team is led by <strong>SILVIO DE OLIVEIRA</strong>.
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+
+         <!-- Team Leader Profile Section -->
+     <section class="py-20 bg-gray-50">
+         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+             <div class="max-w-6xl mx-auto">
+                 <!-- Team Leader Profile -->
+                 <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                     <div class="grid grid-cols-1 lg:grid-cols-3 gap-0">
+                         <!-- Photo Section -->
+                         <div class="lg:col-span-1 relative">
+                             <img src="images/FOTO SILVIO.jpg" alt="Dr. Silvio de Oliveira" class="w-full h-96 lg:h-full object-cover object-center">
+                             <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6">
+                                 <h3 class="text-2xl font-bold text-white">Dr. Silvio de Oliveira</h3>
+                                 <p class="text-gray-200 font-medium">Technical Leader</p>
+                             </div>
+                         </div>
+                         
+                         <!-- Education Section -->
+                         <div class="lg:col-span-2 p-8">
+                             <h4 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+                                 <i class="fas fa-graduation-cap mr-3 text-primary"></i> Education
+                             </h4>
+                             <div class="space-y-4 text-gray-700">
+                                 <div class="flex items-start">
+                                     <i class="fas fa-circle text-primary text-xs mt-2 mr-3"></i>
+                                     <p><strong>MSc. in Micrometeorology</strong> - Institute for Space Research (INPE)</p>
+                                 </div>
+                                 <div class="flex items-start">
+                                     <i class="fas fa-circle text-primary text-xs mt-2 mr-3"></i>
+                                     <p><strong>BSc. in Meteorology</strong> - Federal University of Rio de Janeiro (UFRJ)</p>
+                                 </div>
+                                 <div class="flex items-start">
+                                     <i class="fas fa-circle text-primary text-xs mt-2 mr-3"></i>
+                                     <p><strong>Environmental Engineering Specialist</strong> - Texas A&M University, College Station, USA</p>
+                                 </div>
+                                 <div class="flex items-start">
+                                     <i class="fas fa-circle text-primary text-xs mt-2 mr-3"></i>
+                                     <p><strong>Specialization in Mathematical Simulation of Photochemical Oxidation</strong> - Gesellschaft für Mathematik und Datenverarbeitung (GMD) Berlin, Germany</p>
+                                 </div>
+                                 <div class="flex items-start">
+                                     <i class="fas fa-circle text-primary text-xs mt-2 mr-3"></i>
+                                     <p><strong>Specialization in Atmospheric Dispersion with CALPUFF Models</strong> - TRC Environmental Corporation, Berkeley, California, USA</p>
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </section>
 
     <!-- Professional Experience Section -->
     <section class="py-20 bg-white">
@@ -288,20 +287,6 @@
                     <p class="text-gray-600 text-sm">Regulatory compliance and environmental assessment</p>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Call to Action -->
-    <section class="py-20 bg-white">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl font-bold text-gray-900 mb-6">Ready to Work with SECA?</h2>
-            <p class="text-xl text-gray-600 mb-8">
-                Contact us today to discuss your environmental consulting needs and discover how we can help you achieve your goals.
-            </p>
-            <a href="contact-en.html" class="inline-flex items-center px-8 py-3 border border-transparent text-lg font-medium rounded-md text-white bg-primary hover:bg-secondary transition-colors">
-                Get in Touch
-                <i class="fas fa-arrow-right ml-2"></i>
-            </a>
         </div>
     </section>
 
