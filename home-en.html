@@ -23,6 +23,109 @@
             }
         }
     </script>
+    
+    <style>
+        .main-section {
+            background-color: #2B3549;
+            min-height: calc(100vh - 200px);
+            padding-top: 120px;
+            padding-bottom: 60px;
+            position: relative;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+        }
+        
+        .content-area {
+            display: flex;
+            align-items: center;
+            min-height: 40vh;
+            gap: 40px;
+        }
+        
+        .text-content {
+            flex: 1;
+            color: white;
+        }
+        
+        .text-content h1 {
+            font-weight: normal;
+            font-size: 43px;
+            color: #ffffff;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+        
+        .text-content h2 {
+            font-weight: normal;
+            font-size: 26px;
+            color: #ffffff;
+            line-height: 1.3;
+            margin-bottom: 30px;
+        }
+        
+        .text-content p {
+            font-weight: normal;
+            color: #ffffff;
+            text-align: justify;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        
+        .video-content {
+            flex: 0 0 400px;
+        }
+        
+        .video-content video {
+            width: 100%;
+            height: 300px;
+            border-radius: 8px;
+        }
+        
+        body {
+            margin-bottom: 200px; /* Space for fixed footer */
+        }
+        
+        .footer-fixed {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 30;
+        }
+        
+        @media (max-width: 768px) {
+            .content-area {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .video-content {
+                flex: none;
+                max-width: 100%;
+            }
+            
+            .text-content h1 {
+                font-size: 32px;
+            }
+            
+            .text-content h2 {
+                font-size: 22px;
+            }
+            
+            .main-section {
+                min-height: calc(100vh - 250px);
+            }
+            
+            body {
+                margin-bottom: 250px; /* More space for footer on mobile */
+            }
+        }
+    </style>
 </head>
 <body class="bg-gray-50">
     <!-- Top Bar with Logo and Language Switcher -->
@@ -81,275 +184,35 @@
         </div>
     </div>
 
-    <!-- Hero Section -->
-    <section class="bg-[#2a3347] py-16 pt-32">
+    <!-- Main Section -->
+    <section class="main-section">
         <div class="absolute inset-0 bg-[#2a3347]">
             <div class="absolute inset-0 bg-gradient-to-r from-[#2a3347] to-[#3a4357] opacity-80"></div>
             <video class="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-40" autoplay muted loop playsinline>
                 <source src="videos/Video_Seca_Audio_new10b.mp4" type="video/mp4">
             </video>
         </div>
-        <div class="relative z-20 min-h-screen flex items-center">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 text-center">
-                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight">
-                    SECA - Environmental and Climatic Studies System
-                </h1>
-                <h2 class="text-2xl md:text-3xl text-white mb-8 font-light">
-                    Excellence in Mathematical Simulation of Atmospheric Dispersion of Pollutants
-                </h2>
-                <p class="text-lg text-gray-200 max-w-3xl mx-auto mb-10">
-                    SECA is a company specialized in providing consulting services, studies and projects that has been operating in the environmental area with an emphasis on air pollution since 1995.
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="about-en.html" class="inline-flex items-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary hover:bg-secondary transition-colors duration-300">
-                        Learn More
-                        <i class="fas fa-arrow-right ml-2"></i>
-                    </a>
-                    <a href="contact-en.html" class="inline-flex items-center px-8 py-3 border-2 border-white text-base font-medium rounded-md text-white hover:bg-white hover:text-primary transition-colors duration-300">
-                        Contact Us
-                        <i class="fas fa-envelope ml-2"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section class="py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">Our Services</h2>
-                <div class="h-1 w-20 bg-primary mx-auto mb-6"></div>
-                <p class="text-xl text-gray-600">We offer a comprehensive range of environmental consulting services, backed by decades of expertise and cutting-edge technology.</p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Air Quality Studies -->
-                <div class="bg-white rounded-xl shadow-lg p-8 border border-gray-100 transform hover:scale-105 hover:shadow-2xl transition-all duration-300">
-                    <div class="text-primary mb-6 bg-primary/5 w-16 h-16 rounded-lg flex items-center justify-center">
-                        <i class="fas fa-wind text-3xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Air Quality Studies</h3>
-                    <p class="text-gray-600 mb-6">
-                        Specialized mathematical models for evaluating atmospheric pollutant dispersion, using validated and internationally recognized methods.
+        <div class="container relative z-20">
+            <div class="content-area">
+                <div class="text-content">
+                    <h1>SECA - Environmental<br>and Climatic Studies System</h1>
+                    <h2>Excellence in Mathematical Simulation<br>of Atmospheric Dispersion of Pollutants</h2>
+                    <p>
+                        SECA - Environmental and Climatic Studies System Ltd. is a company specialized in providing consulting services, studies and projects that has been operating in the environmental area with an emphasis on air pollution since 1995. Based on the experience of its technical staff, it has been executing services and advising companies with updated technology and with this while maintaining the commitment to quality and impartiality.
                     </p>
-                    <a href="about-en.html#studies" class="inline-flex items-center text-primary hover:text-secondary transition-colors group">
-                        Learn More 
-                        <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform"></i>
-                    </a>
                 </div>
-
-                <!-- Environmental Consulting -->
-                <div class="bg-white rounded-xl shadow-lg p-8 border border-gray-100 transform hover:scale-105 hover:shadow-2xl transition-all duration-300">
-                    <div class="text-primary mb-6 bg-primary/5 w-16 h-16 rounded-lg flex items-center justify-center">
-                        <i class="fas fa-chart-line text-3xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Environmental Consulting</h3>
-                    <p class="text-gray-600 mb-6">
-                        Expert consulting for environmental licensing, impact assessment, and regulatory compliance with comprehensive solutions.
-                    </p>
-                    <a href="products-en.html" class="inline-flex items-center text-primary hover:text-secondary transition-colors group">
-                        Learn More 
-                        <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform"></i>
-                    </a>
-                </div>
-
-                <!-- Training Programs -->
-                <div class="bg-white rounded-xl shadow-lg p-8 border border-gray-100 transform hover:scale-105 hover:shadow-2xl transition-all duration-300">
-                    <div class="text-primary mb-6 bg-primary/5 w-16 h-16 rounded-lg flex items-center justify-center">
-                        <i class="fas fa-graduation-cap text-3xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Training Programs</h3>
-                    <p class="text-gray-600 mb-6">
-                        Specialized training in air dispersion modeling and environmental monitoring systems for professionals.
-                    </p>
-                    <a href="training-en.html" class="inline-flex items-center text-primary hover:text-secondary transition-colors group">
-                        Learn More 
-                        <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform"></i>
-                    </a>
+                <div class="video-content">
+                    <video width="400" height="300" autoplay muted loop>
+                        <source src="videos/videorosaF.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Featured Case Study -->
-    <section class="py-24 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                <div class="space-y-6">
-                    <div class="inline-block">
-                        <h2 class="text-3xl font-bold text-gray-900 mb-2">Featured Project</h2>
-                        <div class="h-1 w-16 bg-primary"></div>
-                    </div>
-                    <h3 class="text-xl font-semibold text-primary">Air Quality Assessment for Industrial Complex</h3>
-                    <div class="space-y-4 text-gray-600">
-                        <p class="text-lg">
-                            SECA conducted a comprehensive air quality assessment for a major industrial complex, involving dispersion modeling, monitoring station setup, and regulatory compliance analysis.
-                        </p>
-                        <ul class="space-y-3">
-                            <li class="flex items-start">
-                                <i class="fas fa-check-circle text-primary mt-1 mr-3"></i>
-                                <span>Installation of state-of-the-art meteorological stations for accurate data collection</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check-circle text-primary mt-1 mr-3"></i>
-                                <span>Multi-year data analysis using advanced statistical methods</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check-circle text-primary mt-1 mr-3"></i>
-                                <span>Sophisticated mathematical modeling using AERMOD, CALPUFF, and proprietary SECA methodologies</span>
-                            </li>
-                        </ul>
-                        <p class="text-lg font-medium text-gray-700">
-                            Results enabled the client to demonstrate regulatory compliance, optimize operations, and implement cost-effective emissions control strategies.
-                        </p>
-                    </div>
-                    <div class="pt-4">
-                        <a href="clients-en.html#case-studies" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary hover:bg-secondary transition-colors group">
-                            View Case Studies
-                            <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="relative">
-                    <div class="absolute inset-0 bg-gradient-to-r from-[#2a3347] to-[#3a4357] rounded-xl transform rotate-3 scale-105"></div>
-                    <img src="images/Station.png" alt="Environmental Monitoring Station" class="relative rounded-xl shadow-2xl transform hover:-translate-y-2 transition-all duration-300 w-full">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Blog Posts -->
-    <section class="py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">Latest Articles</h2>
-                <div class="h-1 w-20 bg-primary mx-auto mb-6"></div>
-                <p class="text-xl text-gray-600">Stay up-to-date with our research and industry insights</p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Blog Post 1 -->
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden group hover:shadow-2xl transition-all duration-300">
-                    <div class="relative overflow-hidden">
-                        <img src="images/aremod_icon.jpg" alt="Air Quality Modeling" class="w-full h-48 object-cover transform group-hover:scale-110 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                        <div class="absolute bottom-4 left-4">
-                            <span class="inline-block bg-primary text-white text-sm px-3 py-1 rounded-full">Research</span>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold text-gray-900 mb-3 group-hover:text-primary transition-colors">Advances in Air Quality Modeling</h3>
-                        <p class="text-gray-600 mb-6">New methodologies and technologies for more accurate atmospheric dispersion modeling and environmental impact assessment.</p>
-                        <div class="flex items-center justify-between">
-                            <span class="text-sm text-gray-500"><i class="far fa-calendar-alt mr-2"></i>June 15, 2023</span>
-                            <a href="#" class="text-primary hover:text-secondary transition-colors inline-flex items-center group/link">
-                                Read More
-                                <i class="fas fa-arrow-right ml-2 transform group-hover/link:translate-x-1 transition-transform"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Blog Post 2 -->
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden group hover:shadow-2xl transition-all duration-300">
-                    <div class="relative overflow-hidden">
-                        <img src="images/calpuff_icon.jpg" alt="Environmental Monitoring" class="w-full h-48 object-cover transform group-hover:scale-110 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                        <div class="absolute bottom-4 left-4">
-                            <span class="inline-block bg-primary text-white text-sm px-3 py-1 rounded-full">Technology</span>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold text-gray-900 mb-3 group-hover:text-primary transition-colors">Next-Gen Environmental Monitoring</h3>
-                        <p class="text-gray-600 mb-6">Exploring the latest advancements in environmental monitoring technology and their practical applications.</p>
-                        <div class="flex items-center justify-between">
-                            <span class="text-sm text-gray-500"><i class="far fa-calendar-alt mr-2"></i>June 1, 2023</span>
-                            <a href="#" class="text-primary hover:text-secondary transition-colors inline-flex items-center group/link">
-                                Read More
-                                <i class="fas fa-arrow-right ml-2 transform group-hover/link:translate-x-1 transition-transform"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Blog Post 3 -->
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden group hover:shadow-2xl transition-all duration-300">
-                    <div class="relative overflow-hidden">
-                        <img src="images/met-2a.jpg" alt="Regulatory Compliance" class="w-full h-48 object-cover transform group-hover:scale-110 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                        <div class="absolute bottom-4 left-4">
-                            <span class="inline-block bg-primary text-white text-sm px-3 py-1 rounded-full">Compliance</span>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold text-gray-900 mb-3 group-hover:text-primary transition-colors">Environmental Compliance Updates</h3>
-                        <p class="text-gray-600 mb-6">Key updates and insights on environmental regulations and compliance requirements for industries.</p>
-                        <div class="flex items-center justify-between">
-                            <span class="text-sm text-gray-500"><i class="far fa-calendar-alt mr-2"></i>May 20, 2023</span>
-                            <a href="#" class="text-primary hover:text-secondary transition-colors inline-flex items-center group/link">
-                                Read More
-                                <i class="fas fa-arrow-right ml-2 transform group-hover/link:translate-x-1 transition-transform"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="text-center mt-12">
-                <a href="https://seca-ambiental.com.br/blog/" target="_blank" 
-                   class="inline-flex items-center px-8 py-3 border-2 border-primary text-base font-medium rounded-md text-primary hover:bg-primary hover:text-white transition-all duration-300">
-                    View All Articles
-                    <i class="fas fa-external-link-alt ml-2"></i>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Clients Section -->
-    <section class="py-20 bg-primary text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-center mb-4">Trusted by Industry Leaders</h2>
-            <p class="text-xl text-center text-gray-200 mb-12">We've partnered with leading organizations across various industries</p>
-            
-            <div class="grid grid-cols-2 md:grid-cols-6 gap-8">
-                <div class="flex items-center justify-center">
-                    <img src="images/Logo fit.png" alt="Client" class="h-20 w-auto filter brightness-0 invert opacity-80 hover:opacity-100 transition-opacity">
-                </div>
-                <div class="flex items-center justify-center">
-                    <img src="images/Logo fit.png" alt="Client" class="h-20 w-auto filter brightness-0 invert opacity-80 hover:opacity-100 transition-opacity">
-                </div>
-                <div class="flex items-center justify-center">
-                    <img src="images/Logo fit.png" alt="Client" class="h-20 w-auto filter brightness-0 invert opacity-80 hover:opacity-100 transition-opacity">
-                </div>
-                <div class="flex items-center justify-center">
-                    <img src="images/Logo fit.png" alt="Client" class="h-20 w-auto filter brightness-0 invert opacity-80 hover:opacity-100 transition-opacity">
-                </div>
-                <div class="flex items-center justify-center">
-                    <img src="images/Logo fit.png" alt="Client" class="h-20 w-auto filter brightness-0 invert opacity-80 hover:opacity-100 transition-opacity">
-                </div>
-                <div class="flex items-center justify-center">
-                    <img src="images/Logo fit.png" alt="Client" class="h-20 w-auto filter brightness-0 invert opacity-80 hover:opacity-100 transition-opacity">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Call to Action -->
-    <section class="py-20 bg-white">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl font-bold text-gray-900 mb-6">Ready to Work with SECA?</h2>
-            <p class="text-xl text-gray-600 mb-8">
-                Contact us today to discuss your environmental consulting needs and discover how we can help you achieve your goals.
-            </p>
-            <a href="contact-en.html" class="inline-flex items-center px-8 py-3 border border-transparent text-lg font-medium rounded-md text-white bg-primary hover:bg-secondary transition-colors">
-                Get in Touch
-            </a>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-[#2a3347] text-white py-8">
+    <footer class="bg-[#2a3347] text-white py-8 footer-fixed">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-wrap justify-between items-start gap-8">
                 <!-- Logo and Social -->
@@ -401,7 +264,6 @@
 
             <div class="border-t border-white/10 mt-6 pt-6 flex flex-col sm:flex-row justify-between items-center text-xs text-gray-400">
                 <p>&copy; 2025 SECA - Environmental and Climatic Studies System. All rights reserved.</p>
-
             </div>
         </div>
     </footer>
