@@ -23,8 +23,25 @@
             }
         }
     </script>
+    <style>
+        /* Fixed footer styles */
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        main {
+            flex: 1;
+        }
+        
+        footer {
+            margin-top: auto;
+        }
+    </style>
 </head>
 <body class="bg-gray-50">
+    <main>
     <!-- Top Bar with Logo and Language Switcher -->
     <div class="bg-white py-4 border-b fixed top-0 left-0 right-0 z-40 shadow-sm transition-shadow duration-300" id="navbar">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -85,646 +102,67 @@
     <section class="bg-[#2a3347] py-16 pt-32">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center">
-                <h1 class="text-4xl font-bold tracking-tight text-white sm:text-5xl">Useful Links</h1>
-                <p class="mt-6 max-w-2xl mx-auto text-xl text-gray-100">
-                    Resources and partner organizations related to environmental consulting, air quality monitoring, and atmospheric modeling.
-                </p>
+                <h1 class="text-4xl font-bold tracking-tight text-white sm:text-5xl">Links</h1>
             </div>
         </div>
     </section>
 
-    <!-- Links Section -->
-    <section class="py-16 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">Resources & Partners</h2>
-                <div class="h-1 w-20 bg-primary mx-auto mb-6"></div>
-                <p class="text-xl text-gray-600">
-                    We've compiled a selection of valuable resources, tools, and organizations related to environmental monitoring, air quality, and climate studies. These links can help you find additional information, data sources, and reference materials to support your environmental initiatives.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Regulatory Agencies -->
-    <section class="py-16 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-12">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">Regulatory & Government Agencies</h2>
-                <div class="h-1 w-20 bg-primary mx-auto mb-6"></div>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Brazilian Environmental Agencies -->
-                <div class="bg-white rounded-xl shadow-lg p-8 border border-gray-100 hover:shadow-xl transition-all duration-300">
-                    <div class="text-primary mb-6 bg-primary/5 w-16 h-16 rounded-lg flex items-center justify-center">
-                        <i class="fas fa-balance-scale text-3xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Brazilian Environmental Agencies</h3>
-                    <ul class="space-y-3">
-                        <li>
-                            <a href="https://www.gov.br/ibama/pt-br" target="_blank" class="text-primary hover:text-secondary inline-flex items-center">
-                                <span class="mr-1">IBAMA - Brazilian Institute of Environment and Renewable Natural Resources</span>
-                                <i class="fas fa-external-link-alt text-xs"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.gov.br/icmbio/pt-br" target="_blank" class="text-primary hover:text-secondary inline-flex items-center">
-                                <span class="mr-1">ICMBio - Chico Mendes Institute for Biodiversity Conservation</span>
-                                <i class="fas fa-external-link-alt text-xs"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.cetesb.sp.gov.br/" target="_blank" class="text-primary hover:text-secondary inline-flex items-center">
-                                <span class="mr-1">CETESB - Environmental Company of the State of São Paulo</span>
-                                <i class="fas fa-external-link-alt text-xs"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.inea.rj.gov.br/" target="_blank" class="text-primary hover:text-secondary inline-flex items-center">
-                                <span class="mr-1">INEA - State Environmental Institute (Rio de Janeiro)</span>
-                                <i class="fas fa-external-link-alt text-xs"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                
-                <!-- International Environmental Agencies -->
-                <div class="bg-white rounded-xl shadow-lg p-8 border border-gray-100 hover:shadow-xl transition-all duration-300">
-                    <div class="text-primary mb-6 bg-primary/5 w-16 h-16 rounded-lg flex items-center justify-center">
-                        <i class="fas fa-globe-americas text-3xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-4">International Environmental Agencies</h3>
-                    <ul class="space-y-3">
-                        <li>
-                            <a href="https://www.epa.gov/" target="_blank" class="text-primary hover:text-secondary inline-flex items-center">
-                                <span class="mr-1">U.S. Environmental Protection Agency (EPA)</span>
-                                <i class="fas fa-external-link-alt text-xs"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://ec.europa.eu/environment/" target="_blank" class="text-primary hover:text-secondary inline-flex items-center">
-                                <span class="mr-1">European Commission Environment</span>
-                                <i class="fas fa-external-link-alt text-xs"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.unep.org/" target="_blank" class="text-primary hover:text-secondary inline-flex items-center">
-                                <span class="mr-1">United Nations Environment Programme (UNEP)</span>
-                                <i class="fas fa-external-link-alt text-xs"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.who.int/health-topics/air-pollution" target="_blank" class="text-primary hover:text-secondary inline-flex items-center">
-                                <span class="mr-1">World Health Organization - Air Pollution</span>
-                                <i class="fas fa-external-link-alt text-xs"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                
-                <!-- Meteorological Agencies -->
-                <div class="bg-white rounded-xl shadow-lg p-8 border border-gray-100 hover:shadow-xl transition-all duration-300">
-                    <div class="text-primary mb-6 bg-primary/5 w-16 h-16 rounded-lg flex items-center justify-center">
-                        <i class="fas fa-cloud-sun text-3xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Meteorological Agencies</h3>
-                    <ul class="space-y-3">
-                        <li>
-                            <a href="https://www.inmet.gov.br/" target="_blank" class="text-primary hover:text-secondary inline-flex items-center">
-                                <span class="mr-1">INMET - National Institute of Meteorology (Brazil)</span>
-                                <i class="fas fa-external-link-alt text-xs"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.noaa.gov/" target="_blank" class="text-primary hover:text-secondary inline-flex items-center">
-                                <span class="mr-1">NOAA - National Oceanic and Atmospheric Administration (USA)</span>
-                                <i class="fas fa-external-link-alt text-xs"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.metoffice.gov.uk/" target="_blank" class="text-primary hover:text-secondary inline-flex items-center">
-                                <span class="mr-1">UK Met Office</span>
-                                <i class="fas fa-external-link-alt text-xs"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.wmo.int/" target="_blank" class="text-primary hover:text-secondary inline-flex items-center">
-                                <span class="mr-1">World Meteorological Organization (WMO)</span>
-                                <i class="fas fa-external-link-alt text-xs"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Research & Academic Resources -->
+    <!-- Weather Forecast Section -->
     <section class="py-16 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-12">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">Research & Academic Resources</h2>
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Weather Forecast</h2>
                 <div class="h-1 w-20 bg-primary mx-auto mb-6"></div>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Research Institutions -->
-                <div class="bg-white rounded-xl shadow-lg p-8 border border-gray-100 hover:shadow-xl transition-all duration-300">
-                    <div class="text-primary mb-6 bg-primary/5 w-16 h-16 rounded-lg flex items-center justify-center">
-                        <i class="fas fa-microscope text-3xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Research Institutions</h3>
-                    <ul class="space-y-3">
-                        <li>
-                            <a href="https://www.inpe.br/" target="_blank" class="text-primary hover:text-secondary inline-flex items-center">
-                                <span class="mr-1">INPE - National Institute for Space Research (Brazil)</span>
-                                <i class="fas fa-external-link-alt text-xs"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.embrapa.br/" target="_blank" class="text-primary hover:text-secondary inline-flex items-center">
-                                <span class="mr-1">EMBRAPA - Brazilian Agricultural Research Corporation</span>
-                                <i class="fas fa-external-link-alt text-xs"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.iag.usp.br/" target="_blank" class="text-primary hover:text-secondary inline-flex items-center">
-                                <span class="mr-1">IAG - Institute of Astronomy, Geophysics and Atmospheric Sciences (USP)</span>
-                                <i class="fas fa-external-link-alt text-xs"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.ipcc.ch/" target="_blank" class="text-primary hover:text-secondary inline-flex items-center">
-                                <span class="mr-1">IPCC - Intergovernmental Panel on Climate Change</span>
-                                <i class="fas fa-external-link-alt text-xs"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.nasa.gov/goddard/" target="_blank" class="text-primary hover:text-secondary inline-flex items-center">
-                                <span class="mr-1">NASA Goddard Space Flight Center</span>
-                                <i class="fas fa-external-link-alt text-xs"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.awma.org" target="_blank" class="text-primary hover:text-secondary inline-flex items-center">
-                                <span class="mr-1">Air & Waste Management Association (AWMA)</span>
-                                <i class="fas fa-external-link-alt text-xs"></i>
-                            </a>
-                        </li>
-                    </ul>
+            <div class="flex justify-center items-center space-x-16">
+                <!-- Brazil Weather -->
+                <div class="text-center">
+                    <a href="https://portal.inmet.gov.br/#previsaoNumerica" target="_blank" class="block hover:scale-105 transition-transform duration-300">
+                        <img src="images/mapa brasil.png" alt="Brazil Weather" class="w-20 h-20 mx-auto mb-4 rounded-lg shadow-lg">
+                        <h3 class="text-lg font-semibold text-primary">BRAZIL</h3>
+                    </a>
                 </div>
                 
-                <!-- Academic Journals & Publications -->
-                <div class="bg-white rounded-xl shadow-lg p-8 border border-gray-100 hover:shadow-xl transition-all duration-300">
-                    <div class="text-primary mb-6 bg-primary/5 w-16 h-16 rounded-lg flex items-center justify-center">
-                        <i class="fas fa-book-open text-3xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Academic Journals & Publications</h3>
-                    <ul class="space-y-3">
-                        <li>
-                            <a href="https://www.journals.elsevier.com/atmospheric-environment" target="_blank" class="text-primary hover:text-secondary inline-flex items-center">
-                                <span class="mr-1">Atmospheric Environment</span>
-                                <i class="fas fa-external-link-alt text-xs"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.journals.elsevier.com/journal-of-environmental-management" target="_blank" class="text-primary hover:text-secondary inline-flex items-center">
-                                <span class="mr-1">Journal of Environmental Management</span>
-                                <i class="fas fa-external-link-alt text-xs"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.sciencedirect.com/journal/environmental-pollution" target="_blank" class="text-primary hover:text-secondary inline-flex items-center">
-                                <span class="mr-1">Environmental Pollution</span>
-                                <i class="fas fa-external-link-alt text-xs"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.nature.com/nclimate/" target="_blank" class="text-primary hover:text-secondary inline-flex items-center">
-                                <span class="mr-1">Nature Climate Change</span>
-                                <i class="fas fa-external-link-alt text-xs"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.sciencedirect.com/journal/science-of-the-total-environment" target="_blank" class="text-primary hover:text-secondary inline-flex items-center">
-                                <span class="mr-1">Science of The Total Environment</span>
-                                <i class="fas fa-external-link-alt text-xs"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.awma.org/sections" target="_blank" class="text-primary hover:text-secondary inline-flex items-center">
-                                <span class="mr-1">AWMA Brazilian Section</span>
-                                <i class="fas fa-external-link-alt text-xs"></i>
-                            </a>
-                        </li>
-                    </ul>
+                <!-- Worldwide Weather -->
+                <div class="text-center">
+                    <a href="https://weather.com/forecast/national" target="_blank" class="block hover:scale-105 transition-transform duration-300">
+                        <img src="images/globo.png" alt="Worldwide Weather" class="w-20 h-20 mx-auto mb-4 rounded-lg shadow-lg">
+                        <h3 class="text-lg font-semibold text-primary">WORLDWIDE</h3>
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Weather & Climate Resources -->
-    <section class="py-16 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-12">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">Weather & Climate Resources</h2>
-                <div class="h-1 w-20 bg-primary mx-auto mb-6"></div>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Weather Forecasting -->
-                <div class="bg-white rounded-xl shadow-lg p-8 border border-gray-100 hover:shadow-xl transition-all duration-300">
-                    <div class="text-primary mb-6 bg-primary/5 w-16 h-16 rounded-lg flex items-center justify-center">
-                        <i class="fas fa-cloud-sun text-3xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Weather Forecasting</h3>
-                    <ul class="space-y-3">
-                        <li>
-                            <a href="https://portal.inmet.gov.br/#previsaoNumerica" target="_blank" class="text-primary hover:text-secondary inline-flex items-center">
-                                <span class="mr-1">INMET - Brazilian Weather Forecast</span>
-                                <i class="fas fa-external-link-alt text-xs"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://weather.com/forecast/national" target="_blank" class="text-primary hover:text-secondary inline-flex items-center">
-                                <span class="mr-1">Weather.com - Global Weather</span>
-                                <i class="fas fa-external-link-alt text-xs"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="http://tempo.cptec.inpe.br" target="_blank" class="text-primary hover:text-secondary inline-flex items-center">
-                                <span class="mr-1">CPTEC/INPE Weather Portal</span>
-                                <i class="fas fa-external-link-alt text-xs"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.metoffice.gov.uk/" target="_blank" class="text-primary hover:text-secondary inline-flex items-center">
-                                <span class="mr-1">UK Met Office</span>
-                                <i class="fas fa-external-link-alt text-xs"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                
-                <!-- Air Quality & Modeling -->
-                <div class="bg-white rounded-xl shadow-lg p-8 border border-gray-100 hover:shadow-xl transition-all duration-300">
-                    <div class="text-primary mb-6 bg-primary/5 w-16 h-16 rounded-lg flex items-center justify-center">
-                        <i class="fas fa-wind text-3xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Air Quality & Modeling</h3>
-                    <ul class="space-y-3">
-                        <li>
-                            <a href="https://www.weblakes.com/" target="_blank" class="text-primary hover:text-secondary inline-flex items-center">
-                                <span class="mr-1">Lakes Environmental Software</span>
-                                <i class="fas fa-external-link-alt text-xs"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.epa.gov/scram" target="_blank" class="text-primary hover:text-secondary inline-flex items-center">
-                                <span class="mr-1">EPA SCRAM - Support Center for Regulatory Atmospheric Modeling</span>
-                                <i class="fas fa-external-link-alt text-xs"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.epa.gov/scram/air-quality-dispersion-modeling-preferred-and-recommended-models" target="_blank" class="text-primary hover:text-secondary inline-flex items-center">
-                                <span class="mr-1">EPA Preferred Air Quality Models</span>
-                                <i class="fas fa-external-link-alt text-xs"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://gaftp.epa.gov/Air/aqmg/SCRAM/models/preferred/aermod/aermod_userguide.pdf" target="_blank" class="text-primary hover:text-secondary inline-flex items-center">
-                                <span class="mr-1">AERMOD User's Guide</span>
-                                <i class="fas fa-external-link-alt text-xs"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                
-                <!-- Monitoring Networks -->
-                <div class="bg-white rounded-xl shadow-lg p-8 border border-gray-100 hover:shadow-xl transition-all duration-300">
-                    <div class="text-primary mb-6 bg-primary/5 w-16 h-16 rounded-lg flex items-center justify-center">
-                        <i class="fas fa-chart-line text-3xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Monitoring Networks</h3>
-                    <ul class="space-y-3">
-                        <li>
-                            <a href="https://www.airnow.gov/" target="_blank" class="text-primary hover:text-secondary inline-flex items-center">
-                                <span class="mr-1">AirNow - US Air Quality Information</span>
-                                <i class="fas fa-external-link-alt text-xs"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.cetesb.sp.gov.br/ar/qualar/" target="_blank" class="text-primary hover:text-secondary inline-flex items-center">
-                                <span class="mr-1">CETESB QUALAR - São Paulo Air Quality Network</span>
-                                <i class="fas fa-external-link-alt text-xs"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://atmosphere.copernicus.eu/" target="_blank" class="text-primary hover:text-secondary inline-flex items-center">
-                                <span class="mr-1">Copernicus Atmosphere Monitoring Service</span>
-                                <i class="fas fa-external-link-alt text-xs"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://openaq.org/" target="_blank" class="text-primary hover:text-secondary inline-flex items-center">
-                                <span class="mr-1">OpenAQ - Open Air Quality Data</span>
-                                <i class="fas fa-external-link-alt text-xs"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Industry Associations -->
+    <!-- Partner Organizations -->
     <section class="py-16 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-12">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">Industry Associations & Professional Organizations</h2>
-                <div class="h-1 w-20 bg-primary mx-auto mb-6"></div>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Industry Associations -->
-                <div class="bg-white rounded-xl shadow-lg p-8 border border-gray-100 hover:shadow-xl transition-all duration-300">
-                    <div class="text-primary mb-6 bg-primary/5 w-16 h-16 rounded-lg flex items-center justify-center">
-                        <i class="fas fa-industry text-3xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Industry Associations</h3>
-                    <ul class="space-y-3">
-                        <li>
-                            <a href="https://www.cni.org.br/" target="_blank" class="text-primary hover:text-secondary inline-flex items-center">
-                                <span class="mr-1">CNI - National Confederation of Industry (Brazil)</span>
-                                <i class="fas fa-external-link-alt text-xs"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.fiesp.com.br/" target="_blank" class="text-primary hover:text-secondary inline-flex items-center">
-                                <span class="mr-1">FIESP - Federation of Industries of the State of São Paulo</span>
-                                <i class="fas fa-external-link-alt text-xs"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://abiquim.org.br/" target="_blank" class="text-primary hover:text-secondary inline-flex items-center">
-                                <span class="mr-1">ABIQUIM - Brazilian Chemical Industry Association</span>
-                                <i class="fas fa-external-link-alt text-xs"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.iema.org.uk/" target="_blank" class="text-primary hover:text-secondary inline-flex items-center">
-                                <span class="mr-1">IEMA - Institute of Environmental Management and Assessment</span>
-                                <i class="fas fa-external-link-alt text-xs"></i>
-                            </a>
-                        </li>
-                    </ul>
+            <div class="flex justify-center items-center space-x-12">
+                <!-- Lakes Environmental -->
+                <div class="text-center">
+                    <a href="https://www.weblakes.com" target="_blank" class="block hover:scale-105 transition-transform duration-300">
+                        <img src="images/lakes_logo.jpg" alt="Lakes Environmental Software" class="h-24 mx-auto rounded-lg shadow-lg">
+                    </a>
                 </div>
                 
-                <!-- Professional Organizations -->
-                <div class="bg-white rounded-xl shadow-lg p-8 border border-gray-100 hover:shadow-xl transition-all duration-300">
-                    <div class="text-primary mb-6 bg-primary/5 w-16 h-16 rounded-lg flex items-center justify-center">
-                        <i class="fas fa-user-tie text-3xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Professional Organizations</h3>
-                    <ul class="space-y-3">
-                        <li>
-                            <a href="https://www.awma.org/" target="_blank" class="text-primary hover:text-secondary inline-flex items-center">
-                                <span class="mr-1">A&WMA - Air & Waste Management Association</span>
-                                <i class="fas fa-external-link-alt text-xs"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.ams.org/" target="_blank" class="text-primary hover:text-secondary inline-flex items-center">
-                                <span class="mr-1">American Meteorological Society</span>
-                                <i class="fas fa-external-link-alt text-xs"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.slapr.org/" target="_blank" class="text-primary hover:text-secondary inline-flex items-center">
-                                <span class="mr-1">SLAPR - Latin American Society of Environmental Risk Perception</span>
-                                <i class="fas fa-external-link-alt text-xs"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.iaia.org/" target="_blank" class="text-primary hover:text-secondary inline-flex items-center">
-                                <span class="mr-1">IAIA - International Association for Impact Assessment</span>
-                                <i class="fas fa-external-link-alt text-xs"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Software & Tools -->
-    <section class="py-16 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-12">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">Software & Technical Tools</h2>
-                <div class="h-1 w-20 bg-primary mx-auto mb-6"></div>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Modeling Software -->
-                <div class="bg-white rounded-xl shadow-lg p-8 border border-gray-100 hover:shadow-xl transition-all duration-300">
-                    <div class="text-primary mb-6 bg-primary/5 w-16 h-16 rounded-lg flex items-center justify-center">
-                        <i class="fas fa-desktop text-3xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Modeling Software</h3>
-                    <ul class="space-y-3">
-                        <li>
-                            <a href="https://www.epa.gov/scram/air-quality-dispersion-modeling-alternative-models#aermod" target="_blank" class="text-primary hover:text-secondary inline-flex items-center">
-                                <span class="mr-1">AERMOD Modeling System</span>
-                                <i class="fas fa-external-link-alt text-xs"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.epa.gov/scram/air-quality-dispersion-modeling-alternative-models#calpuff" target="_blank" class="text-primary hover:text-secondary inline-flex items-center">
-                                <span class="mr-1">CALPUFF Modeling System</span>
-                                <i class="fas fa-external-link-alt text-xs"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.cmascenter.org/cmaq/" target="_blank" class="text-primary hover:text-secondary inline-flex items-center">
-                                <span class="mr-1">CMAQ - Community Multiscale Air Quality Modeling System</span>
-                                <i class="fas fa-external-link-alt text-xs"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://geos-chem.seas.harvard.edu/" target="_blank" class="text-primary hover:text-secondary inline-flex items-center">
-                                <span class="mr-1">GEOS-Chem</span>
-                                <i class="fas fa-external-link-alt text-xs"></i>
-                            </a>
-                        </li>
-                    </ul>
+                <!-- Air & Waste Management Association -->
+                <div class="text-center">
+                    <a href="https://www.awma.org" target="_blank" class="block hover:scale-105 transition-transform duration-300">
+                        <img src="images/Air Waste logo.jpg" alt="Air & Waste Management Association" class="h-24 mx-auto rounded-lg shadow-lg">
+                    </a>
                 </div>
                 
-                <!-- Data Processing Tools -->
-                <div class="bg-white rounded-xl shadow-lg p-8 border border-gray-100 hover:shadow-xl transition-all duration-300">
-                    <div class="text-primary mb-6 bg-primary/5 w-16 h-16 rounded-lg flex items-center justify-center">
-                        <i class="fas fa-cloud-download-alt text-3xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Data Processing Tools</h3>
-                    <ul class="space-y-3">
-                        <li>
-                            <a href="https://www.python.org/" target="_blank" class="text-primary hover:text-secondary inline-flex items-center">
-                                <span class="mr-1">Python Programming Language</span>
-                                <i class="fas fa-external-link-alt text-xs"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.r-project.org/" target="_blank" class="text-primary hover:text-secondary inline-flex items-center">
-                                <span class="mr-1">R Statistical Computing</span>
-                                <i class="fas fa-external-link-alt text-xs"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.esri.com/en-us/arcgis/products/arcgis-pro/overview" target="_blank" class="text-primary hover:text-secondary inline-flex items-center">
-                                <span class="mr-1">ArcGIS Pro</span>
-                                <i class="fas fa-external-link-alt text-xs"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.ncei.noaa.gov/products/weather-climate-models/global-forecast" target="_blank" class="text-primary hover:text-secondary inline-flex items-center">
-                                <span class="mr-1">NCEP/NCAR Reanalysis Data</span>
-                                <i class="fas fa-external-link-alt text-xs"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                
-                <!-- Equipment & Instrumentation -->
-                <div class="bg-white rounded-xl shadow-lg p-8 border border-gray-100 hover:shadow-xl transition-all duration-300">
-                    <div class="text-primary mb-6 bg-primary/5 w-16 h-16 rounded-lg flex items-center justify-center">
-                        <i class="fas fa-tools text-3xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Equipment & Instrumentation</h3>
-                    <ul class="space-y-3">
-                        <li>
-                            <a href="https://www.campbellsci.com/" target="_blank" class="text-primary hover:text-secondary inline-flex items-center">
-                                <span class="mr-1">Campbell Scientific</span>
-                                <i class="fas fa-external-link-alt text-xs"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.thermofisher.com/" target="_blank" class="text-primary hover:text-secondary inline-flex items-center">
-                                <span class="mr-1">Thermo Fisher Scientific</span>
-                                <i class="fas fa-external-link-alt text-xs"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.teledyne.com/" target="_blank" class="text-primary hover:text-secondary inline-flex items-center">
-                                <span class="mr-1">Teledyne Technologies</span>
-                                <i class="fas fa-external-link-alt text-xs"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.vaisala.com/" target="_blank" class="text-primary hover:text-secondary inline-flex items-center">
-                                <span class="mr-1">Vaisala</span>
-                                <i class="fas fa-external-link-alt text-xs"></i>
-                            </a>
-                        </li>
-                    </ul>
+                <!-- INPE -->
+                <div class="text-center">
+                    <a href="http://tempo.cptec.inpe.br" target="_blank" class="block hover:scale-105 transition-transform duration-300">
+                        <img src="images/INPE logo.png" alt="INPE" class="h-24 mx-auto rounded-lg shadow-lg">
+                    </a>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Public Resources -->
-    <section class="py-16 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-12">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">Public Resources & Educational Materials</h2>
-                <div class="h-1 w-20 bg-primary mx-auto mb-6"></div>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Educational Resources -->
-                <div class="bg-white rounded-xl shadow-lg p-8 border border-gray-100 hover:shadow-xl transition-all duration-300">
-                    <div class="text-primary mb-6 bg-primary/5 w-16 h-16 rounded-lg flex items-center justify-center">
-                        <i class="fas fa-graduation-cap text-3xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Educational Resources</h3>
-                    <ul class="space-y-3">
-                        <li>
-                            <a href="https://www.epa.gov/learn-issues" target="_blank" class="text-primary hover:text-secondary inline-flex items-center">
-                                <span class="mr-1">EPA Learning Resources</span>
-                                <i class="fas fa-external-link-alt text-xs"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://education.nationalgeographic.org/resource/air-pollution/" target="_blank" class="text-primary hover:text-secondary inline-flex items-center">
-                                <span class="mr-1">National Geographic - Air Pollution Education</span>
-                                <i class="fas fa-external-link-alt text-xs"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.coursera.org/courses?query=environmental%20science" target="_blank" class="text-primary hover:text-secondary inline-flex items-center">
-                                <span class="mr-1">Coursera Environmental Science Courses</span>
-                                <i class="fas fa-external-link-alt text-xs"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.edx.org/learn/environmental-science" target="_blank" class="text-primary hover:text-secondary inline-flex items-center">
-                                <span class="mr-1">edX Environmental Science Courses</span>
-                                <i class="fas fa-external-link-alt text-xs"></i>
-                            </a>
-                        </li>
-                    </ul>
                 </div>
-                
-                <!-- News & Current Information -->
-                <div class="bg-white rounded-xl shadow-lg p-8 border border-gray-100 hover:shadow-xl transition-all duration-300">
-                    <div class="text-primary mb-6 bg-primary/5 w-16 h-16 rounded-lg flex items-center justify-center">
-                        <i class="fas fa-newspaper text-3xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-4">News & Current Information</h3>
-                    <ul class="space-y-3">
-                        <li>
-                            <a href="https://www.sciencedaily.com/news/earth_climate/air_quality/" target="_blank" class="text-primary hover:text-secondary inline-flex items-center">
-                                <span class="mr-1">ScienceDaily - Air Quality News</span>
-                                <i class="fas fa-external-link-alt text-xs"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.carbonbrief.org/" target="_blank" class="text-primary hover:text-secondary inline-flex items-center">
-                                <span class="mr-1">Carbon Brief</span>
-                                <i class="fas fa-external-link-alt text-xs"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://grist.org/" target="_blank" class="text-primary hover:text-secondary inline-flex items-center">
-                                <span class="mr-1">Grist - Environmental News</span>
-                                <i class="fas fa-external-link-alt text-xs"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.climatecommunication.org/" target="_blank" class="text-primary hover:text-secondary inline-flex items-center">
-                                <span class="mr-1">Climate Communication</span>
-                                <i class="fas fa-external-link-alt text-xs"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
     </section>
-
-    <!-- Suggest a Link -->
-    <section class="py-20 bg-primary text-white">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl font-bold mb-6">Suggest a Resource</h2>
-            <p class="text-xl text-gray-200 mb-8">
-                If you know of a valuable resource that should be included in our links page, please let us know.
-            </p>
-            <a href="contact-en.html" class="inline-flex items-center px-8 py-3 border border-transparent text-lg font-medium rounded-md text-primary bg-white hover:bg-gray-100 transition-colors">
-                Contact Us
-                <i class="fas fa-arrow-right ml-2"></i>
-            </a>
-        </div>
-    </section>
+    </main>
 
     <!-- Footer -->
     <footer class="bg-[#2a3347] text-white py-8">
