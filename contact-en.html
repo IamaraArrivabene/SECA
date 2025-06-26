@@ -23,6 +23,18 @@
             }
         }
     </script>
+    <style>
+        /* Smooth transition for form content */
+        [data-translate], [data-placeholder-en] {
+            transition: opacity 0.2s ease-in-out;
+        }
+        
+        /* Loading state during language switch */
+        .switching {
+            opacity: 0.7;
+            pointer-events: none;
+        }
+    </style>
 </head>
 <body class="bg-gray-50">
     <!-- Top Bar with Logo and Language Switcher -->
@@ -36,38 +48,38 @@
                 
                 <!-- Desktop Navigation Menu -->
                 <nav class="hidden md:flex space-x-6">
-                    <a href="home-en.html" class="text-gray-700 font-medium hover:text-primary transition-colors">Home</a>
-                    <a href="about-en.html" class="text-gray-700 font-medium hover:text-primary transition-colors">About Us</a>
+                    <a href="home-en.html" class="text-gray-700 font-medium hover:text-primary transition-colors">Início</a>
+                    <a href="about-en.html" class="text-gray-700 font-medium hover:text-primary transition-colors">Sobre Nós</a>
                     
                     <!-- Products Dropdown -->
                     <div class="relative group">
                         <a href="products-en.html" class="text-gray-700 font-medium hover:text-primary transition-colors flex items-center">
-                            Products
+                            Produtos
                             <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                             </svg>
                         </a>
                         <div class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
-                            <a href="products-en.html#meteorological" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Meteorological Stations</a>
-                            <a href="products-en.html#sensors" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Environmental Sensors</a>
-                            <a href="products-en.html#software" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Software Solutions</a>
+                            <a href="products-en.html#meteorological" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Estações Meteorológicas</a>
+                            <a href="products-en.html#sensors" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Sensores Ambientais</a>
+                            <a href="products-en.html#software" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Soluções de Software</a>
                         </div>
                     </div>
                     
-                    <a href="training-en.html" class="text-gray-700 font-medium hover:text-primary transition-colors">Training</a>
-                    <a href="animations-en.html" class="text-gray-700 font-medium hover:text-primary transition-colors">Animations</a>
-                    <a href="clients-en.html" class="text-gray-700 font-medium hover:text-primary transition-colors">Clients</a>
+                    <a href="training-en.html" class="text-gray-700 font-medium hover:text-primary transition-colors">Treinamento</a>
+                    <a href="animations-en.html" class="text-gray-700 font-medium hover:text-primary transition-colors">Animações</a>
+                    <a href="clients-en.html" class="text-gray-700 font-medium hover:text-primary transition-colors">Clientes</a>
                     <a href="links-en.html" class="text-gray-700 font-medium hover:text-primary transition-colors">Links</a>
-                    <a href="contact-en.html" class="text-primary font-medium hover:text-secondary transition-colors">Contact Us</a>
+                    <a href="contact-en.html" class="text-primary font-medium hover:text-secondary transition-colors">Contato</a>
                 </nav>
                 
                 <!-- Language Switcher and Mobile Menu Button -->
                 <div class="flex items-center space-x-4">
-                    <a href="#" data-lang="en" class="flex items-center space-x-1 text-sm text-primary">
+                    <a href="#english" data-lang="en" class="flex items-center space-x-1 text-sm text-primary navbar-lang-switcher">
                         <img src="images/USA.jpg" class="w-5 h-5 rounded-full object-cover" alt="EN">
                         <span>EN</span>
                     </a>
-                    <a href="#" data-lang="pt" class="flex items-center space-x-1 text-sm text-gray-600 hover:text-primary">
+                    <a href="#portuguese" data-lang="pt" class="flex items-center space-x-1 text-sm text-gray-600 hover:text-primary navbar-lang-switcher">
                         <img src="images/BR_new.png" class="w-5 h-5 rounded-full object-cover" alt="PT">
                         <span>PT</span>
                     </a>
@@ -85,7 +97,7 @@
     <section class="bg-[#2a3347] py-16 pt-32">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center">
-                <h1 class="text-4xl font-bold tracking-tight text-white sm:text-5xl">Contact Us</h1>
+                <h1 class="text-4xl font-bold tracking-tight text-white sm:text-5xl" data-translate="hero-title" data-en="Contact Us" data-pt="Entre em Contato">Contact Us</h1>
             </div>
         </div>
     </section>
@@ -104,12 +116,12 @@
                     <!-- Contact Info -->
                     <div class="bg-white rounded-xl shadow-lg p-8 bg-opacity-90">
                         <div class="text-center mb-8">
-                            <h2 class="text-2xl font-bold text-gray-800 mb-4">SECA - Sistema de Estudos Climáticos e Ambientais Ltda.</h2>
+                            <h2 class="text-2xl font-bold text-gray-800 mb-4" data-translate="company-name" data-en="SECA - Environmental and Climatic Studies System Ltd." data-pt="SECA - Sistema de Estudos Climáticos e Ambientais Ltda.">SECA - Sistema de Estudos Climáticos e Ambientais Ltda.</h2>
                         </div>
                         
                         <div class="space-y-6">
                             <div>
-                                <h3 class="text-lg font-bold text-gray-900 mb-2">Escritório Oficial:</h3>
+                                <h3 class="text-lg font-bold text-gray-900 mb-2" data-translate="office-main" data-en="Main Office:" data-pt="Escritório Oficial:">Escritório Oficial:</h3>
                                 <p class="text-gray-700">
                                     Rua Costa Carvalho - 403 cj. 302 - Pinheiros<br>
                                     CEP 05429-130 - São Paulo, SP
@@ -120,7 +132,7 @@
                             </div>
 
                             <div>
-                                <h3 class="text-lg font-bold text-gray-900 mb-2">Escritório de Apoio:</h3>
+                                <h3 class="text-lg font-bold text-gray-900 mb-2" data-translate="office-support" data-en="Support Office:" data-pt="Escritório de Apoio:">Escritório de Apoio:</h3>
                                 <p class="text-gray-700">
                                     Rua Eng. Amaro Lanari, 171, cj. 401 - Anchieta<br>
                                     CEP 30310-580 - Belo Horizonte, MG
@@ -148,27 +160,42 @@
                     <div class="bg-white rounded-xl shadow-lg p-8 bg-opacity-90">
                         <form id="contactForm" class="space-y-6">
                             <div>
-                                <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Nome</label>
+                                <label for="name" class="block text-sm font-medium text-gray-700 mb-2" data-translate="label-name" data-en="Name" data-pt="Nome">Nome</label>
                                 <input type="text" id="name" name="name" placeholder="Seu nome" required
-                                       class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-transparent">
+                                       class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-transparent"
+                                       data-placeholder-en="Your name"
+                                       data-placeholder-pt="Seu nome">
                             </div>
 
                             <div>
-                                <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Seu email</label>
-                                <input type="email" id="email" name="email" placeholder="email@email.com" required
-                                       class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-transparent">
+                                <label for="email" class="block text-sm font-medium text-gray-700 mb-2" data-translate="label-email" data-en="Email" data-pt="Email">Email</label>
+                                <input type="email" id="email" name="email" placeholder="seu@email.com" required
+                                       class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-transparent"
+                                       data-placeholder-en="your@email.com"
+                                       data-placeholder-pt="seu@email.com">
                             </div>
 
                             <div>
-                                <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Sua mensagem</label>
-                                <textarea id="message" name="message" rows="6" placeholder="Digite sua mensagem" required
-                                          class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-transparent resize-none"></textarea>
+                                <label for="subject" class="block text-sm font-medium text-gray-700 mb-2" data-translate="label-subject" data-en="Subject" data-pt="Assunto">Assunto</label>
+                                <input type="text" id="subject" name="subject" placeholder="Assunto da mensagem" required
+                                       class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-transparent"
+                                       data-placeholder-en="Message subject"
+                                       data-placeholder-pt="Assunto da mensagem">
+                            </div>
+
+                            <div>
+                                <label for="message" class="block text-sm font-medium text-gray-700 mb-2" data-translate="label-message" data-en="Message" data-pt="Mensagem">Mensagem</label>
+                                <textarea id="message" name="message" rows="6" placeholder="Digite sua mensagem aqui..." required
+                                          class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-transparent resize-none"
+                                          data-placeholder-en="Type your message here..."
+                                          data-placeholder-pt="Digite sua mensagem aqui..."></textarea>
                             </div>
 
                             <div class="text-center">
                                 <button type="submit" 
-                                        class="w-full bg-primary text-white py-3 px-6 rounded-lg font-medium hover:bg-secondary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-colors">
-                                    Enviar
+                                        class="w-full bg-primary text-white py-3 px-6 rounded-lg font-medium hover:bg-secondary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-colors"
+                                        data-translate="submit-btn" data-en="Send Message" data-pt="Enviar Mensagem">
+                                    Enviar Mensagem
                                 </button>
                             </div>
                         </form>
@@ -177,8 +204,6 @@
             </div>
         </div>
     </section>
-
-
 
     <!-- Footer -->
     <footer class="bg-[#2a3347] text-white py-8">
@@ -205,8 +230,6 @@
                             <li><a href="clients-en.html" class="text-gray-300 hover:text-white transition-colors">Clients</a></li>
                         </ul>
                     </div>
-
-
 
                     <!-- Contact Info -->
                     <div class="w-full sm:w-auto">
@@ -235,7 +258,6 @@
 
             <div class="border-t border-white/10 mt-6 pt-6 flex flex-col sm:flex-row justify-between items-center text-xs text-gray-400">
                 <p>&copy; 2025 SECA - Environmental and Climatic Studies System. All rights reserved.</p>
-
             </div>
         </div>
     </footer>
@@ -251,18 +273,18 @@
             </div>
             <nav class="px-4 py-6">
                 <ul class="space-y-4">
-                    <li><a href="home-en.html" class="block text-base text-gray-900 hover:text-primary">Home</a></li>
-                    <li><a href="about-en.html" class="block text-base text-gray-900 hover:text-primary">About Us</a></li>
-                    <li><a href="products-en.html" class="block text-base text-gray-900 hover:text-primary">Products</a></li>
-                    <li class="pl-4"><a href="products-en.html#meteorological" class="block text-sm text-gray-700 hover:text-primary">Meteorological Stations</a></li>
-                    <li class="pl-4"><a href="products-en.html#sensors" class="block text-sm text-gray-700 hover:text-primary">Environmental Sensors</a></li>
-                    <li class="pl-4"><a href="products-en.html#software" class="block text-sm text-gray-700 hover:text-primary">Software Solutions</a></li>
-                    <li><a href="training-en.html" class="block text-base text-gray-900 hover:text-primary">Training</a></li>
-                    <li><a href="animations-en.html" class="block text-base text-gray-900 hover:text-primary">Animations</a></li>
-                    <li><a href="clients-en.html" class="block text-base text-gray-900 hover:text-primary">Clients</a></li>
+                    <li><a href="home-en.html" class="block text-base text-gray-900 hover:text-primary">Início</a></li>
+                    <li><a href="about-en.html" class="block text-base text-gray-900 hover:text-primary">Sobre Nós</a></li>
+                    <li><a href="products-en.html" class="block text-base text-gray-900 hover:text-primary">Produtos</a></li>
+                    <li class="pl-4"><a href="products-en.html#meteorological" class="block text-sm text-gray-700 hover:text-primary">Estações Meteorológicas</a></li>
+                    <li class="pl-4"><a href="products-en.html#sensors" class="block text-sm text-gray-700 hover:text-primary">Sensores Ambientais</a></li>
+                    <li class="pl-4"><a href="products-en.html#software" class="block text-sm text-gray-700 hover:text-primary">Soluções de Software</a></li>
+                    <li><a href="training-en.html" class="block text-base text-gray-900 hover:text-primary">Treinamento</a></li>
+                    <li><a href="animations-en.html" class="block text-base text-gray-900 hover:text-primary">Animações</a></li>
+                    <li><a href="clients-en.html" class="block text-base text-gray-900 hover:text-primary">Clientes</a></li>
                     <li><a href="links-en.html" class="block text-base text-gray-900 hover:text-primary">Links</a></li>
                     <li class="border-l-4 border-primary pl-2">
-                        <a href="contact-en.html" class="block text-base text-primary font-medium">Contact Us</a>
+                        <a href="contact-en.html" class="block text-base text-primary font-medium">Contato</a>
                     </li>
                 </ul>
             </nav>
@@ -271,12 +293,165 @@
 
     <!-- JavaScript -->
     <script>
-        // Form submission handler
-        document.getElementById('contactForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            alert('Thank you for your message! We will get back to you soon.');
-            this.reset();
-        });
+        // Bilingual form functionality with hash-based navigation
+        const bilingualForm = {
+            currentLang: 'pt', // Default language
+            
+            translations: {
+                en: {
+                    successMsg: "Thank you for your message! We will get back to you soon.",
+                    errorMsg: "Please fill in all fields correctly.",
+                    emptyFieldMsg: "This field is required."
+                },
+                pt: {
+                    successMsg: "Obrigado pela sua mensagem! Entraremos em contato em breve.",
+                    errorMsg: "Por favor, preencha todos os campos corretamente.",
+                    emptyFieldMsg: "Este campo é obrigatório."
+                }
+            },
+
+            init() {
+                this.setupHashNavigation();
+                this.setupFormSubmission();
+                this.handleInitialHash();
+            },
+
+            setupHashNavigation() {
+                // Listen for hash changes in the URL
+                window.addEventListener('hashchange', () => {
+                    this.handleHashChange();
+                });
+                
+                // Handle browser back/forward buttons
+                window.addEventListener('popstate', () => {
+                    this.handleHashChange();
+                });
+            },
+
+            handleInitialHash() {
+                // Check URL hash on page load
+                const hash = window.location.hash.substring(1); // Remove #
+                let lang = 'pt'; // Default
+                
+                if (hash === 'english') {
+                    lang = 'en';
+                } else if (hash === 'portuguese') {
+                    lang = 'pt';
+                } else {
+                    // If no hash or invalid hash, set default hash
+                    window.location.hash = '#portuguese';
+                    lang = 'pt';
+                }
+                
+                this.switchLanguage(lang, false); // Don't update hash again
+            },
+
+            handleHashChange() {
+                const hash = window.location.hash.substring(1); // Remove #
+                let lang = 'pt';
+                
+                if (hash === 'english') {
+                    lang = 'en';
+                } else if (hash === 'portuguese') {
+                    lang = 'pt';
+                }
+                
+                this.switchLanguage(lang, false); // Don't update hash again
+            },
+
+
+
+            switchLanguage(lang, updateHash = true) {
+                this.currentLang = lang;
+                
+                // Update hash if needed
+                if (updateHash) {
+                    const hash = lang === 'en' ? 'english' : 'portuguese';
+                    window.location.hash = '#' + hash;
+                }
+                
+                // Store in localStorage as backup
+                localStorage.setItem('seca-language', lang);
+                
+                this.updateLanguage(lang);
+                this.updateHeaderLanguageSwitcher();
+            },
+
+            updateLanguage(lang) {
+                // Add transition effect
+                document.body.classList.add('switching');
+                
+                setTimeout(() => {
+                    // Update all elements with translation attributes
+                    document.querySelectorAll('[data-translate]').forEach(element => {
+                        const enText = element.dataset.en;
+                        const ptText = element.dataset.pt;
+                        
+                        if (enText && ptText) {
+                            element.textContent = lang === 'en' ? enText : ptText;
+                        }
+                    });
+                    
+                    // Update placeholders
+                    document.querySelectorAll('[data-placeholder-en]').forEach(input => {
+                        const enPlaceholder = input.dataset.placeholderEn;
+                        const ptPlaceholder = input.dataset.placeholderPt;
+                        
+                        if (enPlaceholder && ptPlaceholder) {
+                            input.placeholder = lang === 'en' ? enPlaceholder : ptPlaceholder;
+                        }
+                    });
+                    
+                    // Remove transition effect
+                    document.body.classList.remove('switching');
+                }, 100);
+            },
+
+
+
+            updateHeaderLanguageSwitcher() {
+                // Update navbar language switcher to match current language
+                document.querySelectorAll('.navbar-lang-switcher').forEach(link => {
+                    const isActive = link.dataset.lang === this.currentLang;
+                    
+                    if (isActive) {
+                        link.classList.remove('text-gray-600');
+                        link.classList.add('text-primary');
+                    } else {
+                        link.classList.remove('text-primary');
+                        link.classList.add('text-gray-600');
+                    }
+                });
+            },
+
+            setupFormSubmission() {
+                document.getElementById('contactForm').addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    
+                    const t = this.translations[this.currentLang];
+                    
+                    // Basic validation
+                    const formData = new FormData(e.target);
+                    let isValid = true;
+                    
+                    // Check if all required fields are filled
+                    for (let [key, value] of formData.entries()) {
+                        if (!value.trim()) {
+                            isValid = false;
+                            break;
+                        }
+                    }
+                    
+                    if (isValid) {
+                        // Here you would normally send the form data to a server
+                        alert(t.successMsg);
+                        e.target.reset();
+                    } else {
+                        alert(t.errorMsg);
+                    }
+                });
+            }
+        };
 
         // Mobile menu toggle
         document.getElementById('mobileMenuButton').addEventListener('click', function() {
@@ -291,9 +466,12 @@
             navbar.classList.remove('shadow-md', 'bg-white/95');
         });
 
-        // Highlight active page in navigation
+        // Initialize everything when DOM is ready
         document.addEventListener('DOMContentLoaded', function() {
-            // Get current page path
+            // Initialize bilingual form with hash navigation
+            bilingualForm.init();
+            
+            // Get current page path for navigation highlighting
             const currentPath = window.location.pathname;
             const currentPage = currentPath.split('/').pop() || 'home-en.html';
             

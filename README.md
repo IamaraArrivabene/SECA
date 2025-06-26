@@ -56,4 +56,4 @@ This website is compatible with modern browsers including:
 
 ## Credits
 
-© 2023 SECA - Environmental and Climatic Studies System. All rights reserved. 
+© 2025 SECA - Environmental and Climatic Studies System. All rights reserved. 
