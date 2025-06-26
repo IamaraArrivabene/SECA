@@ -24,6 +24,17 @@
         }
     </script>
     
+    <!-- Bilingual CSS -->
+    <style>
+        [data-translate] {
+            transition: opacity 0.3s ease;
+        }
+        
+        .language-transition {
+            opacity: 0;
+        }
+    </style>
+    
     <style>
         /* Interactive Weather Station CSS - Essential for hover functionality */
         .thumb .text-element {
@@ -78,37 +89,37 @@
                 
                 <!-- Desktop Navigation Menu -->
                 <nav class="hidden md:flex space-x-6">
-                    <a href="home-en.html" class="text-gray-700 font-medium hover:text-primary transition-colors">Início</a>
-                    <a href="about-en.html" class="text-gray-700 font-medium hover:text-primary transition-colors">Sobre Nós</a>
+                    <a href="home-en.html" class="text-gray-700 font-medium hover:text-primary transition-colors" data-translate="nav-home" data-en="Home" data-pt="Início">Início</a>
+                    <a href="about-en.html" class="text-gray-700 font-medium hover:text-primary transition-colors" data-translate="nav-about" data-en="About Us" data-pt="Sobre Nós">Sobre Nós</a>
                     
                     <!-- Products Dropdown -->
                     <div class="relative group">
-                        <a href="products-en.html" class="text-primary font-medium hover:text-secondary transition-colors flex items-center">
+                        <a href="products-en.html" class="text-primary font-medium hover:text-secondary transition-colors flex items-center" data-translate="nav-products" data-en="Products" data-pt="Produtos">
                             Produtos
                             <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                             </svg>
                         </a>
                         <div class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
-                            <a href="products-en.html#software" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Soluções de Software</a>
-                            <a href="products-en.html#meteorological" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Estações Meteorológicas</a>
+                            <a href="products-en.html#software" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" data-translate="nav-software" data-en="Software Solutions" data-pt="Soluções de Software">Soluções de Software</a>
+                            <a href="products-en.html#meteorological" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" data-translate="nav-meteorological" data-en="Meteorological Stations" data-pt="Estações Meteorológicas">Estações Meteorológicas</a>
                         </div>
                     </div>
                     
-                    <a href="training-en.html" class="text-gray-700 font-medium hover:text-primary transition-colors">Treinamento</a>
-                    <a href="animations-en.html" class="text-gray-700 font-medium hover:text-primary transition-colors">Animações</a>
-                    <a href="clients-en.html" class="text-gray-700 font-medium hover:text-primary transition-colors">Clientes</a>
-                    <a href="links-en.html" class="text-gray-700 font-medium hover:text-primary transition-colors">Links</a>
-                    <a href="contact-en.html" class="text-gray-700 font-medium hover:text-primary transition-colors">Contato</a>
+                    <a href="training-en.html" class="text-gray-700 font-medium hover:text-primary transition-colors" data-translate="nav-training" data-en="Training" data-pt="Treinamento">Treinamento</a>
+                    <a href="animations-en.html" class="text-gray-700 font-medium hover:text-primary transition-colors" data-translate="nav-animations" data-en="Animations" data-pt="Animações">Animações</a>
+                    <a href="clients-en.html" class="text-gray-700 font-medium hover:text-primary transition-colors" data-translate="nav-clients" data-en="Clients" data-pt="Clientes">Clientes</a>
+                    <a href="links-en.html" class="text-gray-700 font-medium hover:text-primary transition-colors" data-translate="nav-links" data-en="Links" data-pt="Links">Links</a>
+                    <a href="contact-en.html" class="text-gray-700 font-medium hover:text-primary transition-colors" data-translate="nav-contact" data-en="Contact Us" data-pt="Contato">Contato</a>
                 </nav>
                 
                 <!-- Language Switcher and Mobile Menu Button -->
                 <div class="flex items-center space-x-4">
-                    <a href="#" data-lang="en" class="flex items-center space-x-1 text-sm text-primary">
+                    <a href="#english" data-lang="en" class="flex items-center space-x-1 text-sm text-primary navbar-lang-switcher">
                         <img src="images/USA.jpg" class="w-5 h-5 rounded-full object-cover" alt="EN">
                         <span>EN</span>
                     </a>
-                    <a href="#" data-lang="pt" class="flex items-center space-x-1 text-sm text-gray-600 hover:text-primary">
+                    <a href="#portuguese" data-lang="pt" class="flex items-center space-x-1 text-sm text-gray-600 hover:text-primary navbar-lang-switcher">
                         <img src="images/BR_new.png" class="w-5 h-5 rounded-full object-cover" alt="PT">
                         <span>PT</span>
                     </a>
@@ -126,7 +137,7 @@
     <section class="bg-[#2a3347] py-16 pt-32">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center">
-                <h1 class="text-4xl font-bold tracking-tight text-white sm:text-5xl">Softwares</h1>
+                <h1 class="text-4xl font-bold tracking-tight text-white sm:text-5xl" data-translate="hero-title" data-en="Products" data-pt="Produtos">Softwares</h1>
             </div>
         </div>
     </section>
@@ -135,7 +146,7 @@
     <section class="py-12 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-4xl mx-auto">
-                <p class="text-xl text-gray-600">
+                <p class="text-xl text-gray-600" data-translate="distributor-info" data-en="<strong>SECA</strong> is an official distributor in Brazil of Lakes Environmental Software, a reseller of Lakes products in the area of software for modeling atmospheric dispersion <a href='https://www.weblakes.com/company/distributors.html#south' class='text-primary hover:underline' target='_blank'>(https://www.weblakes.com/company/distributors.html#south)</a>" data-pt="<strong>SECA</strong> é um distribuidor oficial no Brasil da Lakes Environmental Software, um revendedor de produtos Lakes na área de software para modelagem de dispersão atmosférica <a href='https://www.weblakes.com/company/distributors.html#south' class='text-primary hover:underline' target='_blank'>(https://www.weblakes.com/company/distributors.html#south)</a>">
                     <strong>SECA</strong> is an official distributor in Brazil of Lakes Environmental Software, a reseller of Lakes products in the area of software for modeling atmospheric dispersion 
                     <a href="https://www.weblakes.com/company/distributors.html#south" class="text-primary hover:underline" target="_blank">(https://www.weblakes.com/company/distributors.html#south)</a>
                 </p>
@@ -149,13 +160,13 @@
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <!-- Content -->
                 <div class="text-white">
-                    <h2 class="text-2xl font-bold mb-6">
+                    <h2 class="text-2xl font-bold mb-6" data-translate="aermod-title" data-en="Mathematical Model ISC-AERMOD View™<br><span class='text-lg font-normal'>(Gaussian Plume Air Dispersion Model)</span>" data-pt="Modelo Matemático ISC-AERMOD View™<br><span class='text-lg font-normal'>(Modelo de Dispersão Atmosférica de Pluma Gaussiana)</span>">
                         Mathematical Model ISC-AERMOD View™<br>
                         <span class="text-lg font-normal">(Gaussian Plume Air Dispersion Model)</span>
                     </h2>
                     
                     <div class="space-y-4 text-sm leading-relaxed">
-                        <p>
+                        <p data-translate="aermod-intro" data-en="AERMOD View is a complete and powerful air dispersion modeling package, which seamlessly incorporates the following popular U.S. EPA air dispersion models into one integrated interface:" data-pt="AERMOD View é um pacote completo e poderoso de modelagem de dispersão atmosférica, que incorpora perfeitamente os seguintes modelos populares de dispersão atmosférica da U.S. EPA em uma interface integrada:">
                             AERMOD View is a complete and powerful air dispersion modeling package, which seamlessly incorporates the following popular U.S. EPA air dispersion models into one integrated interface:
                         </p>
                         
@@ -165,19 +176,19 @@
                             <span>• ISC-PRIME</span>
                         </div>
                         
-                        <p>
+                        <p data-translate="aermod-usage" data-en="These US EPA air dispersion models are used extensively to assess pollution concentration and deposition from a wide variety of sources." data-pt="Estes modelos de dispersão atmosférica da US EPA são amplamente utilizados para avaliar a concentração e deposição de poluição de uma ampla variedade de fontes.">
                             These US EPA air dispersion models are used extensively to assess pollution concentration and deposition from a wide variety of sources.
                         </p>
                         
-                        <p>
+                        <p data-translate="aermod-description" data-en="The AERMOD (AMS/EPA Regulatory Model) is the next generation air dispersion model based on planetary boundary layer theory." data-pt="O AERMOD (Modelo Regulatório AMS/EPA) é o modelo de dispersão atmosférica de próxima geração baseado na teoria da camada limite planetária.">
                             The AERMOD (AMS/EPA Regulatory Model) is the next generation air dispersion model based on planetary boundary layer theory.
                         </p>
                         
-                        <p>
+                        <p data-translate="aermod-structure" data-en="AERMOD utilizes a similar input and output structure to ISCST3 and shares many of the same features, as well as offering additional features." data-pt="O AERMOD utiliza uma estrutura de entrada e saída similar ao ISCST3 e compartilha muitas das mesmas características, além de oferecer recursos adicionais.">
                             AERMOD utilizes a similar input and output structure to ISCST3 and shares many of the same features, as well as offering additional features.
                         </p>
                         
-                        <p>
+                        <p data-translate="aermod-features" data-en="AERMOD fully incorporates the <em>PRIME building downwash</em> algorithms, advanced depositional parameters, local terrain effects, and advanced meteorological turbulence calculations." data-pt="O AERMOD incorpora totalmente os algoritmos de <em>downwash de edifícios PRIME</em>, parâmetros deposicionais avançados, efeitos de terreno local e cálculos avançados de turbulência meteorológica.">
                             AERMOD fully incorporates the <em>PRIME building downwash</em> algorithms, advanced depositional parameters, local terrain effects, and advanced meteorological turbulence calculations.
                         </p>
                     </div>
@@ -199,12 +210,12 @@
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
                 <!-- Content -->
                 <div class="text-gray-800">
-                    <h2 class="text-2xl font-bold mb-6 text-[#2a3347]">
+                    <h2 class="text-2xl font-bold mb-6 text-[#2a3347]" data-translate="calpuff-title" data-en="Mathematical Model CALPUFF View™" data-pt="Modelo Matemático CALPUFF View™">
                         Mathematical Model CALPUFF View™
                     </h2>
                     
                     <div class="space-y-4 text-sm leading-relaxed">
-                        <p>
+                        <p data-translate="calpuff-intro" data-en="CALPUFF View (California Puff) provides a complete graphical solution for the CALPUFF modeling system: CALPUFF, CALMET, CALPOST, and their related pre- and post-processors. All three modeling systems are supported by the interface:" data-pt="CALPUFF View (California Puff) fornece uma solução gráfica completa para o sistema de modelagem CALPUFF: CALPUFF, CALMET, CALPOST e seus pré e pós-processadores relacionados. Todos os três sistemas de modelagem são suportados pela interface:">
                             CALPUFF View (California Puff) provides a complete graphical solution for the CALPUFF modeling system: CALPUFF, CALMET, CALPOST, and their related pre- and post-processors. All three modeling systems are supported by the interface:
                         </p>
                         
@@ -214,29 +225,29 @@
                             <span>• Version 7</span>
                         </div>
                         
-                        <p>
+                        <p data-translate="calpuff-features" data-en="The CALPUFF View model includes powerful and independent QA quality control tools, ready-to-process results for technical dispersion reports and a wide range of result visualization options." data-pt="O modelo CALPUFF View inclui ferramentas poderosas e independentes de controle de qualidade QA, resultados prontos para processar para relatórios técnicos de dispersão e uma ampla gama de opções de visualização de resultados.">
                             The CALPUFF View model includes powerful and independent QA quality control tools, ready-to-process results for technical dispersion reports and a wide range of result visualization options.
                         </p>
                         
-                        <p>
+                        <p data-translate="calpuff-sophisticated" data-en="CALPUFF is a sophisticated model that is used in many modeling scenarios, including:" data-pt="CALPUFF é um modelo sofisticado que é usado em muitos cenários de modelagem, incluindo:">
                             CALPUFF is a sophisticated model that is used in many modeling scenarios, including:
                         </p>
                         
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
                             <ul class="space-y-2 text-sm">
-                                <li>• Toxic pollutant deposition</li>
-                                <li>• Visibility assessments</li>
-                                <li>• Complex terrain</li>
-                                <li>• Secondary pollutant formation</li>
-                                <li>• Long range plume transport over large distances on liquid and terrestrial surfaces</li>
-                                <li>• Building downwash effect</li>
+                                <li data-translate="calpuff-feature-1" data-en="• Toxic pollutant deposition" data-pt="• Deposição de poluentes tóxicos">• Toxic pollutant deposition</li>
+                                <li data-translate="calpuff-feature-2" data-en="• Visibility assessments" data-pt="• Avaliações de visibilidade">• Visibility assessments</li>
+                                <li data-translate="calpuff-feature-3" data-en="• Complex terrain" data-pt="• Terreno complexo">• Complex terrain</li>
+                                <li data-translate="calpuff-feature-4" data-en="• Secondary pollutant formation" data-pt="• Formação de poluentes secundários">• Secondary pollutant formation</li>
+                                <li data-translate="calpuff-feature-5" data-en="• Long range plume transport over large distances on liquid and terrestrial surfaces" data-pt="• Transporte de pluma de longo alcance sobre grandes distâncias em superfícies líquidas e terrestres">• Long range plume transport over large distances on liquid and terrestrial surfaces</li>
+                                <li data-translate="calpuff-feature-6" data-en="• Building downwash effect" data-pt="• Efeito de downwash de edifícios">• Building downwash effect</li>
                             </ul>
                             <ul class="space-y-2 text-sm">
-                                <li>• Effects of sources installed in the ocean/continent interaction of the coastal zone</li>
-                                <li>• Dry and wet deposition of pollutants</li>
-                                <li>• Fumigation conditions of the behavior of plumes from industrial point sources</li>
-                                <li>• Chemical transformation calculation of pollutants</li>
-                                <li>• Calculation steps with average time variation of less than 1 hour</li>
+                                <li data-translate="calpuff-feature-7" data-en="• Effects of sources installed in the ocean/continent interaction of the coastal zone" data-pt="• Efeitos de fontes instaladas na interação oceano/continente da zona costeira">• Effects of sources installed in the ocean/continent interaction of the coastal zone</li>
+                                <li data-translate="calpuff-feature-8" data-en="• Dry and wet deposition of pollutants" data-pt="• Deposição seca e úmida de poluentes">• Dry and wet deposition of pollutants</li>
+                                <li data-translate="calpuff-feature-9" data-en="• Fumigation conditions of the behavior of plumes from industrial point sources" data-pt="• Condições de fumigação do comportamento de plumas de fontes pontuais industriais">• Fumigation conditions of the behavior of plumes from industrial point sources</li>
+                                <li data-translate="calpuff-feature-10" data-en="• Chemical transformation calculation of pollutants" data-pt="• Cálculo de transformação química de poluentes">• Chemical transformation calculation of pollutants</li>
+                                <li data-translate="calpuff-feature-11" data-en="• Calculation steps with average time variation of less than 1 hour" data-pt="• Etapas de cálculo com variação de tempo médio inferior a 1 hora">• Calculation steps with average time variation of less than 1 hour</li>
                             </ul>
                         </div>
                     </div>
@@ -258,23 +269,23 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
                 <!-- Risk Planning Models -->
                 <div>
-                    <h3 class="text-xl font-semibold text-[#2a3347] mb-6">Risk Planning (Mathematical Models):</h3>
+                    <h3 class="text-xl font-semibold text-[#2a3347] mb-6" data-translate="risk-planning-title" data-en="Risk Planning (Mathematical Models):" data-pt="Planejamento de Riscos (Modelos Matemáticos):">Risk Planning (Mathematical Models):</h3>
                     <ul class="space-y-4 text-sm">
                         <li class="flex items-start">
                             <span class="text-primary mr-2">•</span>
-                            <div>
+                            <div data-translate="ecorisk-desc" data-en="<strong>EcoRisk View</strong> is an advanced ecological risk assessment program." data-pt="<strong>EcoRisk View</strong> é um programa avançado de avaliação de riscos ecológicos.">
                                 <strong>EcoRisk View</strong> is an advanced ecological risk assessment program.
                             </div>
                         </li>
                         <li class="flex items-start">
                             <span class="text-primary mr-2">•</span>
-                            <div>
+                            <div data-translate="sevex-desc" data-en="<strong>SEVEX View</strong> is an advanced 3D model of dense gas over complex terrain." data-pt="<strong>SEVEX View</strong> é um modelo 3D avançado de gás denso sobre terreno complexo.">
                                 <strong>SEVEX View</strong> is an advanced 3D model of dense gas over complex terrain.
                             </div>
                         </li>
                         <li class="flex items-start">
                             <span class="text-primary mr-2">•</span>
-                            <div>
+                            <div data-translate="slab-desc" data-en="<strong>SLAB View</strong> - Simulation of accidental leaks of denser gases than air." data-pt="<strong>SLAB View</strong> - Simulação de vazamentos acidentais de gases mais densos que o ar.">
                                 <strong>SLAB View</strong> - Simulation of accidental leaks of denser gases than air.
                             </div>
                         </li>
@@ -283,29 +294,29 @@
 
                 <!-- Other Mathematical Models -->
                 <div>
-                    <h3 class="text-xl font-semibold text-[#2a3347] mb-6">Other Products Mathematical Model of Simulation:</h3>
+                    <h3 class="text-xl font-semibold text-[#2a3347] mb-6" data-translate="other-models-title" data-en="Other Products Mathematical Model of Simulation:" data-pt="Outros Produtos Modelo Matemático de Simulação:">Other Products Mathematical Model of Simulation:</h3>
                     <ul class="space-y-4 text-sm">
                         <li class="flex items-start">
                             <span class="text-primary mr-2">•</span>
-                            <div>
+                            <div data-translate="calroads-desc" data-en="<strong>CALRoads View</strong> is a model for predicting the impacts of pollutants near highways." data-pt="<strong>CALRoads View</strong> é um modelo para prever os impactos de poluentes próximo a rodovias.">
                                 <strong>CALRoads View</strong> is a model for predicting the impacts of pollutants near highways.
                             </div>
                         </li>
                         <li class="flex items-start">
                             <span class="text-primary mr-2">•</span>
-                            <div>
+                            <div data-translate="aermet-desc" data-en="<strong>AERMET View</strong> - AERMOD Preprocessor of meteorological data." data-pt="<strong>AERMET View</strong> - Pré-processador AERMOD de dados meteorológicos.">
                                 <strong>AERMET View</strong> - AERMOD Preprocessor of meteorological data.
                             </div>
                         </li>
                         <li class="flex items-start">
                             <span class="text-primary mr-2">•</span>
-                            <div>
+                            <div data-translate="screen-desc" data-en="<strong>SCREEN View</strong> is used to estimate worst-case concentrations for a single source." data-pt="<strong>SCREEN View</strong> é usado para estimar concentrações de pior caso para uma única fonte.">
                                 <strong>SCREEN View</strong> is used to estimate worst-case concentrations for a single source.
                             </div>
                         </li>
                         <li class="flex items-start">
                             <span class="text-primary mr-2">•</span>
-                            <div>
+                            <div data-translate="wrplot-desc" data-en="<strong>WRPlot View</strong> - Wind rose plots meteorological data." data-pt="<strong>WRPlot View</strong> - Gráficos de rosa dos ventos com dados meteorológicos.">
                                 <strong>WRPlot View</strong> - Wind rose plots meteorological data.
                             </div>
                         </li>
@@ -320,8 +331,8 @@
         <div style="min-height: 183px; background-color: rgba(255,255,255,1); position: relative; margin-left: auto; margin-right: auto; max-width: 1279px;">
             <div style="width: 891px; min-height: 166px; position: absolute; top: 22px; left: 76px;">
                 <div style="font-family: 'Open Sans', sans-serif; color: #2c3549; text-align: justify; font-size: 14px; line-height: 1.5; letter-spacing: 1px;">
-                    <h2 style="font-size: 24px; text-align: left; margin: 0; margin-bottom: 10px;"><b>Weather Stations</b></h2>
-                    <h3 style="font-size: 14px; color: #000000; line-height: 1.5; letter-spacing: 1px; margin: 0;"><b>Practical, versatile and economical monitoring solutions. Supply of stations, installation, training, data processing and analysis for environmental studies and several applications</b>.</h3>
+                    <h2 style="font-size: 24px; text-align: left; margin: 0; margin-bottom: 10px;" data-translate="weather-stations-title" data-en="<b>Weather Stations</b>" data-pt="<b>Estações Meteorológicas</b>"><b>Weather Stations</b></h2>
+                    <h3 style="font-size: 14px; color: #000000; line-height: 1.5; letter-spacing: 1px; margin: 0;" data-translate="weather-stations-desc" data-en="<b>Practical, versatile and economical monitoring solutions. Supply of stations, installation, training, data processing and analysis for environmental studies and several applications</b>." data-pt="<b>Soluções de monitoramento práticas, versáteis e econômicas. Fornecimento de estações, instalação, treinamento, processamento e análise de dados para estudos ambientais e diversas aplicações</b>."><b>Practical, versatile and economical monitoring solutions. Supply of stations, installation, training, data processing and analysis for environmental studies and several applications</b>.</h3>
                 </div>
             </div>
         </div>
@@ -336,14 +347,14 @@
             
             <!-- Instruction Text -->
             <div style="position: absolute; top: 12px; left: 94px; width: 668px; min-height: 45px;">
-                <h2 style="color: #2c3549; font-size: 24px; font-weight: bold; text-align: center; margin: 0;">Check the operation of the station by running the mouse over the image</h2>
+                <h2 style="color: #2c3549; font-size: 24px; font-weight: bold; text-align: center; margin: 0;" data-translate="station-instruction" data-en="Check the operation of the station by running the mouse over the image" data-pt="Verifique o funcionamento da estação passando o mouse sobre a imagem">Check the operation of the station by running the mouse over the image</h2>
             </div>
             
             <!-- Humidity Sensor -->
             <div class="thumb" style="position: absolute; top: 221px; left: 774px; width: 490px; min-height: 136px; background-color: transparent; background-repeat: no-repeat; background-size: contain; cursor: pointer;">
                 <div class="component-highlight" style="position: absolute; top: 0px; left: -1px; width: 117px; min-height: 117px; background-image: url('images/Sendor de umidade red.jpg'); background-repeat: no-repeat; background-size: contain;"></div>
                 <div class="text-element" style="position: absolute; top: 94px; left: 28px; width: 391px; min-height: 44px; background-color: transparent; opacity: 0; transition: opacity 0.5s;">
-                    <h3 style="color: #720e0e; font-size: 14px; text-align: left; letter-spacing: 1px; margin: 0; line-height: 1.4;">Sensor of relative humidity and air temperature</h3>
+                    <h3 style="color: #720e0e; font-size: 14px; text-align: left; letter-spacing: 1px; margin: 0; line-height: 1.4;" data-translate="humidity-sensor" data-en="Sensor of relative humidity and air temperature" data-pt="Sensor de umidade relativa e temperatura do ar">Sensor of relative humidity and air temperature</h3>
                 </div>
             </div>
             
@@ -351,7 +362,7 @@
             <div class="thumb" style="position: absolute; top: 25px; left: 102px; width: 422px; min-height: 156px; background-color: transparent; cursor: pointer;">
                 <div class="component-highlight" style="position: absolute; top: 27px; left: 291px; width: 130px; min-height: 130px; background-image: url('images/Anemometro red.jpg'); background-repeat: no-repeat; background-position: bottom left; background-size: contain;"></div>
                 <div class="text-element" style="position: absolute; top: 70px; left: 7px; width: 284px; min-height: 76px; opacity: 0; transition: opacity 0.5s;">
-                    <h3 style="color: #720e0e; font-size: 14px; text-align: left; letter-spacing: 1px; margin: 0; line-height: 1.4;">Anemometer<br>Measures wind speed and direction</h3>
+                    <h3 style="color: #720e0e; font-size: 14px; text-align: left; letter-spacing: 1px; margin: 0; line-height: 1.4;" data-translate="anemometer" data-en="Anemometer<br>Measures wind speed and direction" data-pt="Anemômetro<br>Mede velocidade e direção do vento">Anemometer<br>Measures wind speed and direction</h3>
                 </div>
             </div>
             
@@ -359,7 +370,7 @@
             <div class="thumb" style="position: absolute; top: 89px; left: 569px; width: 73px; min-height: 166px; background-color: transparent; cursor: pointer;">
                 <div class="component-highlight" style="position: absolute; top: 91px; left: -25px; width: 130px; min-height: 130px; background-image: url('images/met-2a.jpg'); background-repeat: no-repeat; background-size: contain;"></div>
                 <div class="text-element" style="position: absolute; top: 22px; left: 4px; width: 324px; min-height: 60px; opacity: 0; transition: opacity 0.5s;">
-                    <h3 style="color: #720e0e; font-size: 14px; text-align: left; letter-spacing: 1px; margin: 0; line-height: 1.4;">Pluviometer<br>Measures rainfall</h3>
+                    <h3 style="color: #720e0e; font-size: 14px; text-align: left; letter-spacing: 1px; margin: 0; line-height: 1.4;" data-translate="pluviometer" data-en="Pluviometer<br>Measures rainfall" data-pt="Pluviômetro<br>Mede precipitação">Pluviometer<br>Measures rainfall</h3>
                 </div>
             </div>
             
@@ -367,7 +378,7 @@
             <div class="thumb" style="position: absolute; top: 88px; left: 685px; width: 73px; min-height: 168px; background-color: transparent; cursor: pointer;">
                 <div class="component-highlight" style="position: absolute; top: 104px; left: 14px; width: 52px; min-height: 52px; background-image: url('images/Sensor de folhas red.jpg'); background-repeat: no-repeat; background-size: contain;"></div>
                 <div class="text-element" style="position: absolute; top: 22px; left: 4px; width: 324px; min-height: 60px; opacity: 0; transition: opacity 0.5s;">
-                    <h3 style="color: #720e0e; font-size: 14px; text-align: left; letter-spacing: 1px; margin: 0; line-height: 1.4;">Leaf sensor<br>Measures the degree sensitivity of the leaves</h3>
+                    <h3 style="color: #720e0e; font-size: 14px; text-align: left; letter-spacing: 1px; margin: 0; line-height: 1.4;" data-translate="leaf-sensor" data-en="Leaf sensor<br>Measures the degree sensitivity of the leaves" data-pt="Sensor de folhas<br>Mede o grau de sensibilidade das folhas">Leaf sensor<br>Measures the degree sensitivity of the leaves</h3>
                 </div>
             </div>
             
@@ -375,7 +386,7 @@
             <div class="thumb" style="position: absolute; top: 111px; left: 743px; width: 490px; min-height: 111px; background-color: transparent; background-repeat: no-repeat; background-size: contain; cursor: pointer;">
                 <div class="component-highlight" style="position: absolute; top: 71px; left: 19px; width: 40px; min-height: 40px; background-image: url('images/Sensor UV.jpeg'); background-repeat: no-repeat; background-size: contain;"></div>
                 <div class="text-element" style="position: absolute; top: 35px; left: 75px; width: 324px; min-height: 60px; background-color: transparent; opacity: 0; transition: opacity 0.5s;">
-                    <h3 style="color: #720e0e; font-size: 14px; text-align: left; letter-spacing: 1px; margin: 0; line-height: 1.4;">UV sensor<br>Measures solar, global and ultra-violet radiation</h3>
+                    <h3 style="color: #720e0e; font-size: 14px; text-align: left; letter-spacing: 1px; margin: 0; line-height: 1.4;" data-translate="uv-sensor" data-en="UV sensor<br>Measures solar, global and ultra-violet radiation" data-pt="Sensor UV<br>Mede radiação solar, global e ultravioleta">UV sensor<br>Measures solar, global and ultra-violet radiation</h3>
                 </div>
             </div>
             
@@ -383,7 +394,7 @@
             <div class="thumb" style="position: absolute; top: 348px; left: 125px; width: 422px; min-height: 156px; background-color: transparent; cursor: pointer;">
                 <div class="component-highlight" style="position: absolute; top: 24px; left: 291px; width: 102px; min-height: 102px; background-image: url('images/alarme red.jpg'); background-repeat: no-repeat; background-position: bottom left; background-size: contain;"></div>
                 <div class="text-element" style="position: absolute; top: 70px; left: 49px; width: 232px; min-height: 73px; opacity: 0; transition: opacity 0.5s;">
-                    <h3 style="color: #720e0e; font-size: 14px; text-align: left; letter-spacing: 1px; margin: 0; line-height: 1.4;">Alarm<br>System failure indicator</h3>
+                    <h3 style="color: #720e0e; font-size: 14px; text-align: left; letter-spacing: 1px; margin: 0; line-height: 1.4;" data-translate="alarm" data-en="Alarm<br>System failure indicator" data-pt="Alarme<br>Indicador de falha do sistema">Alarm<br>System failure indicator</h3>
                 </div>
             </div>
             
@@ -391,7 +402,7 @@
             <div class="thumb" style="position: absolute; top: 306px; left: 542px; width: 141px; min-height: 259px; background-color: transparent; cursor: pointer;">
                 <div class="component-highlight" style="position: absolute; top: 4px; left: 3px; width: 130px; min-height: 160px; background-image: url('images/coletor de dados red.jpg'); background-repeat: no-repeat; background-position: bottom left; background-size: contain;"></div>
                 <div class="text-element" style="position: absolute; top: 189px; left: 136px; width: 218px; min-height: 60px; opacity: 0; transition: opacity 0.5s;">
-                    <h3 style="color: #720e0e; font-size: 14px; text-align: left; letter-spacing: 1px; margin: 0; line-height: 1.4;">Data collector<br>Real-time preview</h3>
+                    <h3 style="color: #720e0e; font-size: 14px; text-align: left; letter-spacing: 1px; margin: 0; line-height: 1.4;" data-translate="data-collector" data-en="Data collector<br>Real-time preview" data-pt="Coletor de dados<br>Visualização em tempo real">Data collector<br>Real-time preview</h3>
                 </div>
             </div>
             
@@ -399,7 +410,7 @@
             <div class="thumb" style="position: absolute; top: 285px; left: 645px; width: 490px; min-height: 136px; background-color: transparent; background-repeat: no-repeat; background-size: contain; cursor: pointer;">
                 <div class="component-highlight" style="position: absolute; top: -2px; left: -1px; width: 146px; min-height: 146px; background-image: url('images/Coletor.jpeg'); background-repeat: no-repeat; background-size: contain;"></div>
                 <div class="text-element" style="position: absolute; top: 76px; left: 132px; width: 454px; min-height: 61px; background-color: transparent; opacity: 0; transition: opacity 0.5s;">
-                    <h3 style="color: #720e0e; font-size: 14px; text-align: left; letter-spacing: 1px; margin: 0; line-height: 1.4;">Actinograph measures and stores the intensity of solar radiation to supply the lack of electricity</h3>
+                    <h3 style="color: #720e0e; font-size: 14px; text-align: left; letter-spacing: 1px; margin: 0; line-height: 1.4;" data-translate="actinograph" data-en="Actinograph measures and stores the intensity of solar radiation to supply the lack of electricity" data-pt="Actinógrafo mede e armazena a intensidade da radiação solar para suprir a falta de eletricidade">Actinograph measures and stores the intensity of solar radiation to supply the lack of electricity</h3>
                 </div>
             </div>
         </div>
@@ -429,21 +440,21 @@
                 <div class="flex flex-1 flex-wrap justify-around gap-8">
                     <!-- Links Rápidos -->
                     <div class="w-full sm:w-auto">
-                        <h3 class="text-sm font-semibold uppercase tracking-wider mb-3">Links Rápidos</h3>
+                        <h3 class="text-sm font-semibold uppercase tracking-wider mb-3" data-translate="footer-links-title" data-en="Quick Links" data-pt="Links Rápidos">Links Rápidos</h3>
                         <ul class="space-y-2 text-sm">
-                            <li><a href="about-en.html" class="text-gray-300 hover:text-white transition-colors">Sobre Nós</a></li>
-                            <li><a href="products-en.html" class="text-gray-300 hover:text-white transition-colors">Produtos</a></li>
-                            <li><a href="training-en.html" class="text-gray-300 hover:text-white transition-colors">Treinamento</a></li>
-                            <li><a href="clients-en.html" class="text-gray-300 hover:text-white transition-colors">Clientes</a></li>
+                            <li><a href="about-en.html" class="text-gray-300 hover:text-white transition-colors" data-translate="footer-about" data-en="About Us" data-pt="Sobre Nós">Sobre Nós</a></li>
+                            <li><a href="products-en.html" class="text-gray-300 hover:text-white transition-colors" data-translate="footer-products" data-en="Products" data-pt="Produtos">Produtos</a></li>
+                            <li><a href="training-en.html" class="text-gray-300 hover:text-white transition-colors" data-translate="footer-training" data-en="Training" data-pt="Treinamento">Treinamento</a></li>
+                            <li><a href="clients-en.html" class="text-gray-300 hover:text-white transition-colors" data-translate="footer-clients" data-en="Clients" data-pt="Clientes">Clientes</a></li>
                         </ul>
                     </div>
 
                     <!-- Informações de Contato -->
                     <div class="w-full sm:w-auto">
-                        <h3 class="text-sm font-semibold uppercase tracking-wider mb-3">Contato</h3>
+                        <h3 class="text-sm font-semibold uppercase tracking-wider mb-3" data-translate="footer-contact-title" data-en="Contact" data-pt="Contato">Contato</h3>
                         <ul class="space-y-3 text-sm text-gray-300">
                             <li>
-                                <div class="font-medium text-white mb-1">Escritório Oficial:</div>
+                                <div class="font-medium text-white mb-1" data-translate="footer-office" data-en="Official Office:" data-pt="Escritório Oficial:">Escritório Oficial:</div>
                                 <div class="flex items-start">
                                     <i class="fas fa-map-marker-alt mt-1 mr-2 text-xs"></i>
                                     <span>Rua Costa Carvalho - 403 cj. 302 - Pinheiros<br>CEP 05429-130 - São Paulo, SP</span>
@@ -464,7 +475,7 @@
             </div>
 
             <div class="border-t border-white/10 mt-6 pt-6 flex flex-col sm:flex-row justify-between items-center text-xs text-gray-400">
-                <p>&copy; 2025 SECA - Sistema de Estudos Climáticos e Ambientais. Todos os direitos reservados.</p>
+                <p data-translate="footer-copyright" data-en="&copy; 2025 SECA - Environmental and Climatic Studies System. All rights reserved." data-pt="&copy; 2025 SECA - Sistema de Estudos Climáticos e Ambientais. Todos os direitos reservados.">&copy; 2025 SECA - Sistema de Estudos Climáticos e Ambientais. Todos os direitos reservados.</p>
             </div>
         </div>
     </footer>
@@ -480,18 +491,18 @@
             </div>
             <nav class="px-4 py-6">
                 <ul class="space-y-4">
-                    <li><a href="home-en.html" class="block text-base text-gray-900 hover:text-primary">Início</a></li>
-                    <li><a href="about-en.html" class="block text-base text-gray-900 hover:text-primary">Sobre Nós</a></li>
+                    <li><a href="home-en.html" class="block text-base text-gray-900 hover:text-primary" data-translate="mobile-home" data-en="Home" data-pt="Início">Início</a></li>
+                    <li><a href="about-en.html" class="block text-base text-gray-900 hover:text-primary" data-translate="mobile-about" data-en="About Us" data-pt="Sobre Nós">Sobre Nós</a></li>
                     <li class="border-l-4 border-primary pl-2">
-                        <a href="products-en.html" class="block text-base text-primary font-medium">Produtos</a>
+                        <a href="products-en.html" class="block text-base text-primary font-medium" data-translate="mobile-products" data-en="Products" data-pt="Produtos">Produtos</a>
                     </li>
-                    <li class="pl-4"><a href="#software" class="block text-sm text-gray-700 hover:text-primary">Soluções de Software</a></li>
-                    <li class="pl-4"><a href="#meteorological" class="block text-sm text-gray-700 hover:text-primary">Estações Meteorológicas</a></li>
-                    <li><a href="training-en.html" class="block text-base text-gray-900 hover:text-primary">Treinamento</a></li>
-                    <li><a href="animations-en.html" class="block text-base text-gray-900 hover:text-primary">Animações</a></li>
-                    <li><a href="clients-en.html" class="block text-base text-gray-900 hover:text-primary">Clientes</a></li>
-                    <li><a href="links-en.html" class="block text-base text-gray-900 hover:text-primary">Links</a></li>
-                    <li><a href="contact-en.html" class="block text-base text-gray-900 hover:text-primary">Contato</a></li>
+                    <li class="pl-4"><a href="#software" class="block text-sm text-gray-700 hover:text-primary" data-translate="mobile-software" data-en="Software Solutions" data-pt="Soluções de Software">Soluções de Software</a></li>
+                    <li class="pl-4"><a href="#meteorological" class="block text-sm text-gray-700 hover:text-primary" data-translate="mobile-meteorological" data-en="Meteorological Stations" data-pt="Estações Meteorológicas">Estações Meteorológicas</a></li>
+                    <li><a href="training-en.html" class="block text-base text-gray-900 hover:text-primary" data-translate="mobile-training" data-en="Training" data-pt="Treinamento">Treinamento</a></li>
+                    <li><a href="animations-en.html" class="block text-base text-gray-900 hover:text-primary" data-translate="mobile-animations" data-en="Animations" data-pt="Animações">Animações</a></li>
+                    <li><a href="clients-en.html" class="block text-base text-gray-900 hover:text-primary" data-translate="mobile-clients" data-en="Clients" data-pt="Clientes">Clientes</a></li>
+                    <li><a href="links-en.html" class="block text-base text-gray-900 hover:text-primary" data-translate="mobile-links" data-en="Links" data-pt="Links">Links</a></li>
+                    <li><a href="contact-en.html" class="block text-base text-gray-900 hover:text-primary" data-translate="mobile-contact" data-en="Contact Us" data-pt="Contato">Contato</a></li>
                 </ul>
             </nav>
         </div>
@@ -499,6 +510,95 @@
 
     <!-- JavaScript -->
     <script>
+        // Bilingual functionality
+        const bilingualPage = {
+            currentLanguage: 'pt', // Default to Portuguese
+            
+            init() {
+                this.setupEventListeners();
+                this.initializeLanguage();
+            },
+            
+            setupEventListeners() {
+                // Hash change listener for browser navigation
+                window.addEventListener('hashchange', () => {
+                    this.handleHashChange();
+                });
+                
+                // Popstate for browser back/forward
+                window.addEventListener('popstate', () => {
+                    this.handleHashChange();
+                });
+                
+                // Navbar language switcher click handler
+                document.querySelectorAll('.navbar-lang-switcher').forEach(link => {
+                    link.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        const targetLang = e.target.closest('a').getAttribute('data-lang');
+                        const targetHash = targetLang === 'en' ? '#english' : '#portuguese';
+                        window.location.hash = targetHash;
+                    });
+                });
+            },
+            
+            initializeLanguage() {
+                // Check URL hash first
+                const hash = window.location.hash;
+                if (hash === '#english') {
+                    this.setLanguage('en');
+                } else if (hash === '#portuguese') {
+                    this.setLanguage('pt');
+                } else {
+                    // Default to Portuguese and set hash
+                    window.location.hash = '#portuguese';
+                    this.setLanguage('pt');
+                }
+            },
+            
+            handleHashChange() {
+                const hash = window.location.hash;
+                if (hash === '#english') {
+                    this.setLanguage('en');
+                } else if (hash === '#portuguese') {
+                    this.setLanguage('pt');
+                }
+            },
+            
+            setLanguage(lang) {
+                this.currentLanguage = lang;
+                
+                // Update all translatable elements
+                const elements = document.querySelectorAll('[data-translate]');
+                elements.forEach(element => {
+                    element.classList.add('language-transition');
+                    
+                    setTimeout(() => {
+                        const translation = element.getAttribute(`data-${lang}`);
+                        if (translation) {
+                            element.innerHTML = translation;
+                        }
+                        element.classList.remove('language-transition');
+                    }, 150);
+                });
+                
+                // Update language switcher appearance
+                this.updateLanguageSwitcher(lang);
+            },
+            
+            updateLanguageSwitcher(lang) {
+                document.querySelectorAll('.navbar-lang-switcher').forEach(link => {
+                    const linkLang = link.getAttribute('data-lang');
+                    if (linkLang === lang) {
+                        link.classList.add('text-primary');
+                        link.classList.remove('text-gray-600');
+                    } else {
+                        link.classList.remove('text-primary');
+                        link.classList.add('text-gray-600');
+                    }
+                });
+            }
+        };
+
         // Mobile menu toggle
         document.getElementById('mobileMenuButton').addEventListener('click', function() {
             document.getElementById('mobileMenu').classList.remove('hidden');
@@ -514,6 +614,9 @@
 
         // Highlight active page in navigation
         document.addEventListener('DOMContentLoaded', function() {
+            // Initialize bilingual functionality
+            bilingualPage.init();
+            
             // Get current page path
             const currentPath = window.location.pathname;
             const currentPage = currentPath.split('/').pop() || 'home-en.html';

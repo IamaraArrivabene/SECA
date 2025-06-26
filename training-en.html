@@ -23,6 +23,17 @@
             }
         }
     </script>
+    
+    <!-- Bilingual CSS -->
+    <style>
+        [data-translate] {
+            transition: opacity 0.3s ease;
+        }
+        
+        .language-transition {
+            opacity: 0;
+        }
+    </style>
 </head>
 <body class="bg-gray-50">
     <!-- Top Bar with Logo and Language Switcher -->
@@ -36,38 +47,38 @@
                 
                 <!-- Desktop Navigation Menu -->
                 <nav class="hidden md:flex space-x-6">
-                    <a href="home-en.html" class="text-gray-700 font-medium hover:text-primary transition-colors">Início</a>
-                    <a href="about-en.html" class="text-gray-700 font-medium hover:text-primary transition-colors">Sobre Nós</a>
+                    <a href="home-en.html" class="text-gray-700 font-medium hover:text-primary transition-colors" data-translate="nav-home" data-en="Home" data-pt="Início">Início</a>
+                    <a href="about-en.html" class="text-gray-700 font-medium hover:text-primary transition-colors" data-translate="nav-about" data-en="About Us" data-pt="Sobre Nós">Sobre Nós</a>
                     
                     <!-- Products Dropdown -->
                     <div class="relative group">
-                        <a href="products-en.html" class="text-gray-700 font-medium hover:text-primary transition-colors flex items-center">
+                        <a href="products-en.html" class="text-gray-700 font-medium hover:text-primary transition-colors flex items-center" data-translate="nav-products" data-en="Products" data-pt="Produtos">
                             Produtos
                             <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                             </svg>
                         </a>
                         <div class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
-                            <a href="products-en.html#meteorological" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Estações Meteorológicas</a>
-                            <a href="products-en.html#sensors" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Sensores Ambientais</a>
-                            <a href="products-en.html#software" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Soluções de Software</a>
+                            <a href="products-en.html#meteorological" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" data-translate="nav-meteorological" data-en="Meteorological Stations" data-pt="Estações Meteorológicas">Estações Meteorológicas</a>
+                            <a href="products-en.html#sensors" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" data-translate="nav-sensors" data-en="Environmental Sensors" data-pt="Sensores Ambientais">Sensores Ambientais</a>
+                            <a href="products-en.html#software" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" data-translate="nav-software" data-en="Software Solutions" data-pt="Soluções de Software">Soluções de Software</a>
                         </div>
                     </div>
                     
-                    <a href="training-en.html" class="text-primary font-medium hover:text-secondary transition-colors">Treinamento</a>
-                    <a href="animations-en.html" class="text-gray-700 font-medium hover:text-primary transition-colors">Animações</a>
-                    <a href="clients-en.html" class="text-gray-700 font-medium hover:text-primary transition-colors">Clientes</a>
-                    <a href="links-en.html" class="text-gray-700 font-medium hover:text-primary transition-colors">Links</a>
-                    <a href="contact-en.html" class="text-gray-700 font-medium hover:text-primary transition-colors">Contato</a>
+                    <a href="training-en.html" class="text-primary font-medium hover:text-secondary transition-colors" data-translate="nav-training" data-en="Training" data-pt="Treinamento">Treinamento</a>
+                    <a href="animations-en.html" class="text-gray-700 font-medium hover:text-primary transition-colors" data-translate="nav-animations" data-en="Animations" data-pt="Animações">Animações</a>
+                    <a href="clients-en.html" class="text-gray-700 font-medium hover:text-primary transition-colors" data-translate="nav-clients" data-en="Clients" data-pt="Clientes">Clientes</a>
+                    <a href="links-en.html" class="text-gray-700 font-medium hover:text-primary transition-colors" data-translate="nav-links" data-en="Links" data-pt="Links">Links</a>
+                    <a href="contact-en.html" class="text-gray-700 font-medium hover:text-primary transition-colors" data-translate="nav-contact" data-en="Contact Us" data-pt="Contato">Contato</a>
                 </nav>
                 
                 <!-- Language Switcher and Mobile Menu Button -->
                 <div class="flex items-center space-x-4">
-                    <a href="#" data-lang="en" class="flex items-center space-x-1 text-sm text-primary">
+                    <a href="#english" data-lang="en" class="flex items-center space-x-1 text-sm text-primary navbar-lang-switcher">
                         <img src="images/USA.jpg" class="w-5 h-5 rounded-full object-cover" alt="EN">
                         <span>EN</span>
                     </a>
-                    <a href="#" data-lang="pt" class="flex items-center space-x-1 text-sm text-gray-600 hover:text-primary">
+                    <a href="#portuguese" data-lang="pt" class="flex items-center space-x-1 text-sm text-gray-600 hover:text-primary navbar-lang-switcher">
                         <img src="images/BR_new.png" class="w-5 h-5 rounded-full object-cover" alt="PT">
                         <span>PT</span>
                     </a>
@@ -85,7 +96,7 @@
     <section class="bg-[#2a3347] py-16 pt-32">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center">
-                <h1 class="text-4xl font-bold tracking-tight text-white sm:text-5xl">Training</h1>
+                <h1 class="text-4xl font-bold tracking-tight text-white sm:text-5xl" data-translate="hero-title" data-en="Training" data-pt="Treinamento">Training</h1>
             </div>
         </div>
     </section>
@@ -101,19 +112,19 @@
             </div>
             <nav class="px-4 py-6">
                 <ul class="space-y-4">
-                    <li><a href="home-en.html" class="block text-base text-gray-900 hover:text-primary">Início</a></li>
-                    <li><a href="about-en.html" class="block text-base text-gray-900 hover:text-primary">Sobre Nós</a></li>
-                    <li><a href="products-en.html" class="block text-base text-gray-900 hover:text-primary">Produtos</a></li>
-                    <li class="pl-4"><a href="products-en.html#meteorological" class="block text-sm text-gray-700 hover:text-primary">Estações Meteorológicas</a></li>
-                    <li class="pl-4"><a href="products-en.html#sensors" class="block text-sm text-gray-700 hover:text-primary">Sensores Ambientais</a></li>
-                    <li class="pl-4"><a href="products-en.html#software" class="block text-sm text-gray-700 hover:text-primary">Soluções de Software</a></li>
+                    <li><a href="home-en.html" class="block text-base text-gray-900 hover:text-primary" data-translate="mobile-home" data-en="Home" data-pt="Início">Início</a></li>
+                    <li><a href="about-en.html" class="block text-base text-gray-900 hover:text-primary" data-translate="mobile-about" data-en="About Us" data-pt="Sobre Nós">Sobre Nós</a></li>
+                    <li><a href="products-en.html" class="block text-base text-gray-900 hover:text-primary" data-translate="mobile-products" data-en="Products" data-pt="Produtos">Produtos</a></li>
+                    <li class="pl-4"><a href="products-en.html#meteorological" class="block text-sm text-gray-700 hover:text-primary" data-translate="mobile-meteorological" data-en="Meteorological Stations" data-pt="Estações Meteorológicas">Estações Meteorológicas</a></li>
+                    <li class="pl-4"><a href="products-en.html#sensors" class="block text-sm text-gray-700 hover:text-primary" data-translate="mobile-sensors" data-en="Environmental Sensors" data-pt="Sensores Ambientais">Sensores Ambientais</a></li>
+                    <li class="pl-4"><a href="products-en.html#software" class="block text-sm text-gray-700 hover:text-primary" data-translate="mobile-software" data-en="Software Solutions" data-pt="Soluções de Software">Soluções de Software</a></li>
                     <li class="border-l-4 border-primary pl-2">
-                        <a href="training-en.html" class="block text-base text-primary font-medium">Treinamento</a>
+                        <a href="training-en.html" class="block text-base text-primary font-medium" data-translate="mobile-training" data-en="Training" data-pt="Treinamento">Treinamento</a>
                     </li>
-                    <li><a href="animations-en.html" class="block text-base text-gray-900 hover:text-primary">Animações</a></li>
-                    <li><a href="clients-en.html" class="block text-base text-gray-900 hover:text-primary">Clientes</a></li>
-                    <li><a href="links-en.html" class="block text-base text-gray-900 hover:text-primary">Links</a></li>
-                    <li><a href="contact-en.html" class="block text-base text-gray-900 hover:text-primary">Contato</a></li>
+                    <li><a href="animations-en.html" class="block text-base text-gray-900 hover:text-primary" data-translate="mobile-animations" data-en="Animations" data-pt="Animações">Animações</a></li>
+                    <li><a href="clients-en.html" class="block text-base text-gray-900 hover:text-primary" data-translate="mobile-clients" data-en="Clients" data-pt="Clientes">Clientes</a></li>
+                    <li><a href="links-en.html" class="block text-base text-gray-900 hover:text-primary" data-translate="mobile-links" data-en="Links" data-pt="Links">Links</a></li>
+                    <li><a href="contact-en.html" class="block text-base text-gray-900 hover:text-primary" data-translate="mobile-contact" data-en="Contact Us" data-pt="Contato">Contato</a></li>
                 </ul>
             </nav>
         </div>
@@ -127,32 +138,32 @@
                 <div class="lg:col-span-3 space-y-8">
                     <!-- Main text -->
                     <div>
-                        <p class="text-gray-700 leading-relaxed">
+                        <p class="text-gray-700 leading-relaxed" data-translate="main-description" data-en="SECA provides training in the area of operational use of atmospheric dispersion models for air pollution; physical fundamentals of the atmosphere for air pollution control; and characterization of air quality and climate. The courses can be presented <em>in company</em>, <em>online</em> for governmental and non-governmental organizations, public and private companies, consulting companies, universities and associations related to the environment." data-pt="A SECA oferece treinamento na área de uso operacional de modelos de dispersão atmosférica para poluição do ar; fundamentos físicos da atmosfera para controle da poluição do ar; e caracterização da qualidade do ar e clima. Os cursos podem ser apresentados <em>in company</em>, <em>online</em> para organizações governamentais e não governamentais, empresas públicas e privadas, empresas de consultoria, universidades e associações relacionadas ao meio ambiente.">
                             SECA provides training in the area of operational use of atmospheric dispersion models for air pollution; physical fundamentals of the atmosphere for air pollution control; and characterization of air quality and climate. The courses can be presented <em>in company</em>, <em>online</em> for governmental and non-governmental organizations, public and private companies, consulting companies, universities and associations related to the environment.
                         </p>
                     </div>
 
                     <!-- Course Topics Card -->
                     <div class="bg-gray-600 text-white p-8 rounded-lg">
-                        <h2 class="text-2xl font-bold mb-6 text-center">Course Topics</h2>
+                        <h2 class="text-2xl font-bold mb-6 text-center" data-translate="course-topics-title" data-en="Course Topics" data-pt="Tópicos do Curso">Course Topics</h2>
                         <div class="space-y-4 text-sm">
-                            <p>- Physical Fundamentals of the Atmosphere for Air Pollution Control;</p>
-                            <p>- Atmospheric Dispersion Modeling for Industrial District Planning, Industrial Installation and Expansion of New Developments;</p>
-                            <p>- Processing of meteorological data and air quality for EIA/RIMA;</p>
+                            <p data-translate="topic-1" data-en="- Physical Fundamentals of the Atmosphere for Air Pollution Control;" data-pt="- Fundamentos Físicos da Atmosfera para Controle da Poluição do Ar;">- Physical Fundamentals of the Atmosphere for Air Pollution Control;</p>
+                            <p data-translate="topic-2" data-en="- Atmospheric Dispersion Modeling for Industrial District Planning, Industrial Installation and Expansion of New Developments;" data-pt="- Modelagem de Dispersão Atmosférica para Planejamento de Distrito Industrial, Instalação Industrial e Expansão de Novos Empreendimentos;">- Atmospheric Dispersion Modeling for Industrial District Planning, Industrial Installation and Expansion of New Developments;</p>
+                            <p data-translate="topic-3" data-en="- Processing of meteorological data and air quality for EIA/RIMA;" data-pt="- Processamento de dados meteorológicos e qualidade do ar para EIA/RIMA;">- Processing of meteorological data and air quality for EIA/RIMA;</p>
                         </div>
                     </div>
 
                     <!-- Training Information Card -->
                     <div class="bg-gray-600 text-white p-8 rounded-lg">
-                        <h2 class="text-2xl font-bold mb-6 text-center">Training Information</h2>
+                        <h2 class="text-2xl font-bold mb-6 text-center" data-translate="training-info-title" data-en="Training Information" data-pt="Informações sobre Treinamento">Training Information</h2>
                         <div class="space-y-4">
                             <div>
-                                <p class="mb-2"><strong>By phone:</strong></p>
+                                <p class="mb-2" data-translate="by-phone" data-en="<strong>By phone:</strong>" data-pt="<strong>Por telefone:</strong>"><strong>By phone:</strong></p>
                                 <p>+55 (11) 98584 4039</p>
                                 <p>+55 (31) 3582 1025</p>
                             </div>
                             <div>
-                                <p class="mb-2"><strong>or email:</strong></p>
+                                <p class="mb-2" data-translate="or-email" data-en="<strong>or email:</strong>" data-pt="<strong>ou email:</strong>"><strong>or email:</strong></p>
                                 <p>training@seca-ambiental.com.br</p>
                                 <p>seca@seca-ambiental.com.br</p>
                                 <p>silvoliv@uol.com.br</p>
@@ -186,21 +197,21 @@
                 <div class="flex flex-1 flex-wrap justify-around gap-8">
                     <!-- Links Rápidos -->
                     <div class="w-full sm:w-auto">
-                        <h3 class="text-sm font-semibold uppercase tracking-wider mb-3">Links Rápidos</h3>
+                        <h3 class="text-sm font-semibold uppercase tracking-wider mb-3" data-translate="footer-links-title" data-en="Quick Links" data-pt="Links Rápidos">Links Rápidos</h3>
                         <ul class="space-y-2 text-sm">
-                            <li><a href="about-en.html" class="text-gray-300 hover:text-white transition-colors">Sobre Nós</a></li>
-                            <li><a href="products-en.html" class="text-gray-300 hover:text-white transition-colors">Produtos</a></li>
-                            <li><a href="training-en.html" class="text-gray-300 hover:text-white transition-colors">Treinamento</a></li>
-                            <li><a href="clients-en.html" class="text-gray-300 hover:text-white transition-colors">Clientes</a></li>
+                            <li><a href="about-en.html" class="text-gray-300 hover:text-white transition-colors" data-translate="footer-about" data-en="About Us" data-pt="Sobre Nós">Sobre Nós</a></li>
+                            <li><a href="products-en.html" class="text-gray-300 hover:text-white transition-colors" data-translate="footer-products" data-en="Products" data-pt="Produtos">Produtos</a></li>
+                            <li><a href="training-en.html" class="text-gray-300 hover:text-white transition-colors" data-translate="footer-training" data-en="Training" data-pt="Treinamento">Treinamento</a></li>
+                            <li><a href="clients-en.html" class="text-gray-300 hover:text-white transition-colors" data-translate="footer-clients" data-en="Clients" data-pt="Clientes">Clientes</a></li>
                         </ul>
                     </div>
 
                     <!-- Informações de Contato -->
                     <div class="w-full sm:w-auto">
-                        <h3 class="text-sm font-semibold uppercase tracking-wider mb-3">Contato</h3>
+                        <h3 class="text-sm font-semibold uppercase tracking-wider mb-3" data-translate="footer-contact-title" data-en="Contact" data-pt="Contato">Contato</h3>
                         <ul class="space-y-3 text-sm text-gray-300">
                             <li>
-                                <div class="font-medium text-white mb-1">Escritório Oficial:</div>
+                                <div class="font-medium text-white mb-1" data-translate="footer-office" data-en="Official Office:" data-pt="Escritório Oficial:">Escritório Oficial:</div>
                                 <div class="flex items-start">
                                     <i class="fas fa-map-marker-alt mt-1 mr-2 text-xs"></i>
                                     <span>Rua Costa Carvalho - 403 cj. 302 - Pinheiros<br>CEP 05429-130 - São Paulo, SP</span>
@@ -221,7 +232,7 @@
             </div>
 
             <div class="border-t border-white/10 mt-6 pt-6 flex flex-col sm:flex-row justify-between items-center text-xs text-gray-400">
-                <p>&copy; 2025 SECA - Sistema de Estudos Climáticos e Ambientais. Todos os direitos reservados.</p>
+                <p data-translate="footer-copyright" data-en="&copy; 2025 SECA - Environmental and Climatic Studies System. All rights reserved." data-pt="&copy; 2025 SECA - Sistema de Estudos Climáticos e Ambientais. Todos os direitos reservados.">&copy; 2025 SECA - Sistema de Estudos Climáticos e Ambientais. Todos os direitos reservados.</p>
 
             </div>
         </div>
@@ -229,6 +240,95 @@
 
     <!-- JavaScript -->
     <script>
+        // Bilingual functionality
+        const bilingualPage = {
+            currentLanguage: 'pt', // Default to Portuguese
+            
+            init() {
+                this.setupEventListeners();
+                this.initializeLanguage();
+            },
+            
+            setupEventListeners() {
+                // Hash change listener for browser navigation
+                window.addEventListener('hashchange', () => {
+                    this.handleHashChange();
+                });
+                
+                // Popstate for browser back/forward
+                window.addEventListener('popstate', () => {
+                    this.handleHashChange();
+                });
+                
+                // Navbar language switcher click handler
+                document.querySelectorAll('.navbar-lang-switcher').forEach(link => {
+                    link.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        const targetLang = e.target.closest('a').getAttribute('data-lang');
+                        const targetHash = targetLang === 'en' ? '#english' : '#portuguese';
+                        window.location.hash = targetHash;
+                    });
+                });
+            },
+            
+            initializeLanguage() {
+                // Check URL hash first
+                const hash = window.location.hash;
+                if (hash === '#english') {
+                    this.setLanguage('en');
+                } else if (hash === '#portuguese') {
+                    this.setLanguage('pt');
+                } else {
+                    // Default to Portuguese and set hash
+                    window.location.hash = '#portuguese';
+                    this.setLanguage('pt');
+                }
+            },
+            
+            handleHashChange() {
+                const hash = window.location.hash;
+                if (hash === '#english') {
+                    this.setLanguage('en');
+                } else if (hash === '#portuguese') {
+                    this.setLanguage('pt');
+                }
+            },
+            
+            setLanguage(lang) {
+                this.currentLanguage = lang;
+                
+                // Update all translatable elements
+                const elements = document.querySelectorAll('[data-translate]');
+                elements.forEach(element => {
+                    element.classList.add('language-transition');
+                    
+                    setTimeout(() => {
+                        const translation = element.getAttribute(`data-${lang}`);
+                        if (translation) {
+                            element.innerHTML = translation;
+                        }
+                        element.classList.remove('language-transition');
+                    }, 150);
+                });
+                
+                // Update language switcher appearance
+                this.updateLanguageSwitcher(lang);
+            },
+            
+            updateLanguageSwitcher(lang) {
+                document.querySelectorAll('.navbar-lang-switcher').forEach(link => {
+                    const linkLang = link.getAttribute('data-lang');
+                    if (linkLang === lang) {
+                        link.classList.add('text-primary');
+                        link.classList.remove('text-gray-600');
+                    } else {
+                        link.classList.remove('text-primary');
+                        link.classList.add('text-gray-600');
+                    }
+                });
+            }
+        };
+
         // Mobile menu toggle
         document.getElementById('mobileMenuButton').addEventListener('click', function() {
             document.getElementById('mobileMenu').classList.remove('hidden');
@@ -244,6 +344,9 @@
 
         // Highlight active page in navigation
         document.addEventListener('DOMContentLoaded', function() {
+            // Initialize bilingual functionality
+            bilingualPage.init();
+            
             // Get current page path
             const currentPath = window.location.pathname;
             const currentPage = currentPath.split('/').pop() || 'home-en.html';
