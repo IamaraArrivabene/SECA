@@ -26,9 +26,9 @@ modern-seca/
 │   └── main.js        # Main script file
 ├── videos/            # Video assets
 │   └── videorosaF.mp4 # Hero banner video
-├── index.html         # Main redirect to home-en.html
+├── index.html         # Main English homepage (no redirect)
 ├── modern-index.html  # Alternative redirect to home-en.html
-├── home-en.html       # Main English homepage
+├── home-en.html       # Backup of English homepage
 ├── old-reference.html # Legacy reference page
 └── wordpress-integration.php # WordPress integration script
 ```

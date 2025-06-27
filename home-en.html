@@ -27,14 +27,12 @@
     </script>
     
     <style>
-        [data-lang] {
-            opacity: 1;
+        [data-translate] {
             transition: opacity 0.3s ease;
         }
         
-        [data-lang].hidden-lang {
+        .language-transition {
             opacity: 0;
-            pointer-events: none;
         }
         
         .main-section {
@@ -440,13 +438,18 @@
             },
 
             switchLanguage(lang) {
-                // Update all elements with data attributes
-                document.querySelectorAll('[data-en][data-pt]').forEach(element => {
-                    if (lang === 'en') {
-                        element.innerHTML = element.getAttribute('data-en');
-                    } else {
-                        element.innerHTML = element.getAttribute('data-pt');
-                    }
+                // Update all translatable elements with fade animation
+                const elements = document.querySelectorAll('[data-en][data-pt]');
+                elements.forEach(element => {
+                    element.classList.add('language-transition');
+                    
+                    setTimeout(() => {
+                        const translation = element.getAttribute(`data-${lang}`);
+                        if (translation) {
+                            element.innerHTML = translation;
+                        }
+                        element.classList.remove('language-transition');
+                    }, 150);
                 });
 
                 // Update active language indicator

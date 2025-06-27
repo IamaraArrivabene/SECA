@@ -39,15 +39,12 @@
             margin-top: auto;
         }
         
-        /* Smooth transition for content */
         [data-translate] {
-            transition: opacity 0.2s ease-in-out;
+            transition: opacity 0.3s ease;
         }
         
-        /* Loading state during language switch */
-        .switching {
-            opacity: 0.7;
-            pointer-events: none;
+        .language-transition {
+            opacity: 0;
         }
     </style>
 </head>
@@ -333,23 +330,19 @@
             },
 
             updateLanguage(lang) {
-                // Add transition effect
-                document.body.classList.add('switching');
-                
-                setTimeout(() => {
-                    // Update all elements with translation attributes
-                    document.querySelectorAll('[data-translate]').forEach(element => {
-                        const enText = element.dataset.en;
-                        const ptText = element.dataset.pt;
-                        
-                        if (enText && ptText) {
-                            element.textContent = lang === 'en' ? enText : ptText;
-                        }
-                    });
+                // Update all translatable elements with fade animation
+                const elements = document.querySelectorAll('[data-translate]');
+                elements.forEach(element => {
+                    element.classList.add('language-transition');
                     
-                    // Remove transition effect
-                    document.body.classList.remove('switching');
-                }, 100);
+                    setTimeout(() => {
+                        const translation = element.getAttribute(`data-${lang}`);
+                        if (translation) {
+                            element.innerHTML = translation;
+                        }
+                        element.classList.remove('language-transition');
+                    }, 150);
+                });
             },
 
             updateHeaderLanguageSwitcher() {

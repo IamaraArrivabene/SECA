@@ -3,10 +3,516 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="refresh" content="0;url=home-en.html">
     <title>SECA - Environmental and Climatic Studies System</title>
+    <meta name="description" content="SECA is a company specialized in providing consulting services, studies and projects in the environmental area with an emphasis on air pollution since 1995.">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Open+Sans:wght@300;400;600&display=swap">
+    <!-- ScrollReveal Animation Library -->
+    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2a3347',
+                        secondary: '#3a4357',
+                        'off-white': '#f8fafc'
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        [data-translate] {
+            transition: opacity 0.3s ease;
+        }
+        
+        .language-transition {
+            opacity: 0;
+        }
+        
+        .main-section {
+            background-color: #2B3549;
+            min-height: calc(100vh - 200px);
+            padding-top: 120px;
+            padding-bottom: 60px;
+            position: relative;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+        }
+        
+        .content-area {
+            display: flex;
+            align-items: center;
+            min-height: 40vh;
+            gap: 40px;
+        }
+        
+        .text-content {
+            flex: 1;
+            color: white;
+        }
+        
+        .text-content h1 {
+            font-weight: normal;
+            font-size: 43px;
+            color: #ffffff;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+        
+        .text-content h2 {
+            font-weight: normal;
+            font-size: 26px;
+            color: #ffffff;
+            line-height: 1.3;
+            margin-bottom: 30px;
+        }
+        
+        .text-content p {
+            font-weight: normal;
+            color: #ffffff;
+            text-align: justify;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        
+        .video-content {
+            flex: 0 0 400px;
+        }
+        
+        .video-content video {
+            width: 100%;
+            height: 300px;
+            border-radius: 8px;
+        }
+        
+        /* Background video styles - brighter and more prominent like original */
+        #background-video {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            z-index: -1;
+            object-fit: cover;
+        }
+        
+        body {
+            margin-bottom: 200px; /* Space for fixed footer */
+        }
+        
+        .footer-fixed {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 30;
+        }
+
+        /* Animation classes for ScrollReveal */
+        .from-left {
+            visibility: hidden;
+        }
+        
+        .from-right {
+            visibility: hidden;
+        }
+        
+        .from-top {
+            visibility: hidden;
+        }
+        
+        .from-bottom {
+            visibility: hidden;
+        }
+        
+        @media (max-width: 768px) {
+            .content-area {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .video-content {
+                flex: none;
+                max-width: 100%;
+            }
+            
+            .text-content h1 {
+                font-size: 32px;
+            }
+            
+            .text-content h2 {
+                font-size: 22px;
+            }
+            
+            .main-section {
+                min-height: calc(100vh - 250px);
+            }
+            
+            body {
+                margin-bottom: 250px; /* More space for footer on mobile */
+            }
+        }
+    </style>
 </head>
-<body>
-    <p>Redirecting to homepage...</p>
+<body class="bg-gray-50">
+    <!-- Background Video -->
+    <video id="background-video" autoplay muted loop playsinline>
+        <source src="videos/Video_Seca_Audio_new10b.mp4" type="video/mp4">
+    </video>
+
+    <!-- Opening Audio -->
+    <audio autoplay loop>
+        <source src="images/Seca_Audio.mp3" type="audio/mp3">
+    </audio>
+
+    <!-- Top Bar with Logo and Language Switcher -->
+    <div class="bg-white py-4 border-b fixed top-0 left-0 right-0 z-40 shadow-sm transition-shadow duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <a href="index.html" class="flex-shrink-0">
+                    <img src="images/Logo fit.png" alt="SECA" class="h-12">
+                </a>
+                
+                <!-- Desktop Navigation Menu -->
+                <nav class="hidden md:flex space-x-6">
+                    <a href="index.html" class="text-primary font-medium hover:text-secondary transition-colors"
+                       data-en="Home" data-pt="Início">Início</a>
+                    <a href="about-en.html" class="text-gray-700 font-medium hover:text-primary transition-colors"
+                       data-en="About Us" data-pt="Sobre Nós">Sobre Nós</a>
+                    
+                    <!-- Products Dropdown -->
+                    <div class="relative group">
+                        <a href="products-en.html" class="text-gray-700 font-medium hover:text-primary transition-colors flex items-center"
+                           data-en="Products" data-pt="Produtos">
+                            Produtos
+                            <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </a>
+                        <div class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                            <a href="products-en.html#meteorological" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                               data-en="Weather Stations" data-pt="Estações Meteorológicas">Estações Meteorológicas</a>
+                            <a href="products-en.html#sensors" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                               data-en="Environmental Sensors" data-pt="Sensores Ambientais">Sensores Ambientais</a>
+                            <a href="products-en.html#software" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                               data-en="Software Solutions" data-pt="Soluções de Software">Soluções de Software</a>
+                        </div>
+                    </div>
+                    
+                    <a href="training-en.html" class="text-gray-700 font-medium hover:text-primary transition-colors"
+                       data-en="Training" data-pt="Treinamento">Treinamento</a>
+                    <a href="animations-en.html" class="text-gray-700 font-medium hover:text-primary transition-colors"
+                       data-en="Animations" data-pt="Animações">Animações</a>
+                    <a href="clients-en.html" class="text-gray-700 font-medium hover:text-primary transition-colors"
+                       data-en="Clients" data-pt="Clientes">Clientes</a>
+                    <a href="links-en.html" class="text-gray-700 font-medium hover:text-primary transition-colors"
+                       data-en="Links" data-pt="Links">Links</a>
+                    <a href="contact-en.html" class="text-gray-700 font-medium hover:text-primary transition-colors"
+                       data-en="Contact" data-pt="Contato">Contato</a>
+                </nav>
+                
+                <!-- Language Switcher and Mobile Menu Button -->
+                <div class="flex items-center space-x-4">
+                    <a href="#english" class="navbar-lang-switcher flex items-center space-x-1 text-sm text-primary">
+                        <img src="images/USA.jpg" class="w-5 h-5 rounded-full object-cover" alt="EN">
+                        <span>EN</span>
+                    </a>
+                    <a href="#portuguese" class="navbar-lang-switcher flex items-center space-x-1 text-sm text-gray-600 hover:text-primary">
+                        <img src="images/BR_new.png" class="w-5 h-5 rounded-full object-cover" alt="PT">
+                        <span>PT</span>
+                    </a>
+                    
+                    <!-- Mobile Menu Button -->
+                    <button class="md:hidden ml-4 text-gray-700 hover:text-primary" id="mobileMenuButton">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Section -->
+    <section class="main-section">
+        <div class="absolute inset-0 bg-[#2a3347] bg-opacity-60"></div>
+        <div class="container relative z-20">
+            <div class="content-area">
+                <div class="text-content from-left">
+                    <h1 data-en="SECA - Environmental<br>and Climatic Studies System" 
+                        data-pt="SECA - Sistema de Estudos<br>Climáticos e Ambientais">SECA - Environmental<br>and Climatic Studies System</h1>
+                    <h2 data-en="Excellence in Mathematical Simulation<br>of Atmospheric Dispersion of Pollutants" 
+                        data-pt="Excelência em Simulação Matemática<br>de Dispersão Atmosférica de Poluentes">Excellence in Mathematical Simulation<br>of Atmospheric Dispersion of Pollutants</h2>
+                    <p data-en="SECA - Environmental and Climatic Studies System Ltd. is a company specialized in providing consulting services, studies and projects that has been operating in the environmental area with an emphasis on air pollution since 1995. Based on the experience of its technical staff, it has been executing services and advising companies with updated technology and with this while maintaining the commitment to quality and impartiality."
+                       data-pt="SECA - Sistema de Estudos Climáticos e Ambientais Ltda. é uma empresa especializada na prestação de serviços de consultoria, estudos e projetos que atua na área ambiental com ênfase em poluição do ar desde 1995. Baseando-se na experiência de sua equipe técnica, vem executando serviços e assessorando empresas com tecnologia atualizada, mantendo o compromisso com a qualidade e imparcialidade.">
+                        SECA - Environmental and Climatic Studies System Ltd. is a company specialized in providing consulting services, studies and projects that has been operating in the environmental area with an emphasis on air pollution since 1995. Based on the experience of its technical staff, it has been executing services and advising companies with updated technology and with this while maintaining the commitment to quality and impartiality.
+                    </p>
+                </div>
+                <div class="video-content from-right">
+                    <video width="400" height="300" autoplay muted loop>
+                        <source src="videos/videorosaF.mp4" type="video/mp4">
+                        <span data-en="Your browser does not support the video tag." 
+                              data-pt="Seu navegador não suporta a tag de vídeo.">Your browser does not support the video tag.</span>
+                    </video>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#2a3347] text-white py-8 footer-fixed">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-wrap justify-between items-start gap-8">
+                <!-- Logo and Social -->
+                <div class="w-full sm:w-auto flex flex-col items-center sm:items-start">
+                    <img src="images/logo-white.png" alt="SECA" class="h-10 mb-4">
+                    <a href="https://www.linkedin.com/in/silvio-de-oliveira-b382972b/" target="_blank" 
+                       class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+
+                <!-- Combined Links and Contact -->
+                <div class="flex flex-1 flex-wrap justify-around gap-8">
+                    <!-- Links Rápidos -->
+                    <div class="w-full sm:w-auto">
+                        <h3 class="text-sm font-semibold uppercase tracking-wider mb-3"
+                            data-en="Quick Links" data-pt="Links Rápidos">Links Rápidos</h3>
+                        <ul class="space-y-2 text-sm">
+                            <li><a href="about-en.html" class="text-gray-300 hover:text-white transition-colors"
+                                   data-en="About Us" data-pt="Sobre Nós">Sobre Nós</a></li>
+                            <li><a href="products-en.html" class="text-gray-300 hover:text-white transition-colors"
+                                   data-en="Products" data-pt="Produtos">Produtos</a></li>
+                            <li><a href="training-en.html" class="text-gray-300 hover:text-white transition-colors"
+                                   data-en="Training" data-pt="Treinamento">Treinamento</a></li>
+                            <li><a href="clients-en.html" class="text-gray-300 hover:text-white transition-colors"
+                                   data-en="Clients" data-pt="Clientes">Clientes</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Informações de Contato -->
+                    <div class="w-full sm:w-auto">
+                        <h3 class="text-sm font-semibold uppercase tracking-wider mb-3"
+                            data-en="Contact" data-pt="Contato">Contato</h3>
+                        <ul class="space-y-3 text-sm text-gray-300">
+                            <li>
+                                <div class="font-medium text-white mb-1"
+                                     data-en="Official Office:" data-pt="Escritório Oficial:">Escritório Oficial:</div>
+                                <div class="flex items-start">
+                                    <i class="fas fa-map-marker-alt mt-1 mr-2 text-xs"></i>
+                                    <span>Rua Cardeal Arcoverde,712, Pinheiros, CEP 05408-001<br>CEP 05408-001- São Paulo, SP</span>
+                                </div>
+                                <div class="flex items-center mt-1">
+                                    <i class="fas fa-phone mr-2 text-xs"></i>
+                                    <span>+55 (11) 98584 4039</span>
+                                </div>
+                            </li>
+
+                            <li class="flex items-center">
+                                <i class="fas fa-envelope mr-2 text-xs"></i>
+                                <a href="mailto:seca@seca-ambiental.com.br" class="hover:text-white transition-colors">seca@seca-ambiental.com.br</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-white/10 mt-6 pt-6 flex flex-col sm:flex-row justify-between items-center text-xs text-gray-400">
+                <p data-en="© 2025 SECA - Environmental and Climatic Studies System. All rights reserved."
+                   data-pt="© 2025 SECA - Sistema de Estudos Climáticos e Ambientais. Todos os direitos reservados.">&copy; 2025 SECA - Sistema de Estudos Climáticos e Ambientais. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu (Hidden by default) -->
+    <div class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden" id="mobileMenu">
+        <div class="fixed inset-y-0 right-0 max-w-xs w-full bg-white shadow-xl">
+            <div class="flex items-center justify-between p-4 border-b">
+                <h2 class="text-lg font-semibold text-gray-900"
+                    data-en="Menu" data-pt="Menu">Menu</h2>
+                <button class="text-gray-600 hover:text-gray-900" onclick="document.getElementById('mobileMenu').classList.add('hidden')">
+                    <i class="fas fa-times text-2xl"></i>
+                </button>
+            </div>
+            <nav class="px-4 py-6">
+                <ul class="space-y-4">
+                    <li class="border-l-4 border-primary pl-2">
+                        <a href="index.html" class="block text-base text-primary font-medium"
+                           data-en="Home" data-pt="Início">Início</a>
+                    </li>
+                    <li><a href="about-en.html" class="block text-base text-gray-900 hover:text-primary"
+                           data-en="About Us" data-pt="Sobre Nós">Sobre Nós</a></li>
+                    <li><a href="products-en.html" class="block text-base text-gray-900 hover:text-primary"
+                           data-en="Products" data-pt="Produtos">Produtos</a></li>
+                    <li class="pl-4"><a href="products-en.html#meteorological" class="block text-sm text-gray-700 hover:text-primary"
+                                        data-en="Weather Stations" data-pt="Estações Meteorológicas">Estações Meteorológicas</a></li>
+                    <li class="pl-4"><a href="products-en.html#sensors" class="block text-sm text-gray-700 hover:text-primary"
+                                        data-en="Environmental Sensors" data-pt="Sensores Ambientais">Sensores Ambientais</a></li>
+                    <li class="pl-4"><a href="products-en.html#software" class="block text-sm text-gray-700 hover:text-primary"
+                                        data-en="Software Solutions" data-pt="Soluções de Software">Soluções de Software</a></li>
+                    <li><a href="training-en.html" class="block text-base text-gray-900 hover:text-primary"
+                           data-en="Training" data-pt="Treinamento">Treinamento</a></li>
+                    <li><a href="animations-en.html" class="block text-base text-gray-900 hover:text-primary"
+                           data-en="Animations" data-pt="Animações">Animações</a></li>
+                    <li><a href="clients-en.html" class="block text-base text-gray-900 hover:text-primary"
+                           data-en="Clients" data-pt="Clientes">Clientes</a></li>
+                    <li><a href="links-en.html" class="block text-base text-gray-900 hover:text-primary"
+                           data-en="Links" data-pt="Links">Links</a></li>
+                    <li><a href="contact-en.html" class="block text-base text-gray-900 hover:text-primary"
+                           data-en="Contact" data-pt="Contato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // Initialize ScrollReveal animations
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize ScrollReveal with same settings as original
+            window.sr = ScrollReveal({
+                distance: '100px'
+            });
+            sr.reveal('.from-left', { origin: 'left'});
+            sr.reveal('.from-right', { origin: 'right'});
+            sr.reveal('.from-top', { origin: 'top'});
+            // Footer animation removed as requested
+        });
+
+        // Bilingual functionality
+        const bilingualPage = {
+            init() {
+                this.setupLanguageSwitching();
+                this.handleInitialLanguage();
+            },
+
+            setupLanguageSwitching() {
+                // Handle navbar language links
+                document.querySelectorAll('.navbar-lang-switcher').forEach(link => {
+                    link.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        const hash = link.getAttribute('href').substring(1); // Remove #
+                        if (hash === 'english' || hash === 'portuguese') {
+                            window.location.hash = hash;
+                            this.switchLanguage(hash === 'english' ? 'en' : 'pt');
+                        }
+                    });
+                });
+
+                // Handle hash changes (for browser back/forward)
+                window.addEventListener('hashchange', () => {
+                    const hash = window.location.hash.substring(1);
+                    if (hash === 'english' || hash === 'portuguese') {
+                        this.switchLanguage(hash === 'english' ? 'en' : 'pt');
+                    }
+                });
+
+                // Handle popstate for browser navigation
+                window.addEventListener('popstate', () => {
+                    const hash = window.location.hash.substring(1);
+                    if (hash === 'english' || hash === 'portuguese') {
+                        this.switchLanguage(hash === 'english' ? 'en' : 'pt');
+                    }
+                });
+            },
+
+            handleInitialLanguage() {
+                const hash = window.location.hash.substring(1);
+                if (hash === 'english' || hash === 'portuguese') {
+                    this.switchLanguage(hash === 'english' ? 'en' : 'pt');
+                } else {
+                    // Default to Portuguese
+                    window.location.hash = 'portuguese';
+                    this.switchLanguage('pt');
+                }
+            },
+
+            switchLanguage(lang) {
+                // Update all translatable elements with fade animation
+                const elements = document.querySelectorAll('[data-en][data-pt]');
+                elements.forEach(element => {
+                    element.classList.add('language-transition');
+                    
+                    setTimeout(() => {
+                        const translation = element.getAttribute(`data-${lang}`);
+                        if (translation) {
+                            element.innerHTML = translation;
+                        }
+                        element.classList.remove('language-transition');
+                    }, 150);
+                });
+
+                // Update active language indicator
+                document.querySelectorAll('.navbar-lang-switcher').forEach(link => {
+                    const isActive = (lang === 'en' && link.getAttribute('href') === '#english') ||
+                                   (lang === 'pt' && link.getAttribute('href') === '#portuguese');
+                    
+                    if (isActive) {
+                        link.classList.remove('text-gray-600');
+                        link.classList.add('text-primary');
+                    } else {
+                        link.classList.remove('text-primary');
+                        link.classList.add('text-gray-600');
+                    }
+                });
+
+                // Update page language attribute
+                document.documentElement.lang = lang === 'en' ? 'en' : 'pt';
+            }
+        };
+
+        // Initialize when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            bilingualPage.init();
+        });
+
+        // Mobile menu toggle
+        document.getElementById('mobileMenuButton').addEventListener('click', function() {
+            document.getElementById('mobileMenu').classList.remove('hidden');
+        });
+
+        // Navbar scroll behavior
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            // Always keep navbar white without shadows regardless of scroll position
+            navbar.classList.add('bg-white');
+            navbar.classList.remove('shadow-md', 'bg-white/95');
+        });
+
+        // Highlight active page in navigation
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get current page path
+            const currentPath = window.location.pathname;
+            const currentPage = currentPath.split('/').pop() || 'index.html';
+            
+            // Highlight desktop navbar item
+            document.querySelectorAll('nav a').forEach(link => {
+                if (link.getAttribute('href') === currentPage || 
+                    (currentPage === 'index.html' && link.getAttribute('href') === 'index.html')) {
+                    link.classList.add('text-primary');
+                    link.classList.remove('text-gray-700');
+                }
+            });
+            
+            // Highlight mobile menu item
+            document.querySelectorAll('#mobileMenu nav a').forEach(link => {
+                if (link.getAttribute('href') === currentPage || 
+                    (currentPage === 'index.html' && link.getAttribute('href') === 'index.html')) {
+                    link.classList.add('text-primary');
+                    link.parentElement.classList.add('border-l-4', 'border-primary', 'pl-2');
+                }
+            });
+        });
+    </script>
 </body>
 </html> 
