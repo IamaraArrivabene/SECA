@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Open+Sans:wght@300;400;600&display=swap">
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script>
         tailwind.config = {
             theme: {
@@ -359,8 +361,6 @@
                 this.switchLanguage(lang, false); // Don't update hash again
             },
 
-
-
             switchLanguage(lang, updateHash = true) {
                 this.currentLang = lang;
                 
@@ -407,8 +407,6 @@
                 }, 100);
             },
 
-
-
             updateHeaderLanguageSwitcher() {
                 // Update navbar language switcher to match current language
                 document.querySelectorAll('.navbar-lang-switcher').forEach(link => {
@@ -429,6 +427,7 @@
                     e.preventDefault();
                     
                     const t = this.translations[this.currentLang];
+                    const submitBtn = e.target.querySelector('button[type="submit"]');
                     
                     // Basic validation
                     const formData = new FormData(e.target);
@@ -443,13 +442,85 @@
                     }
                     
                     if (isValid) {
-                        // Here you would normally send the form data to a server
-                        alert(t.successMsg);
-                        e.target.reset();
+                        // Disable submit button and show loading
+                        submitBtn.disabled = true;
+                        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>' + 
+                            (this.currentLang === 'en' ? 'Sending...' : 'Enviando...');
+                        
+                        // Send email using EmailJS
+                        this.sendEmail(formData, submitBtn, t);
                     } else {
                         alert(t.errorMsg);
                     }
                 });
+            },
+
+            async sendEmail(formData, submitBtn, t) {
+                try {
+                    // EmailJS configuration - Replace with your actual IDs
+                    const serviceID = 'YOUR_SERVICE_ID';
+                    const templateID = 'YOUR_TEMPLATE_ID';
+                    const publicKey = 'YOUR_PUBLIC_KEY';
+                    
+                    // Prepare template parameters
+                    const templateParams = {
+                        from_name: formData.get('name'),
+                        from_email: formData.get('email'),
+                        subject: formData.get('subject'),
+                        message: formData.get('message'),
+                        to_email: 'seca@seca-ambiental.com.br' // Your receiving email
+                    };
+                    
+                    // Send email
+                    const response = await emailjs.send(serviceID, templateID, templateParams, publicKey);
+                    
+                    if (response.status === 200) {
+                        // Success
+                        this.showNotification(t.successMsg, 'success');
+                        document.getElementById('contactForm').reset();
+                    } else {
+                        throw new Error('Email service error');
+                    }
+                    
+                } catch (error) {
+                    console.error('Email error:', error);
+                    this.showNotification(
+                        this.currentLang === 'en' 
+                            ? 'Sorry, there was an error sending your message. Please try again or contact us directly.'
+                            : 'Desculpe, houve um erro ao enviar sua mensagem. Tente novamente ou entre em contato diretamente.',
+                        'error'
+                    );
+                } finally {
+                    // Reset button
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = this.currentLang === 'en' ? 'Send Message' : 'Enviar Mensagem';
+                }
+            },
+
+            showNotification(message, type) {
+                // Create notification element
+                const notification = document.createElement('div');
+                notification.className = `fixed top-4 right-4 p-4 rounded-lg shadow-lg z-50 ${
+                    type === 'success' ? 'bg-green-500 text-white' : 'bg-red-500 text-white'
+                }`;
+                notification.innerHTML = `
+                    <div class="flex items-center">
+                        <i class="fas ${type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle'} mr-2"></i>
+                        <span>${message}</span>
+                        <button onclick="this.parentElement.parentElement.remove()" class="ml-4 text-white hover:text-gray-200">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                `;
+                
+                document.body.appendChild(notification);
+                
+                // Auto remove after 5 seconds
+                setTimeout(() => {
+                    if (notification.parentElement) {
+                        notification.remove();
+                    }
+                }, 5000);
             }
         };
 
