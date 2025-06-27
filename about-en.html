@@ -112,13 +112,10 @@
             <img src="images/Station.png" alt="SECA Environmental" class="w-full h-full object-cover">
         </video>
         
-        <!-- Overlay -->
-        <div class="absolute inset-0 bg-black/30"></div>
-        
         <!-- Content Card -->
         <div class="relative flex items-center h-full">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="bg-black/70 backdrop-blur-sm rounded-lg p-8 max-w-2xl">
+                <div class="bg-black/70 backdrop-blur-sm rounded-lg p-8 w-full">
                     <h1 class="text-4xl font-bold mb-6 text-white" 
                         data-en="The Company" data-pt="A Empresa">The Company</h1>
                     <p class="text-lg leading-relaxed text-white"
@@ -552,7 +549,7 @@
 
             // Audio setup - play after 10 seconds delay
             const audio = new Audio('images/Seca_Audio.mp3');
-            audio.volume = 0.5; // Set volume to 50%
+            audio.volume = 1; // Set volume to 50%
             
             // Play audio after 10 seconds
             setTimeout(function() {
