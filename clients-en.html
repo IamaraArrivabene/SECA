@@ -45,29 +45,29 @@
                 
                 <!-- Desktop Navigation Menu -->
                 <nav class="hidden md:flex space-x-6">
-                    <a href="home-en.html" class="text-gray-700 font-medium hover:text-primary transition-colors">Início</a>
-                    <a href="about-en.html" class="text-gray-700 font-medium hover:text-primary transition-colors">Sobre Nós</a>
+                    <a href="home-en.html" class="text-gray-700 font-medium hover:text-primary transition-colors" data-translate="nav-home" data-en="Home" data-pt="Início">Início</a>
+                    <a href="about-en.html" class="text-gray-700 font-medium hover:text-primary transition-colors" data-translate="nav-about" data-en="About Us" data-pt="Sobre Nós">Sobre Nós</a>
                     
                     <!-- Products Dropdown -->
                     <div class="relative group">
-                        <a href="products-en.html" class="text-gray-700 font-medium hover:text-primary transition-colors flex items-center">
+                        <a href="products-en.html" class="text-gray-700 font-medium hover:text-primary transition-colors flex items-center" data-translate="nav-products" data-en="Products" data-pt="Produtos">
                             Produtos
                             <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                             </svg>
                         </a>
                         <div class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
-                            <a href="products-en.html#meteorological" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Estações Meteorológicas</a>
-                            <a href="products-en.html#sensors" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Sensores Ambientais</a>
-                            <a href="products-en.html#software" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Soluções de Software</a>
+                            <a href="products-en.html#meteorological" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" data-translate="nav-meteorological" data-en="Weather Stations" data-pt="Estações Meteorológicas">Estações Meteorológicas</a>
+                            <a href="products-en.html#sensors" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" data-translate="nav-sensors" data-en="Environmental Sensors" data-pt="Sensores Ambientais">Sensores Ambientais</a>
+                            <a href="products-en.html#software" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" data-translate="nav-software" data-en="Software Solutions" data-pt="Soluções de Software">Soluções de Software</a>
                         </div>
                     </div>
                     
-                    <a href="training-en.html" class="text-gray-700 font-medium hover:text-primary transition-colors">Treinamento</a>
-                    <a href="animations-en.html" class="text-gray-700 font-medium hover:text-primary transition-colors">Animações</a>
-                    <a href="clients-en.html" class="text-primary font-medium hover:text-secondary transition-colors">Clientes</a>
-                    <a href="links-en.html" class="text-gray-700 font-medium hover:text-primary transition-colors">Links</a>
-                    <a href="contact-en.html" class="text-gray-700 font-medium hover:text-primary transition-colors">Contato</a>
+                    <a href="training-en.html" class="text-gray-700 font-medium hover:text-primary transition-colors" data-translate="nav-training" data-en="Training" data-pt="Treinamento">Treinamento</a>
+                    <a href="animations-en.html" class="text-gray-700 font-medium hover:text-primary transition-colors" data-translate="nav-animations" data-en="Animations" data-pt="Animações">Animações</a>
+                    <a href="clients-en.html" class="text-primary font-medium hover:text-secondary transition-colors" data-translate="nav-clients" data-en="Clients" data-pt="Clientes">Clientes</a>
+                    <a href="links-en.html" class="text-gray-700 font-medium hover:text-primary transition-colors" data-translate="nav-links" data-en="Links" data-pt="Links">Links</a>
+                    <a href="contact-en.html" class="text-gray-700 font-medium hover:text-primary transition-colors" data-translate="nav-contact" data-en="Contact" data-pt="Contato">Contato</a>
                 </nav>
                 
                 <!-- Language Switcher and Mobile Menu Button -->
@@ -103,26 +103,26 @@
     <div class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden" id="mobileMenu">
         <div class="fixed inset-y-0 right-0 max-w-xs w-full bg-white shadow-xl">
             <div class="flex items-center justify-between p-4 border-b">
-                <h2 class="text-lg font-semibold text-gray-900">Menu</h2>
+                <h2 class="text-lg font-semibold text-gray-900" data-translate="mobile-menu-title" data-en="Menu" data-pt="Menu">Menu</h2>
                 <button class="text-gray-600 hover:text-gray-900" onclick="document.getElementById('mobileMenu').classList.add('hidden')">
                     <i class="fas fa-times text-2xl"></i>
                 </button>
             </div>
             <nav class="px-4 py-6">
                 <ul class="space-y-4">
-                    <li><a href="home-en.html" class="block text-base text-gray-900 hover:text-primary">Início</a></li>
-                    <li><a href="about-en.html" class="block text-base text-gray-900 hover:text-primary">Sobre Nós</a></li>
-                    <li><a href="products-en.html" class="block text-base text-gray-900 hover:text-primary">Produtos</a></li>
-                    <li class="pl-4"><a href="products-en.html#meteorological" class="block text-sm text-gray-700 hover:text-primary">Estações Meteorológicas</a></li>
-                    <li class="pl-4"><a href="products-en.html#sensors" class="block text-sm text-gray-700 hover:text-primary">Sensores Ambientais</a></li>
-                    <li class="pl-4"><a href="products-en.html#software" class="block text-sm text-gray-700 hover:text-primary">Soluções de Software</a></li>
-                    <li><a href="training-en.html" class="block text-base text-gray-900 hover:text-primary">Treinamento</a></li>
-                    <li><a href="animations-en.html" class="block text-base text-gray-900 hover:text-primary">Animações</a></li>
+                    <li><a href="home-en.html" class="block text-base text-gray-900 hover:text-primary" data-translate="mobile-home" data-en="Home" data-pt="Início">Início</a></li>
+                    <li><a href="about-en.html" class="block text-base text-gray-900 hover:text-primary" data-translate="mobile-about" data-en="About Us" data-pt="Sobre Nós">Sobre Nós</a></li>
+                    <li><a href="products-en.html" class="block text-base text-gray-900 hover:text-primary" data-translate="mobile-products" data-en="Products" data-pt="Produtos">Produtos</a></li>
+                    <li class="pl-4"><a href="products-en.html#meteorological" class="block text-sm text-gray-700 hover:text-primary" data-translate="mobile-meteorological" data-en="Weather Stations" data-pt="Estações Meteorológicas">Estações Meteorológicas</a></li>
+                    <li class="pl-4"><a href="products-en.html#sensors" class="block text-sm text-gray-700 hover:text-primary" data-translate="mobile-sensors" data-en="Environmental Sensors" data-pt="Sensores Ambientais">Sensores Ambientais</a></li>
+                    <li class="pl-4"><a href="products-en.html#software" class="block text-sm text-gray-700 hover:text-primary" data-translate="mobile-software" data-en="Software Solutions" data-pt="Soluções de Software">Soluções de Software</a></li>
+                    <li><a href="training-en.html" class="block text-base text-gray-900 hover:text-primary" data-translate="mobile-training" data-en="Training" data-pt="Treinamento">Treinamento</a></li>
+                    <li><a href="animations-en.html" class="block text-base text-gray-900 hover:text-primary" data-translate="mobile-animations" data-en="Animations" data-pt="Animações">Animações</a></li>
                     <li class="border-l-4 border-primary pl-2">
-                        <a href="clients-en.html" class="block text-base text-primary font-medium">Clientes</a>
+                        <a href="clients-en.html" class="block text-base text-primary font-medium" data-translate="mobile-clients" data-en="Clients" data-pt="Clientes">Clientes</a>
                     </li>
-                    <li><a href="links-en.html" class="block text-base text-gray-900 hover:text-primary">Links</a></li>
-                    <li><a href="contact-en.html" class="block text-base text-gray-900 hover:text-primary">Contato</a></li>
+                    <li><a href="links-en.html" class="block text-base text-gray-900 hover:text-primary" data-translate="mobile-links" data-en="Links" data-pt="Links">Links</a></li>
+                    <li><a href="contact-en.html" class="block text-base text-gray-900 hover:text-primary" data-translate="mobile-contact" data-en="Contact" data-pt="Contato">Contato</a></li>
                 </ul>
             </nav>
         </div>
@@ -254,21 +254,21 @@
                 <div class="flex flex-1 flex-wrap justify-around gap-8">
                     <!-- Quick Links -->
                     <div class="w-full sm:w-auto">
-                        <h3 class="text-sm font-semibold uppercase tracking-wider mb-3" data-translate="quick-links" data-en="Quick Links" data-pt="Links Rápidos">Quick Links</h3>
+                        <h3 class="text-sm font-semibold uppercase tracking-wider mb-3" data-translate="footer-quick-links" data-en="Quick Links" data-pt="Links Rápidos">Quick Links</h3>
                         <ul class="space-y-2 text-sm">
-                            <li><a href="about-en.html" class="text-gray-300 hover:text-white transition-colors" data-translate="about-us" data-en="About Us" data-pt="Sobre Nós">About Us</a></li>
-                            <li><a href="products-en.html" class="text-gray-300 hover:text-white transition-colors" data-translate="products" data-en="Products" data-pt="Produtos">Products</a></li>
-                            <li><a href="training-en.html" class="text-gray-300 hover:text-white transition-colors" data-translate="training" data-en="Training" data-pt="Treinamento">Training</a></li>
-                            <li><a href="clients-en.html" class="text-gray-300 hover:text-white transition-colors" data-translate="clients" data-en="Clients" data-pt="Clientes">Clients</a></li>
+                            <li><a href="about-en.html" class="text-gray-300 hover:text-white transition-colors" data-translate="footer-about-us" data-en="About Us" data-pt="Sobre Nós">About Us</a></li>
+                            <li><a href="products-en.html" class="text-gray-300 hover:text-white transition-colors" data-translate="footer-products" data-en="Products" data-pt="Produtos">Products</a></li>
+                            <li><a href="training-en.html" class="text-gray-300 hover:text-white transition-colors" data-translate="footer-training" data-en="Training" data-pt="Treinamento">Training</a></li>
+                            <li><a href="clients-en.html" class="text-gray-300 hover:text-white transition-colors" data-translate="footer-clients" data-en="Clients" data-pt="Clientes">Clients</a></li>
                         </ul>
                     </div>
 
                     <!-- Contact Info -->
                     <div class="w-full sm:w-auto">
-                        <h3 class="text-sm font-semibold uppercase tracking-wider mb-3" data-translate="contact" data-en="Contact" data-pt="Contato">Contact</h3>
+                        <h3 class="text-sm font-semibold uppercase tracking-wider mb-3" data-translate="footer-contact" data-en="Contact" data-pt="Contato">Contact</h3>
                         <ul class="space-y-3 text-sm text-gray-300">
                             <li>
-                                <div class="font-medium text-white mb-1" data-translate="office-main" data-en="Main Office:" data-pt="Escritório Oficial:">Escritório Oficial:</div>
+                                <div class="font-medium text-white mb-1" data-translate="footer-office-main" data-en="Main Office:" data-pt="Escritório Oficial:">Escritório Oficial:</div>
                                 <div class="flex items-start">
                                     <i class="fas fa-map-marker-alt mt-1 mr-2 text-xs"></i>
                                     <span>Rua Cardeal Arcoverde,712, Pinheiros, CEP 05408-001<br>CEP 05408-001- São Paulo, SP</span>
@@ -289,8 +289,7 @@
             </div>
 
             <div class="border-t border-white/10 mt-6 pt-6 flex flex-col sm:flex-row justify-between items-center text-xs text-gray-400">
-                <p>&copy; 2025 SECA - Sistema de Estudos Climáticos e Ambientais. Todos os direitos reservados.</p>
-
+                <p data-translate="footer-copyright" data-en="&copy; 2025 SECA - Environmental and Climatic Studies System. All rights reserved." data-pt="&copy; 2025 SECA - Sistema de Estudos Climáticos e Ambientais. Todos os direitos reservados.">&copy; 2025 SECA - Sistema de Estudos Climáticos e Ambientais. Todos os direitos reservados.</p>
             </div>
         </div>
     </footer>
@@ -307,6 +306,18 @@
             },
 
             setupHashNavigation() {
+                // Handle navbar language links
+                document.querySelectorAll('.navbar-lang-switcher').forEach(link => {
+                    link.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        const hash = link.getAttribute('href').substring(1); // Remove #
+                        if (hash === 'english' || hash === 'portuguese') {
+                            window.location.hash = hash;
+                            this.switchLanguage(hash === 'english' ? 'en' : 'pt');
+                        }
+                    });
+                });
+
                 // Listen for hash changes in the URL
                 window.addEventListener('hashchange', () => {
                     this.handleHashChange();
@@ -333,7 +344,7 @@
                     lang = 'pt';
                 }
                 
-                this.switchLanguage(lang, false); // Don't update hash again
+                this.switchLanguage(lang, false, false); // Don't update hash again, no animation
             },
 
             handleHashChange() {
@@ -346,10 +357,10 @@
                     lang = 'pt';
                 }
                 
-                this.switchLanguage(lang, false); // Don't update hash again
+                this.switchLanguage(lang, false); // Don't update hash again, but allow animation for user changes
             },
 
-            switchLanguage(lang, updateHash = true) {
+            switchLanguage(lang, updateHash = true, animate = true) {
                 this.currentLang = lang;
                 
                 // Update hash if needed
@@ -361,23 +372,31 @@
                 // Store in localStorage as backup
                 localStorage.setItem('seca-language', lang);
                 
-                this.updateLanguage(lang);
+                this.updateLanguage(lang, animate);
                 this.updateHeaderLanguageSwitcher();
             },
 
-            updateLanguage(lang) {
-                // Update all translatable elements with fade animation
+            updateLanguage(lang, animate = true) {
+                // Update all translatable elements with optional fade animation
                 const elements = document.querySelectorAll('[data-translate]');
                 elements.forEach(element => {
-                    element.classList.add('language-transition');
-                    
-                    setTimeout(() => {
+                    if (animate) {
+                        element.classList.add('language-transition');
+                        
+                        setTimeout(() => {
+                            const translation = element.getAttribute(`data-${lang}`);
+                            if (translation) {
+                                element.innerHTML = translation;
+                            }
+                            element.classList.remove('language-transition');
+                        }, 150);
+                    } else {
+                        // Update immediately without animation
                         const translation = element.getAttribute(`data-${lang}`);
                         if (translation) {
                             element.innerHTML = translation;
                         }
-                        element.classList.remove('language-transition');
-                    }, 150);
+                    }
                 });
             },
 

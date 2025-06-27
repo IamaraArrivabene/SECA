@@ -115,11 +115,11 @@
                 
                 <!-- Language Switcher and Mobile Menu Button -->
                 <div class="flex items-center space-x-4">
-                    <a href="#english" data-lang="en" class="flex items-center space-x-1 text-sm text-primary navbar-lang-switcher">
+                    <a href="#english" class="flex items-center space-x-1 text-sm text-primary navbar-lang-switcher" data-lang="en">
                         <img src="images/USA.jpg" class="w-5 h-5 rounded-full object-cover" alt="EN">
                         <span>EN</span>
                     </a>
-                    <a href="#portuguese" data-lang="pt" class="flex items-center space-x-1 text-sm text-gray-600 hover:text-primary navbar-lang-switcher">
+                    <a href="#portuguese" class="flex items-center space-x-1 text-sm text-gray-600 hover:text-primary navbar-lang-switcher" data-lang="pt">
                         <img src="images/BR_new.png" class="w-5 h-5 rounded-full object-cover" alt="PT">
                         <span>PT</span>
                     </a>
@@ -484,7 +484,7 @@
     <div class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden" id="mobileMenu">
         <div class="fixed inset-y-0 right-0 max-w-xs w-full bg-white shadow-xl">
             <div class="flex items-center justify-between p-4 border-b">
-                <h2 class="text-lg font-semibold text-gray-900">Menu</h2>
+                <h2 class="text-lg font-semibold text-gray-900" data-translate="mobile-menu-title" data-en="Menu" data-pt="Menu">Menu</h2>
                 <button class="text-gray-600 hover:text-gray-900" onclick="document.getElementById('mobileMenu').classList.add('hidden')">
                     <i class="fas fa-times text-2xl"></i>
                 </button>
@@ -510,87 +510,118 @@
 
     <!-- JavaScript -->
     <script>
-        // Bilingual functionality
+        // Bilingual functionality with hash-based navigation
         const bilingualPage = {
-            currentLanguage: 'pt', // Default to Portuguese
+            currentLang: 'pt', // Default language
             
             init() {
-                this.setupEventListeners();
-                this.initializeLanguage();
+                this.setupHashNavigation();
+                this.handleInitialHash();
             },
-            
-            setupEventListeners() {
-                // Hash change listener for browser navigation
+
+            setupHashNavigation() {
+                // Handle navbar language links
+                document.querySelectorAll('.navbar-lang-switcher').forEach(link => {
+                    link.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        const hash = link.getAttribute('href').substring(1); // Remove #
+                        if (hash === 'english' || hash === 'portuguese') {
+                            window.location.hash = hash;
+                            this.switchLanguage(hash === 'english' ? 'en' : 'pt');
+                        }
+                    });
+                });
+
+                // Listen for hash changes in the URL
                 window.addEventListener('hashchange', () => {
                     this.handleHashChange();
                 });
                 
-                // Popstate for browser back/forward
+                // Handle browser back/forward buttons
                 window.addEventListener('popstate', () => {
                     this.handleHashChange();
                 });
-                
-                // Navbar language switcher click handler
-                document.querySelectorAll('.navbar-lang-switcher').forEach(link => {
-                    link.addEventListener('click', (e) => {
-                        e.preventDefault();
-                        const targetLang = e.target.closest('a').getAttribute('data-lang');
-                        const targetHash = targetLang === 'en' ? '#english' : '#portuguese';
-                        window.location.hash = targetHash;
-                    });
-                });
             },
-            
-            initializeLanguage() {
-                // Check URL hash first
-                const hash = window.location.hash;
-                if (hash === '#english') {
-                    this.setLanguage('en');
-                } else if (hash === '#portuguese') {
-                    this.setLanguage('pt');
+
+            handleInitialHash() {
+                // Check URL hash on page load
+                const hash = window.location.hash.substring(1); // Remove #
+                let lang = 'pt'; // Default
+                
+                if (hash === 'english') {
+                    lang = 'en';
+                } else if (hash === 'portuguese') {
+                    lang = 'pt';
                 } else {
-                    // Default to Portuguese and set hash
+                    // If no hash or invalid hash, set default hash
                     window.location.hash = '#portuguese';
-                    this.setLanguage('pt');
+                    lang = 'pt';
                 }
-            },
-            
-            handleHashChange() {
-                const hash = window.location.hash;
-                if (hash === '#english') {
-                    this.setLanguage('en');
-                } else if (hash === '#portuguese') {
-                    this.setLanguage('pt');
-                }
-            },
-            
-            setLanguage(lang) {
-                this.currentLanguage = lang;
                 
-                // Update all translatable elements
+                this.switchLanguage(lang, false, false); // Don't update hash again, no animation
+            },
+
+            handleHashChange() {
+                const hash = window.location.hash.substring(1); // Remove #
+                let lang = 'pt';
+                
+                if (hash === 'english') {
+                    lang = 'en';
+                } else if (hash === 'portuguese') {
+                    lang = 'pt';
+                }
+                
+                this.switchLanguage(lang, false); // Don't update hash again, but allow animation for user changes
+            },
+
+            switchLanguage(lang, updateHash = true, animate = true) {
+                this.currentLang = lang;
+                
+                // Update hash if needed
+                if (updateHash) {
+                    const hash = lang === 'en' ? 'english' : 'portuguese';
+                    window.location.hash = '#' + hash;
+                }
+                
+                // Store in localStorage as backup
+                localStorage.setItem('seca-language', lang);
+                
+                this.updateLanguage(lang, animate);
+                this.updateHeaderLanguageSwitcher();
+            },
+
+            updateLanguage(lang, animate = true) {
+                // Update all translatable elements with optional fade animation
                 const elements = document.querySelectorAll('[data-translate]');
                 elements.forEach(element => {
-                    element.classList.add('language-transition');
-                    
-                    setTimeout(() => {
+                    if (animate) {
+                        element.classList.add('language-transition');
+                        
+                        setTimeout(() => {
+                            const translation = element.getAttribute(`data-${lang}`);
+                            if (translation) {
+                                element.innerHTML = translation;
+                            }
+                            element.classList.remove('language-transition');
+                        }, 150);
+                    } else {
+                        // Update immediately without animation
                         const translation = element.getAttribute(`data-${lang}`);
                         if (translation) {
                             element.innerHTML = translation;
                         }
-                        element.classList.remove('language-transition');
-                    }, 150);
+                    }
                 });
-                
-                // Update language switcher appearance
-                this.updateLanguageSwitcher(lang);
             },
-            
-            updateLanguageSwitcher(lang) {
+
+            updateHeaderLanguageSwitcher() {
+                // Update navbar language switcher to match current language
                 document.querySelectorAll('.navbar-lang-switcher').forEach(link => {
-                    const linkLang = link.getAttribute('data-lang');
-                    if (linkLang === lang) {
-                        link.classList.add('text-primary');
+                    const isActive = link.dataset.lang === this.currentLang;
+                    
+                    if (isActive) {
                         link.classList.remove('text-gray-600');
+                        link.classList.add('text-primary');
                     } else {
                         link.classList.remove('text-primary');
                         link.classList.add('text-gray-600');
@@ -612,9 +643,9 @@
             navbar.classList.remove('shadow-md', 'bg-white/95');
         });
 
-        // Highlight active page in navigation
+        // Initialize everything when DOM is ready
         document.addEventListener('DOMContentLoaded', function() {
-            // Initialize bilingual functionality
+            // Initialize bilingual functionality with hash navigation
             bilingualPage.init();
             
             // Get current page path

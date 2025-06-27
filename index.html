@@ -504,27 +504,35 @@
             handleInitialLanguage() {
                 const hash = window.location.hash.substring(1);
                 if (hash === 'english' || hash === 'portuguese') {
-                    this.switchLanguage(hash === 'english' ? 'en' : 'pt');
+                    this.switchLanguage(hash === 'english' ? 'en' : 'pt', false);
                 } else {
                     // Default to Portuguese
                     window.location.hash = 'portuguese';
-                    this.switchLanguage('pt');
+                    this.switchLanguage('pt', false);
                 }
             },
 
-            switchLanguage(lang) {
-                // Update all translatable elements with fade animation
+            switchLanguage(lang, animate = true) {
+                // Update all translatable elements with optional fade animation
                 const elements = document.querySelectorAll('[data-en][data-pt]');
                 elements.forEach(element => {
-                    element.classList.add('language-transition');
-                    
-                    setTimeout(() => {
+                    if (animate) {
+                        element.classList.add('language-transition');
+                        
+                        setTimeout(() => {
+                            const translation = element.getAttribute(`data-${lang}`);
+                            if (translation) {
+                                element.innerHTML = translation;
+                            }
+                            element.classList.remove('language-transition');
+                        }, 150);
+                    } else {
+                        // Update immediately without animation
                         const translation = element.getAttribute(`data-${lang}`);
                         if (translation) {
                             element.innerHTML = translation;
                         }
-                        element.classList.remove('language-transition');
-                    }, 150);
+                    }
                 });
 
                 // Update active language indicator

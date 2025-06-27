@@ -61,29 +61,29 @@
                 
                 <!-- Desktop Navigation Menu -->
                 <nav class="hidden md:flex space-x-6">
-                    <a href="home-en.html" class="text-gray-700 font-medium hover:text-primary transition-colors">Início</a>
-                    <a href="about-en.html" class="text-gray-700 font-medium hover:text-primary transition-colors">Sobre Nós</a>
+                    <a href="home-en.html" class="text-gray-700 font-medium hover:text-primary transition-colors" data-translate="nav-home" data-en="Home" data-pt="Início">Início</a>
+                    <a href="about-en.html" class="text-gray-700 font-medium hover:text-primary transition-colors" data-translate="nav-about" data-en="About Us" data-pt="Sobre Nós">Sobre Nós</a>
                     
                     <!-- Products Dropdown -->
                     <div class="relative group">
-                        <a href="products-en.html" class="text-gray-700 font-medium hover:text-primary transition-colors flex items-center">
+                        <a href="products-en.html" class="text-gray-700 font-medium hover:text-primary transition-colors flex items-center" data-translate="nav-products" data-en="Products" data-pt="Produtos">
                             Produtos
                             <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                             </svg>
                         </a>
                         <div class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
-                            <a href="products-en.html#meteorological" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Estações Meteorológicas</a>
-                            <a href="products-en.html#sensors" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Sensores Ambientais</a>
-                            <a href="products-en.html#software" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Soluções de Software</a>
+                            <a href="products-en.html#meteorological" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" data-translate="nav-meteorological" data-en="Meteorological Stations" data-pt="Estações Meteorológicas">Estações Meteorológicas</a>
+                            <a href="products-en.html#sensors" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" data-translate="nav-sensors" data-en="Environmental Sensors" data-pt="Sensores Ambientais">Sensores Ambientais</a>
+                            <a href="products-en.html#software" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" data-translate="nav-software" data-en="Software Solutions" data-pt="Soluções de Software">Soluções de Software</a>
                         </div>
                     </div>
                     
-                    <a href="training-en.html" class="text-gray-700 font-medium hover:text-primary transition-colors">Treinamento</a>
-                    <a href="animations-en.html" class="text-gray-700 font-medium hover:text-primary transition-colors">Animações</a>
-                    <a href="clients-en.html" class="text-gray-700 font-medium hover:text-primary transition-colors">Clientes</a>
-                    <a href="links-en.html" class="text-primary font-medium hover:text-secondary transition-colors">Links</a>
-                    <a href="contact-en.html" class="text-gray-700 font-medium hover:text-primary transition-colors">Contato</a>
+                    <a href="training-en.html" class="text-gray-700 font-medium hover:text-primary transition-colors" data-translate="nav-training" data-en="Training" data-pt="Treinamento">Treinamento</a>
+                    <a href="animations-en.html" class="text-gray-700 font-medium hover:text-primary transition-colors" data-translate="nav-animations" data-en="Animations" data-pt="Animações">Animações</a>
+                    <a href="clients-en.html" class="text-gray-700 font-medium hover:text-primary transition-colors" data-translate="nav-clients" data-en="Clients" data-pt="Clientes">Clientes</a>
+                    <a href="links-en.html" class="text-primary font-medium hover:text-secondary transition-colors" data-translate="nav-links" data-en="Links" data-pt="Links">Links</a>
+                    <a href="contact-en.html" class="text-gray-700 font-medium hover:text-primary transition-colors" data-translate="nav-contact" data-en="Contact" data-pt="Contato">Contato</a>
                 </nav>
                 
                 <!-- Language Switcher and Mobile Menu Button -->
@@ -297,7 +297,7 @@
                     lang = 'pt';
                 }
                 
-                this.switchLanguage(lang, false); // Don't update hash again
+                this.switchLanguage(lang, false, false); // Don't update hash again, no animation
             },
 
             handleHashChange() {
@@ -310,10 +310,10 @@
                     lang = 'pt';
                 }
                 
-                this.switchLanguage(lang, false); // Don't update hash again
+                this.switchLanguage(lang, false); // Don't update hash again, but allow animation for user changes
             },
 
-            switchLanguage(lang, updateHash = true) {
+            switchLanguage(lang, updateHash = true, animate = true) {
                 this.currentLang = lang;
                 
                 // Update hash if needed
@@ -325,23 +325,31 @@
                 // Store in localStorage as backup
                 localStorage.setItem('seca-language', lang);
                 
-                this.updateLanguage(lang);
+                this.updateLanguage(lang, animate);
                 this.updateHeaderLanguageSwitcher();
             },
 
-            updateLanguage(lang) {
-                // Update all translatable elements with fade animation
+            updateLanguage(lang, animate = true) {
+                // Update all translatable elements with optional fade animation
                 const elements = document.querySelectorAll('[data-translate]');
                 elements.forEach(element => {
-                    element.classList.add('language-transition');
-                    
-                    setTimeout(() => {
+                    if (animate) {
+                        element.classList.add('language-transition');
+                        
+                        setTimeout(() => {
+                            const translation = element.getAttribute(`data-${lang}`);
+                            if (translation) {
+                                element.innerHTML = translation;
+                            }
+                            element.classList.remove('language-transition');
+                        }, 150);
+                    } else {
+                        // Update immediately without animation
                         const translation = element.getAttribute(`data-${lang}`);
                         if (translation) {
                             element.innerHTML = translation;
                         }
-                        element.classList.remove('language-transition');
-                    }, 150);
+                    }
                 });
             },
 

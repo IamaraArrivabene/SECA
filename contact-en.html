@@ -342,7 +342,7 @@
                     lang = 'pt';
                 }
                 
-                this.switchLanguage(lang, false); // Don't update hash again
+                this.switchLanguage(lang, false, false); // Don't update hash again, no animation
             },
 
             handleHashChange() {
@@ -355,10 +355,10 @@
                     lang = 'pt';
                 }
                 
-                this.switchLanguage(lang, false); // Don't update hash again
+                this.switchLanguage(lang, false); // Don't update hash again, but allow animation for user changes
             },
 
-            switchLanguage(lang, updateHash = true) {
+            switchLanguage(lang, updateHash = true, animate = true) {
                 this.currentLang = lang;
                 
                 // Update hash if needed
@@ -370,26 +370,35 @@
                 // Store in localStorage as backup
                 localStorage.setItem('seca-language', lang);
                 
-                this.updateLanguage(lang);
+                this.updateLanguage(lang, animate);
                 this.updateHeaderLanguageSwitcher();
             },
 
-            updateLanguage(lang) {
-                // Update all translatable elements with fade animation
+            updateLanguage(lang, animate = true) {
+                // Update all translatable elements with optional fade animation
                 const elements = document.querySelectorAll('[data-translate]');
                 elements.forEach(element => {
-                    element.classList.add('language-transition');
-                    
-                    setTimeout(() => {
+                    if (animate) {
+                        element.classList.add('language-transition');
+                        
+                        setTimeout(() => {
+                            const translation = element.getAttribute(`data-${lang}`);
+                            if (translation) {
+                                element.innerHTML = translation;
+                            }
+                            element.classList.remove('language-transition');
+                        }, 150);
+                    } else {
+                        // Update immediately without animation
                         const translation = element.getAttribute(`data-${lang}`);
                         if (translation) {
                             element.innerHTML = translation;
                         }
-                        element.classList.remove('language-transition');
-                    }, 150);
+                    }
                 });
                 
                 // Update placeholders without animation
+                const delay = animate ? 150 : 0;
                 setTimeout(() => {
                     document.querySelectorAll('[data-placeholder-en]').forEach(input => {
                         const enPlaceholder = input.dataset.placeholderEn;
@@ -399,7 +408,7 @@
                             input.placeholder = lang === 'en' ? enPlaceholder : ptPlaceholder;
                         }
                     });
-                }, 150);
+                }, delay);
             },
 
             updateHeaderLanguageSwitcher() {

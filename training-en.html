@@ -240,87 +240,106 @@
 
     <!-- JavaScript -->
     <script>
-        // Bilingual functionality
+        // Bilingual functionality with hash-based navigation
         const bilingualPage = {
-            currentLanguage: 'pt', // Default to Portuguese
+            currentLang: 'pt', // Default language
             
             init() {
-                this.setupEventListeners();
-                this.initializeLanguage();
+                this.setupHashNavigation();
+                this.handleInitialHash();
             },
-            
-            setupEventListeners() {
-                // Hash change listener for browser navigation
+
+            setupHashNavigation() {
+                // Listen for hash changes in the URL
                 window.addEventListener('hashchange', () => {
                     this.handleHashChange();
                 });
                 
-                // Popstate for browser back/forward
+                // Handle browser back/forward buttons
                 window.addEventListener('popstate', () => {
                     this.handleHashChange();
                 });
-                
-                // Navbar language switcher click handler
-                document.querySelectorAll('.navbar-lang-switcher').forEach(link => {
-                    link.addEventListener('click', (e) => {
-                        e.preventDefault();
-                        const targetLang = e.target.closest('a').getAttribute('data-lang');
-                        const targetHash = targetLang === 'en' ? '#english' : '#portuguese';
-                        window.location.hash = targetHash;
-                    });
-                });
             },
-            
-            initializeLanguage() {
-                // Check URL hash first
-                const hash = window.location.hash;
-                if (hash === '#english') {
-                    this.setLanguage('en');
-                } else if (hash === '#portuguese') {
-                    this.setLanguage('pt');
+
+            handleInitialHash() {
+                // Check URL hash on page load
+                const hash = window.location.hash.substring(1); // Remove #
+                let lang = 'pt'; // Default
+                
+                if (hash === 'english') {
+                    lang = 'en';
+                } else if (hash === 'portuguese') {
+                    lang = 'pt';
                 } else {
-                    // Default to Portuguese and set hash
+                    // If no hash or invalid hash, set default hash
                     window.location.hash = '#portuguese';
-                    this.setLanguage('pt');
+                    lang = 'pt';
                 }
-            },
-            
-            handleHashChange() {
-                const hash = window.location.hash;
-                if (hash === '#english') {
-                    this.setLanguage('en');
-                } else if (hash === '#portuguese') {
-                    this.setLanguage('pt');
-                }
-            },
-            
-            setLanguage(lang) {
-                this.currentLanguage = lang;
                 
-                // Update all translatable elements
+                this.switchLanguage(lang, false, false); // Don't update hash again, no animation
+            },
+
+            handleHashChange() {
+                const hash = window.location.hash.substring(1); // Remove #
+                let lang = 'pt';
+                
+                if (hash === 'english') {
+                    lang = 'en';
+                } else if (hash === 'portuguese') {
+                    lang = 'pt';
+                }
+                
+                this.switchLanguage(lang, false); // Don't update hash again, but allow animation for user changes
+            },
+
+            switchLanguage(lang, updateHash = true, animate = true) {
+                this.currentLang = lang;
+                
+                // Update hash if needed
+                if (updateHash) {
+                    const hash = lang === 'en' ? 'english' : 'portuguese';
+                    window.location.hash = '#' + hash;
+                }
+                
+                // Store in localStorage as backup
+                localStorage.setItem('seca-language', lang);
+                
+                this.updateLanguage(lang, animate);
+                this.updateHeaderLanguageSwitcher();
+            },
+
+            updateLanguage(lang, animate = true) {
+                // Update all translatable elements with optional fade animation
                 const elements = document.querySelectorAll('[data-translate]');
                 elements.forEach(element => {
-                    element.classList.add('language-transition');
-                    
-                    setTimeout(() => {
+                    if (animate) {
+                        element.classList.add('language-transition');
+                        
+                        setTimeout(() => {
+                            const translation = element.getAttribute(`data-${lang}`);
+                            if (translation) {
+                                element.innerHTML = translation;
+                            }
+                            element.classList.remove('language-transition');
+                        }, 150);
+                    } else {
+                        // Update immediately without animation
                         const translation = element.getAttribute(`data-${lang}`);
                         if (translation) {
                             element.innerHTML = translation;
                         }
-                        element.classList.remove('language-transition');
-                    }, 150);
+                    }
                 });
-                
-                // Update language switcher appearance
-                this.updateLanguageSwitcher(lang);
             },
-            
-            updateLanguageSwitcher(lang) {
+
+            updateHeaderLanguageSwitcher() {
+                // Update navbar language switcher to match current language
                 document.querySelectorAll('.navbar-lang-switcher').forEach(link => {
-                    const linkLang = link.getAttribute('data-lang');
-                    if (linkLang === lang) {
-                        link.classList.add('text-primary');
+                    const isActive = link.dataset.lang === this.currentLang;
+                    
+                    if (isActive) {
                         link.classList.remove('text-gray-600');
+                        link.classList.add('text-primary');
                     } else {
                         link.classList.remove('text-primary');
                         link.classList.add('text-gray-600');
@@ -342,9 +361,9 @@
             navbar.classList.remove('shadow-md', 'bg-white/95');
         });
 
-        // Highlight active page in navigation
+        // Initialize everything when DOM is ready
         document.addEventListener('DOMContentLoaded', function() {
-            // Initialize bilingual functionality
+            // Initialize bilingual functionality with hash navigation
             bilingualPage.init();
             
             // Get current page path
