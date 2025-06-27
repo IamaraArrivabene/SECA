@@ -9,6 +9,8 @@
     <!-- Stylesheets -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Open+Sans:wght@300;400;600&display=swap">
+    <!-- ScrollReveal Animation Library -->
+    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -96,6 +98,17 @@
             border-radius: 8px;
         }
         
+        /* Background video styles - brighter and more prominent like original */
+        #background-video {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            z-index: -1;
+            object-fit: cover;
+        }
+        
         body {
             margin-bottom: 200px; /* Space for fixed footer */
         }
@@ -106,6 +119,23 @@
             left: 0;
             right: 0;
             z-index: 30;
+        }
+
+        /* Animation classes for ScrollReveal */
+        .from-left {
+            visibility: hidden;
+        }
+        
+        .from-right {
+            visibility: hidden;
+        }
+        
+        .from-top {
+            visibility: hidden;
+        }
+        
+        .from-bottom {
+            visibility: hidden;
         }
         
         @media (max-width: 768px) {
@@ -138,6 +168,16 @@
     </style>
 </head>
 <body class="bg-gray-50">
+    <!-- Background Video -->
+    <video id="background-video" autoplay muted loop playsinline>
+        <source src="videos/Video_Seca_Audio_new10b.mp4" type="video/mp4">
+    </video>
+
+    <!-- Opening Audio -->
+    <audio autoplay loop>
+        <source src="images/Seca_Audio.mp3" type="audio/mp3">
+    </audio>
+
     <!-- Top Bar with Logo and Language Switcher -->
     <div class="bg-white py-4 border-b fixed top-0 left-0 right-0 z-40 shadow-sm transition-shadow duration-300" id="navbar">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -207,15 +247,10 @@
 
     <!-- Main Section -->
     <section class="main-section">
-        <div class="absolute inset-0 bg-[#2a3347]">
-            <div class="absolute inset-0 bg-gradient-to-r from-[#2a3347] to-[#3a4357] opacity-80"></div>
-            <video class="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-40" autoplay muted loop playsinline>
-                <source src="videos/Video_Seca_Audio_new10b.mp4" type="video/mp4">
-            </video>
-        </div>
+        <div class="absolute inset-0 bg-[#2a3347] bg-opacity-60"></div>
         <div class="container relative z-20">
             <div class="content-area">
-                <div class="text-content">
+                <div class="text-content from-left">
                     <h1 data-en="SECA - Environmental<br>and Climatic Studies System" 
                         data-pt="SECA - Sistema de Estudos<br>Climáticos e Ambientais">SECA - Environmental<br>and Climatic Studies System</h1>
                     <h2 data-en="Excellence in Mathematical Simulation<br>of Atmospheric Dispersion of Pollutants" 
@@ -225,7 +260,7 @@
                         SECA - Environmental and Climatic Studies System Ltd. is a company specialized in providing consulting services, studies and projects that has been operating in the environmental area with an emphasis on air pollution since 1995. Based on the experience of its technical staff, it has been executing services and advising companies with updated technology and with this while maintaining the commitment to quality and impartiality.
                     </p>
                 </div>
-                <div class="video-content">
+                <div class="video-content from-right">
                     <video width="400" height="300" autoplay muted loop>
                         <source src="videos/videorosaF.mp4" type="video/mp4">
                         <span data-en="Your browser does not support the video tag." 
@@ -344,6 +379,18 @@
 
     <!-- JavaScript -->
     <script>
+        // Initialize ScrollReveal animations
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize ScrollReveal with same settings as original
+            window.sr = ScrollReveal({
+                distance: '100px'
+            });
+            sr.reveal('.from-left', { origin: 'left'});
+            sr.reveal('.from-right', { origin: 'right'});
+            sr.reveal('.from-top', { origin: 'top'});
+            // Footer animation removed as requested
+        });
+
         // Bilingual functionality
         const bilingualPage = {
             init() {
