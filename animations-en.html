@@ -441,7 +441,7 @@
                     </p>
                 </div>
                 <div class="rounded-xl overflow-hidden shadow-lg">
-                    <video controls class="w-full" id="ozone-video">
+                    <video controls class="w-full" id="ozone-video" preload="metadata" volume="1.0">
                         <source src="images/OzonioT2.mp4" type="video/mp4">
                         <span data-translate="video-not-supported" data-en="Your browser does not support the video tag." data-pt="Seu navegador não suporta a tag de vídeo.">Your browser does not support the video tag.</span>
                     </video>
@@ -510,11 +510,27 @@
 
     <!-- JavaScript -->
     <script>
-        // Set video volume to maximum
+        // Set video volume to maximum with improved handling
         document.addEventListener('DOMContentLoaded', function() {
             const video = document.getElementById('ozone-video');
             if (video) {
+                // Set volume immediately
                 video.volume = 1.0;
+                
+                // Ensure volume is set when video metadata loads
+                video.addEventListener('loadedmetadata', function() {
+                    video.volume = 1.0;
+                });
+                
+                // Ensure volume is set when video starts playing
+                video.addEventListener('play', function() {
+                    video.volume = 1.0;
+                });
+                
+                // Ensure volume is set when video can play
+                video.addEventListener('canplay', function() {
+                    video.volume = 1.0;
+                });
             }
         });
 

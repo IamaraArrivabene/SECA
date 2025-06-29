@@ -589,6 +589,12 @@
         </div>
     </section>
 
+    <!-- Background Audio (Alternative method) -->
+    <audio id="background-audio" loop preload="auto" style="display: none;">
+        <source src="images/Seca_Audio.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
     <!-- Footer -->
     <footer class="bg-[#2a3347] text-white py-8">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -791,17 +797,42 @@
         document.addEventListener('DOMContentLoaded', function() {
             bilingualPage.init();
 
-            // Audio setup - play after 10 seconds delay
-            const audio = new Audio('images/Seca_Audio.mp3');
-            audio.volume = 1; // Set volume to 50%
+            // Dual audio setup for better compatibility and volume
+            const jsAudio = new Audio('images/Seca_Audio.mp3');
+            const htmlAudio = document.getElementById('background-audio');
             
-            // Play audio after 10 seconds
-            setTimeout(function() {
-                audio.play().catch(function(error) {
-                    console.log('Audio autoplay prevented by browser:', error);
-                    // Optionally, you could show a message to the user asking them to click to enable audio
+            // Setup JavaScript audio with improved volume handling
+            jsAudio.addEventListener('loadedmetadata', function() {
+                jsAudio.volume = 1.0; // Set to maximum volume
+            });
+            jsAudio.volume = 1.0; // Set immediately as fallback
+            
+            // Setup HTML5 audio element
+            if (htmlAudio) {
+                htmlAudio.volume = 1.0;
+                htmlAudio.addEventListener('loadedmetadata', function() {
+                    htmlAudio.volume = 1.0;
                 });
-            }, 10000); // 10 seconds delay
+            }
+            
+            // Play audio after 10 seconds - try both methods
+            setTimeout(function() {
+                // Try JavaScript audio first
+                jsAudio.play().then(function() {
+                    jsAudio.volume = 1.0; // Ensure volume after playback starts
+                }).catch(function(error) {
+                    console.log('JavaScript audio autoplay prevented, trying HTML5 audio:', error);
+                    
+                    // Fallback to HTML5 audio
+                    if (htmlAudio) {
+                        htmlAudio.play().then(function() {
+                            htmlAudio.volume = 1.0;
+                        }).catch(function(error2) {
+                            console.log('Both audio methods prevented by browser:', error2);
+                        });
+                    }
+                });
+            }, 5000); // 5 seconds delay
         });
 
         // Mobile menu toggle
