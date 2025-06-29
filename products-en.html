@@ -276,23 +276,91 @@
             }
         }
         
-        /* Mobile menu improvements */
+        /* Essential mobile fixes only */
         @media (max-width: 768px) {
-            #mobileMenu .max-w-xs {
-                max-width: 100%;
+            /* Text container fixes */
+            .text-center {
+                word-wrap: break-word;
+                overflow-wrap: break-word;
             }
             
-            #mobileMenu nav ul li a {
-                padding: 16px 0;
-                font-size: 16px;
-                min-height: 48px;
-                display: flex;
-                align-items: center;
+            /* Link fixes for mobile */
+            a[href*="weblakes.com"] {
+                word-break: break-all;
+                font-size: 0.75rem;
+                line-height: 1.4;
             }
             
-            #mobileMenu nav ul li.pl-4 a {
-                padding-left: 16px;
-                font-size: 14px;
+            /* Content width fixes */
+            .max-w-4xl {
+                max-width: 100% !important;
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+            
+            /* Weather stations section mobile fixes */
+            #meteorological h2 {
+                font-size: 1.5rem !important;
+            }
+            
+            #meteorological p {
+                font-size: 0.875rem !important;
+                line-height: 1.6 !important;
+            }
+        }
+        
+        /* Mobile menu and responsive fixes */
+        @media (max-width: 768px) {
+            /* Hide complex interactive weather station on mobile */
+            .interactive-weather-station {
+                display: none !important;
+            }
+            
+            /* Show mobile weather station instead */
+            .mobile-weather-station {
+                display: block !important;
+            }
+        }
+        
+        /* Desktop: Hide mobile station, show interactive */
+        @media (min-width: 769px) {
+            .mobile-weather-station {
+                display: none !important;
+            }
+            
+            .interactive-weather-station {
+                display: block !important;
+            }
+            
+            /* Ensure desktop navigation is visible */
+            nav.hidden {
+                display: flex !important;
+            }
+            
+            #mobileMenuButton {
+                display: none !important;
+            }
+        }
+        
+        /* Additional breakpoints for better responsiveness */
+        @media (max-width: 640px) {
+            /* Small mobile phones */
+            #mobileMenuButton {
+                display: flex !important;
+                min-width: 40px;
+                min-height: 40px;
+                padding: 6px;
+            }
+        }
+        
+        @media (min-width: 641px) and (max-width: 768px) {
+            /* Tablets in portrait */
+            #mobileMenuButton {
+                display: flex !important;
+            }
+            
+            .hidden.sm\\:flex {
+                display: none !important;
             }
         }
         
@@ -393,11 +461,11 @@
                 
                 <!-- Language Switcher and Mobile Menu Button -->
                 <div class="flex items-center space-x-4">
-                    <a href="#english" class="flex items-center space-x-1 text-sm text-primary navbar-lang-switcher" data-lang="en">
+                    <a href="#english" class="navbar-lang-switcher flex items-center space-x-1 text-sm text-primary">
                         <img src="images/USA.jpg" class="w-5 h-5 rounded-full object-cover" alt="EN">
                         <span>EN</span>
                     </a>
-                    <a href="#portuguese" class="flex items-center space-x-1 text-sm text-gray-600 hover:text-primary navbar-lang-switcher" data-lang="pt">
+                    <a href="#portuguese" class="navbar-lang-switcher flex items-center space-x-1 text-sm text-gray-600 hover:text-primary">
                         <img src="images/BR_new.png" class="w-5 h-5 rounded-full object-cover" alt="PT">
                         <span>PT</span>
                     </a>
@@ -415,7 +483,7 @@
     <section class="bg-[#2a3347] py-16 pt-32">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center">
-                <h1 class="text-4xl font-bold tracking-tight text-white sm:text-5xl" data-translate="hero-title" data-en="Products" data-pt="Produtos">Softwares</h1>
+                <h1 class="text-4xl font-bold tracking-tight text-white sm:text-5xl" data-translate="hero-title" data-en="Products" data-pt="Produtos">Products</h1>
             </div>
         </div>
     </section>
@@ -604,20 +672,20 @@
         </div>
     </section>
 
-    <!-- Weather Stations Section - Exact Copy from Original -->
-    <section style="position: static; margin-top: -1px; background-color: rgba(255,255,255,1);" id="meteorological">
-        <div style="min-height: 183px; background-color: rgba(255,255,255,1); position: relative; margin-left: auto; margin-right: auto; max-width: 1279px;">
-            <div style="width: 891px; min-height: 166px; position: absolute; top: 22px; left: 76px;">
-                <div style="font-family: 'Open Sans', sans-serif; color: #2c3549; text-align: justify; font-size: 14px; line-height: 1.5; letter-spacing: 1px;">
-                    <h2 style="font-size: 24px; text-align: left; margin: 0; margin-bottom: 10px;" data-translate="weather-stations-title" data-en="<b>Weather Stations</b>" data-pt="<b>Estações Meteorológicas</b>"><b>Weather Stations</b></h2>
-                    <h3 style="font-size: 14px; color: #000000; line-height: 1.5; letter-spacing: 1px; margin: 0;" data-translate="weather-stations-desc" data-en="<b>Practical, versatile and economical monitoring solutions. Supply of stations, installation, training, data processing and analysis for environmental studies and several applications</b>." data-pt="<b>Soluções de monitoramento práticas, versáteis e econômicas. Fornecimento de estações, instalação, treinamento, processamento e análise de dados para estudos ambientais e diversas aplicações</b>."><b>Practical, versatile and economical monitoring solutions. Supply of stations, installation, training, data processing and analysis for environmental studies and several applications</b>.</h3>
-                </div>
+    <!-- Weather Stations Section - Responsive Version -->
+    <section class="py-12 bg-white" id="meteorological">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-2xl font-bold text-[#2a3347] mb-4" data-translate="weather-stations-title" data-en="Weather Stations" data-pt="Estações Meteorológicas">Weather Stations</h2>
+                <p class="text-gray-700 text-sm leading-relaxed" data-translate="weather-stations-desc" data-en="<strong>Practical, versatile and economical monitoring solutions. Supply of stations, installation, training, data processing and analysis for environmental studies and several applications.</strong>" data-pt="<strong>Soluções de monitoramento práticas, versáteis e econômicas. Fornecimento de estações, instalação, treinamento, processamento e análise de dados para estudos ambientais e diversas aplicações.</strong>">
+                    <strong>Practical, versatile and economical monitoring solutions. Supply of stations, installation, training, data processing and analysis for environmental studies and several applications.</strong>
+                </p>
             </div>
         </div>
     </section>
 
-    <!-- Interactive Weather Station Section - Exact Copy from Original -->
-    <section style="position: static; margin-top: -1px; background-color: rgba(255,255,255,1);">
+    <!-- Interactive Weather Station Section - Desktop Only -->
+    <section class="interactive-weather-station" style="position: static; margin-top: -1px; background-color: rgba(255,255,255,1);">
         <div style="min-height: 671px; background-color: rgb(255, 255, 255); position: relative; margin-left: auto; margin-right: auto; max-width: 1279px;">
             
             <!-- Main Station Image -->
@@ -689,6 +757,85 @@
                 <div class="component-highlight" style="position: absolute; top: -2px; left: -1px; width: 146px; min-height: 146px; background-image: url('images/Coletor.jpeg'); background-repeat: no-repeat; background-size: contain;"></div>
                 <div class="text-element" style="position: absolute; top: 76px; left: 132px; width: 454px; min-height: 61px; background-color: transparent; opacity: 0; transition: opacity 0.5s;">
                     <h3 style="color: #720e0e; font-size: 14px; text-align: left; letter-spacing: 1px; margin: 0; line-height: 1.4;" data-translate="actinograph" data-en="Actinograph measures and stores the intensity of solar radiation to supply the lack of electricity" data-pt="Actinógrafo mede e armazena a intensidade da radiação solar para suprir a falta de eletricidade">Actinograph measures and stores the intensity of solar radiation to supply the lack of electricity</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mobile Weather Station Section - Mobile Only -->
+    <section class="mobile-weather-station py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Instruction Text -->
+            <div class="text-center mb-8">
+                <h2 class="text-2xl font-bold text-[#2a3347] mb-4" data-translate="station-instruction" data-en="Weather Station Components" data-pt="Componentes da Estação Meteorológica">Componentes da Estação Meteorológica</h2>
+                <p class="text-gray-600" data-translate="mobile-station-desc" data-en="Complete meteorological monitoring station with multiple sensors" data-pt="Estação completa de monitoramento meteorológico com múltiplos sensores">Estação completa de monitoramento meteorológico com múltiplos sensores</p>
+            </div>
+            
+            <!-- Main Station Image -->
+            <div class="flex justify-center mb-8">
+                <img src="images/Station.png" alt="Weather Station" class="max-w-full h-auto rounded-lg shadow-lg">
+            </div>
+            
+            <!-- Station Components Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <div class="flex items-start space-x-4">
+                        <img src="images/Sendor de umidade red.jpg" alt="Humidity Sensor" class="w-16 h-16 object-cover rounded-lg flex-shrink-0">
+                        <div>
+                            <h3 class="font-semibold text-[#2a3347] mb-2" data-translate="humidity-sensor" data-en="Humidity & Temperature Sensor" data-pt="Sensor de Umidade e Temperatura">Sensor de Umidade e Temperatura</h3>
+                            <p class="text-sm text-gray-600" data-translate="humidity-desc" data-en="Measures relative humidity and air temperature" data-pt="Mede umidade relativa e temperatura do ar">Mede umidade relativa e temperatura do ar</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <div class="flex items-start space-x-4">
+                        <img src="images/Anemometro red.jpg" alt="Anemometer" class="w-16 h-16 object-cover rounded-lg flex-shrink-0">
+                        <div>
+                            <h3 class="font-semibold text-[#2a3347] mb-2" data-translate="anemometer" data-en="Anemometer" data-pt="Anemômetro">Anemômetro</h3>
+                            <p class="text-sm text-gray-600" data-translate="anemometer-desc" data-en="Measures wind speed and direction" data-pt="Mede velocidade e direção do vento">Mede velocidade e direção do vento</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <div class="flex items-start space-x-4">
+                        <img src="images/met-2a.jpg" alt="Pluviometer" class="w-16 h-16 object-cover rounded-lg flex-shrink-0">
+                        <div>
+                            <h3 class="font-semibold text-[#2a3347] mb-2" data-translate="pluviometer" data-en="Pluviometer" data-pt="Pluviômetro">Pluviômetro</h3>
+                            <p class="text-sm text-gray-600" data-translate="pluviometer-desc" data-en="Measures rainfall" data-pt="Mede precipitação">Mede precipitação</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <div class="flex items-start space-x-4">
+                        <img src="images/Sensor UV.jpeg" alt="UV Sensor" class="w-16 h-16 object-cover rounded-lg flex-shrink-0">
+                        <div>
+                            <h3 class="font-semibold text-[#2a3347] mb-2" data-translate="uv-sensor" data-en="UV Sensor" data-pt="Sensor UV">Sensor UV</h3>
+                            <p class="text-sm text-gray-600" data-translate="uv-desc" data-en="Measures solar, global and ultra-violet radiation" data-pt="Mede radiação solar, global e ultravioleta">Mede radiação solar, global e ultravioleta</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <div class="flex items-start space-x-4">
+                        <img src="images/coletor de dados red.jpg" alt="Data Collector" class="w-16 h-16 object-cover rounded-lg flex-shrink-0">
+                        <div>
+                            <h3 class="font-semibold text-[#2a3347] mb-2" data-translate="data-collector" data-en="Data Collector" data-pt="Coletor de Dados">Coletor de Dados</h3>
+                            <p class="text-sm text-gray-600" data-translate="data-collector-desc" data-en="Real-time data preview and storage" data-pt="Visualização e armazenamento de dados em tempo real">Visualização e armazenamento de dados em tempo real</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <div class="flex items-start space-x-4">
+                        <img src="images/alarme red.jpg" alt="Alarm" class="w-16 h-16 object-cover rounded-lg flex-shrink-0">
+                        <div>
+                            <h3 class="font-semibold text-[#2a3347] mb-2" data-translate="alarm" data-en="System Alarm" data-pt="Alarme do Sistema">Alarme do Sistema</h3>
+                            <p class="text-sm text-gray-600" data-translate="alarm-desc" data-en="System failure indicator and alerts" data-pt="Indicador de falha e alertas do sistema">Indicador de falha e alertas do sistema</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -788,16 +935,14 @@
 
     <!-- JavaScript -->
     <script>
-        // Bilingual functionality with hash-based navigation
+        // Bilingual functionality
         const bilingualPage = {
-            currentLang: 'pt', // Default language
-            
             init() {
-                this.setupHashNavigation();
-                this.handleInitialHash();
+                this.setupLanguageSwitching();
+                this.handleInitialLanguage();
             },
 
-            setupHashNavigation() {
+            setupLanguageSwitching() {
                 // Handle navbar language links
                 document.querySelectorAll('.navbar-lang-switcher').forEach(link => {
                     link.addEventListener('click', (e) => {
@@ -810,65 +955,35 @@
                     });
                 });
 
-                // Listen for hash changes in the URL
+                // Handle hash changes (for browser back/forward)
                 window.addEventListener('hashchange', () => {
-                    this.handleHashChange();
+                    const hash = window.location.hash.substring(1);
+                    if (hash === 'english' || hash === 'portuguese') {
+                        this.switchLanguage(hash === 'english' ? 'en' : 'pt');
+                    }
                 });
-                
-                // Handle browser back/forward buttons
+
+                // Handle popstate for browser navigation
                 window.addEventListener('popstate', () => {
-                    this.handleHashChange();
+                    const hash = window.location.hash.substring(1);
+                    if (hash === 'english' || hash === 'portuguese') {
+                        this.switchLanguage(hash === 'english' ? 'en' : 'pt');
+                    }
                 });
             },
 
-            handleInitialHash() {
-                // Check URL hash on page load
-                const hash = window.location.hash.substring(1); // Remove #
-                let lang = 'pt'; // Default
-                
-                if (hash === 'english') {
-                    lang = 'en';
-                } else if (hash === 'portuguese') {
-                    lang = 'pt';
+            handleInitialLanguage() {
+                const hash = window.location.hash.substring(1);
+                if (hash === 'english' || hash === 'portuguese') {
+                    this.switchLanguage(hash === 'english' ? 'en' : 'pt', false);
                 } else {
-                    // If no hash or invalid hash, set default hash
-                    window.location.hash = '#portuguese';
-                    lang = 'pt';
+                    // Default to Portuguese
+                    window.location.hash = 'portuguese';
+                    this.switchLanguage('pt', false);
                 }
-                
-                this.switchLanguage(lang, false, false); // Don't update hash again, no animation
             },
 
-            handleHashChange() {
-                const hash = window.location.hash.substring(1); // Remove #
-                let lang = 'pt';
-                
-                if (hash === 'english') {
-                    lang = 'en';
-                } else if (hash === 'portuguese') {
-                    lang = 'pt';
-                }
-                
-                this.switchLanguage(lang, false); // Don't update hash again, but allow animation for user changes
-            },
-
-            switchLanguage(lang, updateHash = true, animate = true) {
-                this.currentLang = lang;
-                
-                // Update hash if needed
-                if (updateHash) {
-                    const hash = lang === 'en' ? 'english' : 'portuguese';
-                    window.location.hash = '#' + hash;
-                }
-                
-                // Store in localStorage as backup
-                localStorage.setItem('seca-language', lang);
-                
-                this.updateLanguage(lang, animate);
-                this.updateHeaderLanguageSwitcher();
-            },
-
-            updateLanguage(lang, animate = true) {
+            switchLanguage(lang, animate = true) {
                 // Update all translatable elements with optional fade animation
                 const elements = document.querySelectorAll('[data-translate]');
                 elements.forEach(element => {
@@ -890,12 +1005,11 @@
                         }
                     }
                 });
-            },
 
-            updateHeaderLanguageSwitcher() {
-                // Update navbar language switcher to match current language
+                // Update active language indicator
                 document.querySelectorAll('.navbar-lang-switcher').forEach(link => {
-                    const isActive = link.dataset.lang === this.currentLang;
+                    const isActive = (lang === 'en' && link.getAttribute('href') === '#english') ||
+                                   (lang === 'pt' && link.getAttribute('href') === '#portuguese');
                     
                     if (isActive) {
                         link.classList.remove('text-gray-600');
@@ -905,6 +1019,9 @@
                         link.classList.add('text-gray-600');
                     }
                 });
+
+                // Update page language attribute
+                document.documentElement.lang = lang === 'en' ? 'en' : 'pt';
             }
         };
 
