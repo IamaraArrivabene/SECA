@@ -264,6 +264,46 @@
                 display: none; /* Hide background videos on mobile for performance */
             }
         }
+        
+        /* Mobile Audio Control Button Styles */
+        #mobile-audio-control {
+            z-index: 1000;
+        }
+        
+        #audio-toggle-btn {
+            box-shadow: 0 4px 12px rgba(42, 51, 71, 0.3);
+            backdrop-filter: blur(10px);
+        }
+        
+        #audio-toggle-btn:active {
+            transform: scale(0.95);
+        }
+        
+        @media (max-width: 768px) {
+            #mobile-audio-control {
+                bottom: 1rem;
+                right: 1rem;
+            }
+            
+            #audio-toggle-btn {
+                width: 3rem;
+                height: 3rem;
+            }
+        }
+        
+        /* Audio loading indicator */
+        .audio-loading {
+            animation: pulse 1.5s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.6;
+            }
+        }
     </style>
 </head>
 <body class="bg-gray-50">
@@ -590,10 +630,20 @@
     </section>
 
     <!-- Background Audio (Alternative method) -->
-    <audio id="background-audio" loop preload="auto" style="display: none;">
+    <audio id="background-audio" loop preload="metadata" style="display: none;">
         <source src="images/Seca_Audio.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
+
+    <!-- Mobile Audio Control Button -->
+    <div id="mobile-audio-control" class="fixed bottom-6 right-6 z-50 hidden">
+        <button id="audio-toggle-btn" 
+                class="w-14 h-14 bg-primary text-white rounded-full shadow-lg flex items-center justify-center hover:bg-secondary transition-all duration-300" 
+                aria-label="Toggle background audio" 
+                title="Toggle Audio">
+            <i id="audio-icon" class="fas fa-volume-mute text-lg"></i>
+        </button>
+    </div>
 
     <!-- Footer -->
     <footer class="bg-[#2a3347] text-white py-8">
@@ -793,46 +843,206 @@
             }
         };
 
+        // Audio Management System
+        const audioManager = {
+            jsAudio: null,
+            htmlAudio: null,
+            isPlaying: false,
+            isMobile: false,
+            userInteracted: false,
+
+            init() {
+                this.detectMobile();
+                this.setupAudio();
+                this.setupMobileControls();
+                this.handleInitialPlayback();
+            },
+
+            detectMobile() {
+                this.isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || 
+                               (navigator.maxTouchPoints && navigator.maxTouchPoints > 2 && /MacIntel/.test(navigator.platform));
+            },
+
+            setupAudio() {
+                // Setup JavaScript audio
+                this.jsAudio = new Audio('images/Seca_Audio.mp3');
+                this.jsAudio.loop = true;
+                this.jsAudio.volume = 1.0;
+                this.jsAudio.addEventListener('loadedmetadata', () => {
+                    this.jsAudio.volume = 1.0;
+                });
+
+                // Setup HTML5 audio element
+                this.htmlAudio = document.getElementById('background-audio');
+                if (this.htmlAudio) {
+                    this.htmlAudio.volume = 1.0;
+                    this.htmlAudio.addEventListener('loadedmetadata', () => {
+                        this.htmlAudio.volume = 1.0;
+                    });
+                }
+            },
+
+            setupMobileControls() {
+                if (this.isMobile) {
+                    // Show mobile audio control button
+                    const mobileControl = document.getElementById('mobile-audio-control');
+                    const audioBtn = document.getElementById('audio-toggle-btn');
+                    const audioIcon = document.getElementById('audio-icon');
+
+                    if (mobileControl) {
+                        mobileControl.classList.remove('hidden');
+                    }
+
+                    if (audioBtn) {
+                        audioBtn.addEventListener('click', () => {
+                            this.userInteracted = true;
+                            this.toggleAudio();
+                        });
+                    }
+
+                    // Track user interaction for audio unlock
+                    document.addEventListener('touchstart', () => {
+                        this.userInteracted = true;
+                    }, { once: true });
+
+                    document.addEventListener('click', () => {
+                        this.userInteracted = true;
+                    }, { once: true });
+                }
+            },
+
+            handleInitialPlayback() {
+                if (this.isMobile) {
+                    // On mobile, wait for user interaction
+                    console.log('Mobile detected: Audio will require user interaction');
+                    this.updateAudioIcon(false);
+                } else {
+                    // On desktop, try autoplay after delay
+                    setTimeout(() => {
+                        this.playAudio();
+                    }, 5000);
+                }
+            },
+
+                         async playAudio() {
+                if (this.isMobile && !this.userInteracted) {
+                    console.log('Mobile: User interaction required for audio');
+                    return false;
+                }
+
+                this.showLoading();
+
+                try {
+                    // Try JavaScript audio first
+                    await this.jsAudio.play();
+                    this.jsAudio.volume = 1.0;
+                    this.isPlaying = true;
+                    this.updateAudioIcon(true);
+                    console.log('Audio playing via JavaScript Audio API');
+                    return true;
+                } catch (error) {
+                    console.log('JavaScript audio failed, trying HTML5 audio:', error);
+                    
+                    try {
+                        // Fallback to HTML5 audio
+                        if (this.htmlAudio) {
+                            await this.htmlAudio.play();
+                            this.htmlAudio.volume = 1.0;
+                            this.isPlaying = true;
+                            this.updateAudioIcon(true);
+                            console.log('Audio playing via HTML5 audio element');
+                            return true;
+                        }
+                    } catch (error2) {
+                        console.log('Both audio methods failed:', error2);
+                        this.updateAudioIcon(false);
+                        return false;
+                    }
+                }
+            },
+
+            pauseAudio() {
+                try {
+                    if (this.jsAudio && !this.jsAudio.paused) {
+                        this.jsAudio.pause();
+                    }
+                    if (this.htmlAudio && !this.htmlAudio.paused) {
+                        this.htmlAudio.pause();
+                    }
+                    this.isPlaying = false;
+                    this.updateAudioIcon(false);
+                    console.log('Audio paused');
+                } catch (error) {
+                    console.log('Error pausing audio:', error);
+                }
+            },
+
+                         async toggleAudio() {
+                if (this.isPlaying) {
+                    this.pauseAudio();
+                } else {
+                    const success = await this.playAudio();
+                    if (!success && this.isMobile) {
+                        // Show a brief notification that audio couldn't play
+                        this.showAudioError();
+                    }
+                }
+            },
+
+            showAudioError() {
+                const audioBtn = document.getElementById('audio-toggle-btn');
+                if (audioBtn) {
+                    // Briefly show error state
+                    audioBtn.style.backgroundColor = '#ef4444';
+                    setTimeout(() => {
+                        audioBtn.style.backgroundColor = '';
+                    }, 1000);
+                }
+            },
+
+                         updateAudioIcon(playing) {
+                const audioIcon = document.getElementById('audio-icon');
+                const audioBtn = document.getElementById('audio-toggle-btn');
+                
+                if (audioIcon) {
+                    if (playing) {
+                        audioIcon.className = 'fas fa-volume-up text-lg';
+                        if (audioBtn) {
+                            audioBtn.title = 'Pause Audio';
+                            audioBtn.setAttribute('aria-label', 'Pause background audio');
+                            audioBtn.classList.remove('audio-loading');
+                        }
+                    } else {
+                        audioIcon.className = 'fas fa-volume-mute text-lg';
+                        if (audioBtn) {
+                            audioBtn.title = 'Play Audio';
+                            audioBtn.setAttribute('aria-label', 'Play background audio');
+                            audioBtn.classList.remove('audio-loading');
+                        }
+                    }
+                }
+            },
+
+            showLoading() {
+                const audioBtn = document.getElementById('audio-toggle-btn');
+                const audioIcon = document.getElementById('audio-icon');
+                
+                if (audioBtn) {
+                    audioBtn.classList.add('audio-loading');
+                    audioBtn.title = 'Loading Audio...';
+                    audioBtn.setAttribute('aria-label', 'Loading audio');
+                }
+                
+                if (audioIcon) {
+                    audioIcon.className = 'fas fa-spinner fa-spin text-lg';
+                }
+            }
+        };
+
         // Initialize when DOM is loaded
         document.addEventListener('DOMContentLoaded', function() {
             bilingualPage.init();
-
-            // Dual audio setup for better compatibility and volume
-            const jsAudio = new Audio('images/Seca_Audio.mp3');
-            const htmlAudio = document.getElementById('background-audio');
-            
-            // Setup JavaScript audio with improved volume handling
-            jsAudio.addEventListener('loadedmetadata', function() {
-                jsAudio.volume = 1.0; // Set to maximum volume
-            });
-            jsAudio.volume = 1.0; // Set immediately as fallback
-            
-            // Setup HTML5 audio element
-            if (htmlAudio) {
-                htmlAudio.volume = 1.0;
-                htmlAudio.addEventListener('loadedmetadata', function() {
-                    htmlAudio.volume = 1.0;
-                });
-            }
-            
-            // Play audio after 10 seconds - try both methods
-            setTimeout(function() {
-                // Try JavaScript audio first
-                jsAudio.play().then(function() {
-                    jsAudio.volume = 1.0; // Ensure volume after playback starts
-                }).catch(function(error) {
-                    console.log('JavaScript audio autoplay prevented, trying HTML5 audio:', error);
-                    
-                    // Fallback to HTML5 audio
-                    if (htmlAudio) {
-                        htmlAudio.play().then(function() {
-                            htmlAudio.volume = 1.0;
-                        }).catch(function(error2) {
-                            console.log('Both audio methods prevented by browser:', error2);
-                        });
-                    }
-                });
-            }, 5000); // 5 seconds delay
+            audioManager.init();
         });
 
         // Mobile menu toggle
