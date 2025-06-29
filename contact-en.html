@@ -157,7 +157,7 @@
 
                     <!-- Contact Form -->
                     <div class="bg-white rounded-xl shadow-lg p-8 bg-opacity-90">
-                        <form id="contactForm" class="space-y-6">
+                        <form id="contactForm" class="space-y-6" onsubmit="handleFormSubmit(event)">
                             <div>
                                 <label for="name" class="block text-sm font-medium text-gray-700 mb-2" data-translate="label-name" data-en="Name" data-pt="Nome">Nome</label>
                                 <input type="text" id="name" name="name" placeholder="Seu nome" required
@@ -298,12 +298,12 @@
             
             translations: {
                 en: {
-                    successMsg: "Thank you for your message! We will get back to you soon.",
+                    successMsg: "Opening your email client...",
                     errorMsg: "Please fill in all fields correctly.",
                     emptyFieldMsg: "This field is required."
                 },
                 pt: {
-                    successMsg: "Obrigado pela sua mensagem! Entraremos em contato em breve.",
+                    successMsg: "Abrindo seu cliente de email...",
                     errorMsg: "Por favor, preencha todos os campos corretamente.",
                     emptyFieldMsg: "Este campo é obrigatório."
                 }
@@ -427,78 +427,7 @@
             },
 
             setupFormSubmission() {
-                document.getElementById('contactForm').addEventListener('submit', (e) => {
-                    e.preventDefault();
-                    
-                    const t = this.translations[this.currentLang];
-                    const submitBtn = e.target.querySelector('button[type="submit"]');
-                    
-                    // Basic validation
-                    const formData = new FormData(e.target);
-                    let isValid = true;
-                    
-                    // Check if all required fields are filled
-                    for (let [key, value] of formData.entries()) {
-                        if (!value.trim()) {
-                            isValid = false;
-                            break;
-                        }
-                    }
-                    
-                    if (isValid) {
-                        // Disable submit button and show loading
-                        submitBtn.disabled = true;
-                        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>' + 
-                            (this.currentLang === 'en' ? 'Sending...' : 'Enviando...');
-                        
-                        // Send email using EmailJS
-                        this.sendEmail(formData, submitBtn, t);
-                    } else {
-                        alert(t.errorMsg);
-                    }
-                });
-            },
-
-            async sendEmail(formData, submitBtn, t) {
-                try {
-                    // EmailJS configuration - Replace with your actual IDs
-                    const serviceID = 'YOUR_SERVICE_ID';
-                    const templateID = 'YOUR_TEMPLATE_ID';
-                    const publicKey = 'YOUR_PUBLIC_KEY';
-                    
-                    // Prepare template parameters
-                    const templateParams = {
-                        from_name: formData.get('name'),
-                        from_email: formData.get('email'),
-                        subject: formData.get('subject'),
-                        message: formData.get('message'),
-                        to_email: 'seca@seca-ambiental.com.br' // Your receiving email
-                    };
-                    
-                    // Send email
-                    const response = await emailjs.send(serviceID, templateID, templateParams, publicKey);
-                    
-                    if (response.status === 200) {
-                        // Success
-                        this.showNotification(t.successMsg, 'success');
-                        document.getElementById('contactForm').reset();
-                    } else {
-                        throw new Error('Email service error');
-                    }
-                    
-                } catch (error) {
-                    console.error('Email error:', error);
-                    this.showNotification(
-                        this.currentLang === 'en' 
-                            ? 'Sorry, there was an error sending your message. Please try again or contact us directly.'
-                            : 'Desculpe, houve um erro ao enviar sua mensagem. Tente novamente ou entre em contato diretamente.',
-                        'error'
-                    );
-                } finally {
-                    // Reset button
-                    submitBtn.disabled = false;
-                    submitBtn.innerHTML = this.currentLang === 'en' ? 'Send Message' : 'Enviar Mensagem';
-                }
+                // No changes needed here as we'll handle the form submission in a separate function
             },
 
             showNotification(message, type) {
@@ -527,6 +456,40 @@
                 }, 5000);
             }
         };
+
+        // Handle form submission
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            
+            const form = event.target;
+            const name = form.querySelector('#name').value.trim();
+            const email = form.querySelector('#email').value.trim();
+            const subject = form.querySelector('#subject').value.trim();
+            const message = form.querySelector('#message').value.trim();
+            
+            // Basic validation
+            if (!name || !email || !subject || !message) {
+                const lang = bilingualForm.currentLang;
+                bilingualForm.showNotification(bilingualForm.translations[lang].errorMsg, 'error');
+                return;
+            }
+            
+            // Prepare email content
+            const mailtoSubject = encodeURIComponent(subject);
+            const mailtoBody = encodeURIComponent(
+                `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
+            );
+            
+            // Create mailto link
+            const mailtoLink = `mailto:seca@seca-ambiental.com.br?subject=${mailtoSubject}&body=${mailtoBody}`;
+            
+            // Show notification
+            const lang = bilingualForm.currentLang;
+            bilingualForm.showNotification(bilingualForm.translations[lang].successMsg, 'success');
+            
+            // Open mailto link
+            window.location.href = mailtoLink;
+        }
 
         // Mobile menu toggle
         document.getElementById('mobileMenuButton').addEventListener('click', function() {
