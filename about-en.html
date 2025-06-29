@@ -96,14 +96,26 @@
                 justify-content: center;
             }
             
-            /* Video background section mobile */
+            /* Video background section mobile improvements */
             .h-96 {
-                height: 16rem;
+                height: 18rem; /* Increased height for better mobile viewing */
+                min-height: 18rem;
+            }
+            
+            /* Company card mobile improvements */
+            section.relative .bg-black\/70 {
+                margin: 1rem;
+                padding: 1.5rem !important;
+                border-radius: 0.75rem;
+                max-width: calc(100vw - 2rem);
+                backdrop-filter: blur(8px);
+                -webkit-backdrop-filter: blur(8px);
             }
             
             .text-4xl {
-                font-size: 1.875rem;
+                font-size: 1.75rem !important;
                 line-height: 1.2;
+                margin-bottom: 1rem !important;
             }
             
             .text-3xl {
@@ -117,7 +129,7 @@
             }
             
             .text-lg {
-                font-size: 1rem;
+                font-size: 0.95rem !important;
                 line-height: 1.6;
             }
             
@@ -166,8 +178,22 @@
         
         /* Small mobile phones */
         @media (max-width: 480px) {
+            /* Company section height for small phones */
+            .h-96 {
+                height: 16rem; /* Maintain reasonable height for small phones */
+                min-height: 16rem;
+            }
+            
+            /* Company card improvements for small phones */
+            section.relative .bg-black\/70 {
+                margin: 0.75rem !important;
+                padding: 1.25rem !important;
+                max-width: calc(100vw - 1.5rem);
+            }
+            
             .text-4xl {
-                font-size: 1.5rem;
+                font-size: 1.5rem !important;
+                margin-bottom: 0.75rem !important;
             }
             
             .text-3xl {
@@ -179,7 +205,8 @@
             }
             
             .text-lg {
-                font-size: 0.9rem;
+                font-size: 0.875rem !important;
+                line-height: 1.5;
             }
             
             .py-16 {
@@ -204,16 +231,20 @@
                 padding-left: 12px;
                 padding-right: 12px;
             }
-            
-            .h-96 {
-                height: 12rem;
-            }
         }
         
         /* Extra small screens */
         @media (max-width: 360px) {
+            /* Company card for extra small screens */
+            section.relative .bg-black\/70 {
+                margin: 0.5rem !important;
+                padding: 1rem !important;
+                max-width: calc(100vw - 1rem);
+            }
+            
             .text-4xl {
-                font-size: 1.25rem;
+                font-size: 1.25rem !important;
+                margin-bottom: 0.5rem !important;
             }
             
             .text-3xl {
@@ -225,7 +256,8 @@
             }
             
             .text-lg {
-                font-size: 0.875rem;
+                font-size: 0.8rem !important;
+                line-height: 1.4;
             }
             
             .max-w-7xl {
@@ -262,6 +294,25 @@
         @media (max-width: 768px) {
             video {
                 display: none; /* Hide background videos on mobile for performance */
+            }
+            
+            /* Company section mobile layout improvements */
+            section.relative {
+                background: linear-gradient(135deg, #2a3347 0%, #3a4357 100%);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 1rem 0;
+            }
+            
+            section.relative .relative.flex {
+                width: 100%;
+                padding: 0;
+            }
+            
+            section.relative .max-w-7xl {
+                width: 100%;
+                padding: 0 !important;
             }
         }
         
